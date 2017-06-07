@@ -1,0 +1,183 @@
+USE [esp_systems]
+GO
+
+/****** Object:  Table [dbo].[ItemsRpt_NewPrimaryPositions]    Script Date: 4/7/2017 2:39:57 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ItemsRpt_NewPrimaryPositions](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[ItemsReportLetter] [nvarchar](50) NOT NULL,
+	[PayPeriod] [tinyint] NOT NULL,
+	[PayPeriod_Year] [smallint] NOT NULL,
+	[Site] [tinyint] NOT NULL,
+	[Emp_Num] [nvarchar](50) NOT NULL,
+	[Emp_Name] [nvarchar](100) NOT NULL,
+	[Unit] [nvarchar](100) NOT NULL,
+	[Occupation] [nvarchar](100) NOT NULL,
+	[Status] [nvarchar](10) NOT NULL,
+	[EnteredBy] [nvarchar](100) NOT NULL,
+	[EnteredDate] [datetime] NOT NULL CONSTRAINT [DF_ItemsRpt_NewPrimaryPositions_EnteredDate]  DEFAULT (getdate())
+) ON [PRIMARY]
+
+GO
+
+==========================================================================================
+
+USE [esp_systems]
+GO
+
+/****** Object:  Table [dbo].[ItemsRpt_OccupationChange]    Script Date: 4/7/2017 2:40:35 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ItemsRpt_OccupationChange](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[PayPeriod] [tinyint] NOT NULL,
+	[PayPeriod_Year] [smallint] NOT NULL,
+	[ItemsReportLetter] [nvarchar](50) NOT NULL,
+	[Site] [tinyint] NOT NULL,
+	[Emp_Num] [nvarchar](10) NOT NULL,
+	[Emp_Name] [nvarchar](100) NOT NULL,
+	[Unit] [nvarchar](100) NOT NULL,
+	[OccFrom] [nvarchar](100) NOT NULL,
+	[OccTo] [nvarchar](100) NOT NULL,
+	[Comments] [nvarchar](1000) NULL,
+	[EnteredBy] [nvarchar](100) NOT NULL,
+	[EnteredDate] [datetime] NOT NULL CONSTRAINT [DF_ItemsRpt_OccupationChange_EnteredDate]  DEFAULT (getdate())
+) ON [PRIMARY]
+
+GO
+
+
+=====================================================================================================
+
+USE [esp_systems]
+GO
+
+/****** Object:  Table [dbo].[ItemsRpt_StatusChange]    Script Date: 4/7/2017 2:40:56 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ItemsRpt_StatusChange](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[PayPeriod] [tinyint] NOT NULL,
+	[PayPeriod_Year] [smallint] NOT NULL,
+	[ItemsReportLetter] [nvarchar](50) NOT NULL,
+	[Site] [tinyint] NOT NULL,
+	[Emp_Num] [nvarchar](10) NOT NULL,
+	[Emp_Name] [nvarchar](100) NOT NULL,
+	[StatusFrom] [nvarchar](10) NOT NULL,
+	[StatusTo] [nvarchar](10) NOT NULL,
+	[Unit] [nvarchar](100) NOT NULL,
+	[Comments] [nvarchar](1000) NULL,
+	[EnteredBy] [nvarchar](100) NOT NULL,
+	[EnteredDate] [datetime] NOT NULL CONSTRAINT [DF_ItemsRpt_StatusChange_EnteredDate]  DEFAULT (getdate())
+) ON [PRIMARY]
+
+GO
+
+
+====================================================================
+
+USE [esp_systems]
+GO
+
+/****** Object:  Table [dbo].[ItemsRpt_Terminations]    Script Date: 4/7/2017 2:41:22 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ItemsRpt_Terminations](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[PayPeriod] [tinyint] NOT NULL,
+	[PayPeriod_Year] [smallint] NOT NULL,
+	[ItemsReportLetter] [nvarchar](50) NOT NULL,
+	[Site] [tinyint] NOT NULL,
+	[Emp_Num] [nvarchar](10) NOT NULL,
+	[Emp_Name] [nvarchar](100) NOT NULL,
+	[Unit] [nvarchar](100) NOT NULL,
+	[TerminationDate] [date] NOT NULL,
+	[Comments] [text] NOT NULL,
+	[EnteredBy] [nvarchar](100) NOT NULL,
+	[EnteredDate] [datetime] NOT NULL CONSTRAINT [DF_ItemsRpt_Terminations_EnteredDate]  DEFAULT (getdate())
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+==============================================================================
+
+USE [esp_systems]
+GO
+
+/****** Object:  Table [dbo].[ItemsRpt_Transfers]    Script Date: 4/7/2017 2:42:56 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ItemsRpt_Transfers](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[PayPeriod] [tinyint] NOT NULL,
+	[PayPeriod_Year] [smallint] NOT NULL,
+	[ItemsReportLetter] [nvarchar](50) NOT NULL,
+	[Site] [tinyint] NOT NULL,
+	[Emp_Num] [nvarchar](10) NOT NULL,
+	[Emp_Name] [nvarchar](100) NOT NULL,
+	[UnitFrom] [nvarchar](100) NOT NULL,
+	[UnitTo] [nvarchar](100) NOT NULL,
+	[Comments] [text] NOT NULL,
+	[EnteredBy] [nchar](100) NOT NULL,
+	[EnteredDate] [datetime] NOT NULL CONSTRAINT [DF_ItemsRpt_Transfers_EnteredDate]  DEFAULT (getdate())
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+
+======================================================================
+
+USE [esp_systems]
+GO
+
+/****** Object:  Table [dbo].[ItemsRpt_UnitToUnitTransfer]    Script Date: 4/7/2017 2:43:13 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ItemsRpt_UnitToUnitTransfer](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[PayPeriod] [tinyint] NOT NULL,
+	[PayPeriod_Year] [smallint] NOT NULL,
+	[ItemsReportLetter] [nvarchar](50) NOT NULL,
+	[Site] [tinyint] NOT NULL,
+	[Emp_Num] [nvarchar](10) NOT NULL,
+	[Emp_Name] [nvarchar](100) NOT NULL,
+	[UnitFrom] [nvarchar](50) NOT NULL,
+	[UnitTo] [nvarchar](50) NOT NULL,
+	[Occupation] [nvarchar](100) NOT NULL,
+	[Status] [nvarchar](10) NOT NULL,
+	[ChangeInOccupation] [nvarchar](10) NOT NULL,
+	[ChangeInSite] [nvarchar](10) NOT NULL,
+	[Comments] [nvarchar](1000) NULL,
+	[EnteredBy] [nvarchar](100) NOT NULL,
+	[EnteredDate] [datetime] NOT NULL CONSTRAINT [DF_ItemsRpt_UnitToUnitTransfer_EnteredDate]  DEFAULT (getdate())
+) ON [PRIMARY]
+
+GO
+
+
+
