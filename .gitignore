@@ -11,14 +11,14 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
+# [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
 x64/
 x86/
 bld/
-[Bb]in/
+# [Bb]in/
 [Oo]bj/
 [Ll]og/
 
@@ -259,3 +259,9 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/ItemsReport/bin/Debug/ItemsReport.exe
+/ItemsReport/bin/Debug/ItemsReport.vshost.exe
+/ItemsReport/bin/Debug/ItemsReport.vshost.exe.manifest
+/ItemsReport/bin/Debug/WindowsFormsApplication1.exe
+/ItemsReport/bin/Debug/WindowsFormsApplication1.vshost.exe
+/ItemsReport/bin/Debug/WindowsFormsApplication1.vshost.exe.manifest
