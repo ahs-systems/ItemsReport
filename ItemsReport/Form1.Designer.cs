@@ -58,18 +58,18 @@
             this.chkChangeInSite_UUT = new System.Windows.Forms.CheckBox();
             this.chkChangeInOcc_UUT = new System.Windows.Forms.CheckBox();
             this.btnSave_UUT = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.txtEmpName_UUT = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.txtEmpNo_UUT = new System.Windows.Forms.TextBox();
             this.cboSite_UUT = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.SC = new System.Windows.Forms.TabPage();
             this.btnCancel_SC = new System.Windows.Forms.Button();
             this.txtUnit_SC = new System.Windows.Forms.TextBox();
@@ -93,21 +93,21 @@
             this.txtOccCodeTo_OC = new System.Windows.Forms.TextBox();
             this.txtOccCodeFrom_OC = new System.Windows.Forms.TextBox();
             this.txtOccTo_OC = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
             this.txtOccFrom_OC = new System.Windows.Forms.TextBox();
             this.txtComments_OC = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.btnSave_OC = new System.Windows.Forms.Button();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.txtEmpName_OC = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
             this.txtEmpNo_OC = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
             this.cboSite_OC = new System.Windows.Forms.ComboBox();
-            this.label25 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.Terms = new System.Windows.Forms.TabPage();
             this.btnCancel_Terms = new System.Windows.Forms.Button();
             this.btnSave_Terms = new System.Windows.Forms.Button();
@@ -130,14 +130,14 @@
             this.txtComments_Trans = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
             this.txtUnitFrom_Trans = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.txtEmpName_Trans = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
             this.txtEmpNo_Trans = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.cboSite_Trans = new System.Windows.Forms.ComboBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.cboPP = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
@@ -451,6 +451,7 @@
             this.txtTransTo_UUT.Name = "txtTransTo_UUT";
             this.txtTransTo_UUT.Size = new System.Drawing.Size(150, 24);
             this.txtTransTo_UUT.TabIndex = 4;
+            this.txtTransTo_UUT.Leave += new System.EventHandler(this.txtTransTo_UUT_Leave);
             // 
             // txtTransFrom_UUT
             // 
@@ -526,33 +527,6 @@
             this.btnSave_UUT.UseVisualStyleBackColor = false;
             this.btnSave_UUT.Click += new System.EventHandler(this.btnSave_UUT_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(110, 154);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 18);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Status:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(44, 81);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(120, 18);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Unit Trans From:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(77, 44);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(87, 18);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "Emp Name:";
-            // 
             // txtEmpName_UUT
             // 
             this.txtEmpName_UUT.BackColor = System.Drawing.Color.Gainsboro;
@@ -561,15 +535,6 @@
             this.txtEmpName_UUT.Size = new System.Drawing.Size(277, 24);
             this.txtEmpName_UUT.TabIndex = 2;
             this.txtEmpName_UUT.TabStop = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(109, 7);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 18);
-            this.label12.TabIndex = 17;
-            this.label12.Text = "Emp #:";
             // 
             // txtEmpNo_UUT
             // 
@@ -616,15 +581,6 @@
             this.label14.TabIndex = 28;
             this.label14.Text = "Unit Trans To:";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(36, 118);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(128, 18);
-            this.label9.TabIndex = 36;
-            this.label9.Text = "Occupation Code:";
-            // 
             // label15
             // 
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -643,6 +599,51 @@
             this.label13.Size = new System.Drawing.Size(37, 18);
             this.label13.TabIndex = 15;
             this.label13.Text = "Site:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(110, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 18);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Status:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(44, 81);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(120, 18);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Unit Trans From:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(77, 44);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(87, 18);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "Emp Name:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(109, 7);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(55, 18);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "Emp #:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(36, 118);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(128, 18);
+            this.label9.TabIndex = 36;
+            this.label9.Text = "Occupation Code:";
             // 
             // SC
             // 
@@ -934,15 +935,6 @@
             this.txtOccTo_OC.TabIndex = 69;
             this.txtOccTo_OC.TabStop = false;
             // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(75, 153);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(153, 18);
-            this.label33.TabIndex = 72;
-            this.label33.Text = "Occupation Code TO:";
-            // 
             // txtOccFrom_OC
             // 
             this.txtOccFrom_OC.BackColor = System.Drawing.Color.Gainsboro;
@@ -985,24 +977,6 @@
             this.btnSave_OC.UseVisualStyleBackColor = false;
             this.btnSave_OC.Click += new System.EventHandler(this.btnSave_OC_Click);
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(190, 81);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(38, 18);
-            this.label24.TabIndex = 60;
-            this.label24.Text = "Unit:";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(141, 42);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(87, 18);
-            this.label26.TabIndex = 56;
-            this.label26.Text = "Emp Name:";
-            // 
             // txtEmpName_OC
             // 
             this.txtEmpName_OC.BackColor = System.Drawing.Color.Gainsboro;
@@ -1012,15 +986,6 @@
             this.txtEmpName_OC.TabIndex = 3;
             this.txtEmpName_OC.TabStop = false;
             // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(173, 8);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(55, 18);
-            this.label27.TabIndex = 54;
-            this.label27.Text = "Emp #:";
-            // 
             // txtEmpNo_OC
             // 
             this.txtEmpNo_OC.Location = new System.Drawing.Point(226, 7);
@@ -1029,15 +994,6 @@
             this.txtEmpNo_OC.TabIndex = 1;
             this.txtEmpNo_OC.Tag = "txtEmpName_OC";
             this.txtEmpNo_OC.TextChanged += new System.EventHandler(this.txtEmpNo_NPP_TextChanged);
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(412, 81);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(37, 18);
-            this.label28.TabIndex = 52;
-            this.label28.Text = "Site:";
             // 
             // cboSite_OC
             // 
@@ -1057,15 +1013,6 @@
             this.cboSite_OC.TabIndex = 51;
             this.cboSite_OC.TabStop = false;
             // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(51, 117);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(177, 18);
-            this.label25.TabIndex = 68;
-            this.label25.Text = "Occupation Code FROM:";
-            // 
             // label32
             // 
             this.label32.AutoSize = true;
@@ -1083,6 +1030,60 @@
             this.label29.Size = new System.Drawing.Size(88, 18);
             this.label29.TabIndex = 66;
             this.label29.Text = "Occupation:";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(75, 153);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(153, 18);
+            this.label33.TabIndex = 72;
+            this.label33.Text = "Occupation Code TO:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(190, 81);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(38, 18);
+            this.label24.TabIndex = 60;
+            this.label24.Text = "Unit:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(141, 42);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(87, 18);
+            this.label26.TabIndex = 56;
+            this.label26.Text = "Emp Name:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(173, 8);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(55, 18);
+            this.label27.TabIndex = 54;
+            this.label27.Text = "Emp #:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(51, 117);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(177, 18);
+            this.label25.TabIndex = 68;
+            this.label25.Text = "Occupation Code FROM:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(412, 81);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(37, 18);
+            this.label28.TabIndex = 52;
+            this.label28.Text = "Site:";
             // 
             // Terms
             // 
@@ -1351,26 +1352,6 @@
             this.txtUnitFrom_Trans.Tag = "cboSite_Trans";
             this.txtUnitFrom_Trans.Leave += new System.EventHandler(this.txtUnit_Terms_Leave);
             // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.ForeColor = System.Drawing.Color.White;
-            this.label45.Location = new System.Drawing.Point(44, 59);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(120, 18);
-            this.label45.TabIndex = 88;
-            this.label45.Text = "Unit Trans From:";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.ForeColor = System.Drawing.Color.White;
-            this.label46.Location = new System.Drawing.Point(62, 106);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(102, 18);
-            this.label46.TabIndex = 89;
-            this.label46.Text = "Unit Trans To:";
-            // 
             // label42
             // 
             this.label42.AutoSize = true;
@@ -1389,16 +1370,6 @@
             this.txtEmpName_Trans.Size = new System.Drawing.Size(277, 24);
             this.txtEmpName_Trans.TabIndex = 2;
             this.txtEmpName_Trans.TabStop = false;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.ForeColor = System.Drawing.Color.White;
-            this.label43.Location = new System.Drawing.Point(109, 14);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(55, 18);
-            this.label43.TabIndex = 85;
-            this.label43.Text = "Emp #:";
             // 
             // txtEmpNo_Trans
             // 
@@ -1436,6 +1407,36 @@
             this.cboSite_Trans.Size = new System.Drawing.Size(118, 26);
             this.cboSite_Trans.TabIndex = 82;
             this.cboSite_Trans.TabStop = false;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.ForeColor = System.Drawing.Color.White;
+            this.label45.Location = new System.Drawing.Point(44, 59);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(120, 18);
+            this.label45.TabIndex = 88;
+            this.label45.Text = "Unit Trans From:";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.ForeColor = System.Drawing.Color.White;
+            this.label46.Location = new System.Drawing.Point(62, 106);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(102, 18);
+            this.label46.TabIndex = 89;
+            this.label46.Text = "Unit Trans To:";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.ForeColor = System.Drawing.Color.White;
+            this.label43.Location = new System.Drawing.Point(109, 14);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(55, 18);
+            this.label43.TabIndex = 85;
+            this.label43.Text = "Emp #:";
             // 
             // button1
             // 
@@ -1493,7 +1494,7 @@
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.label34.Location = new System.Drawing.Point(14, 27);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(79, 14);
+            this.label34.Size = new System.Drawing.Size(73, 13);
             this.label34.TabIndex = 55;
             this.label34.Text = "Pay Period:";
             // 
@@ -1503,7 +1504,7 @@
             this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.label35.Location = new System.Drawing.Point(169, 28);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(39, 14);
+            this.label35.Size = new System.Drawing.Size(37, 13);
             this.label35.TabIndex = 57;
             this.label35.Text = "Year:";
             // 
@@ -1564,7 +1565,7 @@
             this.MinimizeBox = false;
             this.Name = "ItemsReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Items Report v2017.06.06";
+            this.Text = "Items Report v2017.06.08";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ItemsReport_FormClosing);
             this.Load += new System.EventHandler(this.ItemsReport_Load);
             this.tabControl1.ResumeLayout(false);

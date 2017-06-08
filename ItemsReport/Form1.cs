@@ -293,8 +293,19 @@ namespace WindowsFormsApplication1
             {
                 string _ret = SearchEmpName(((TextBox)sender).Text.Substring(0,8));
                 var _empNameTextBox = this.Controls.Find(((TextBox)sender).Tag.ToString(), true).FirstOrDefault();
-                ((TextBox)_empNameTextBox).Text = _ret;                
-            }            
+
+                // if on "Transfer" tab, remove the "(NFP)" in the Empname textbox
+                if (tabControl1.SelectedIndex == 5)
+                    ((TextBox)_empNameTextBox).Text = _ret.Replace("(NFP)", "");
+                else
+                    ((TextBox)_empNameTextBox).Text = _ret;
+            } 
+            else if(((TextBox)sender).Text.Trim().Length == 0)
+            {
+                var _empNameTextBox = this.Controls.Find(((TextBox)sender).Tag.ToString(), true).SingleOrDefault();
+                ((TextBox)_empNameTextBox).Text = "";
+            }
+
         }
 
         private string SearchEmpName(string _empNo)
@@ -1647,8 +1658,21 @@ namespace WindowsFormsApplication1
         private void txtUnit_NPP_Leave(object sender, EventArgs e)
         {
             if (((TextBox)sender).Text.Trim() == "") return;
-            var _cboSite = tabControl1.TabPages[tabControl1.SelectedIndex].Controls.Find(((TextBox)sender).Tag.ToString(), true).FirstOrDefault();
-            ((ComboBox)_cboSite).SelectedIndex = GetSiteNum_ShortDesc(((TextBox)sender).Text.Trim().ToUpper());            
+            var _cboSite = tabControl1.TabPages[tabControl1.SelectedIndex].Controls.Find(((TextBox)sender).Tag.ToString(), true).SingleOrDefault();
+            ((ComboBox)_cboSite).SelectedIndex = GetSiteNum_ShortDesc(((TextBox)sender).Text.Trim().ToUpper());
+
+            // If Unit to Unit Transfer, check if there is a change in site and put a checkmark on the "ChangeInSite" checkbox
+            if (tabControl1.SelectedIndex == 1) CheckIfChangeInSite();
+        }
+
+        private void CheckIfChangeInSite()
+        {
+            if (txtTransFrom_UUT.Text.Trim() == "" || txtTransTo_UUT.Text.Trim() == "") return;
+
+            byte _unitFrom = (byte) GetSiteNum_ShortDesc(txtTransFrom_UUT.Text.Trim().ToUpper());
+            byte _unitTo = (byte)GetSiteNum_ShortDesc(txtTransTo_UUT.Text.Trim().ToUpper());
+            
+            chkChangeInSite_UUT.Checked = _unitFrom != _unitTo;            
         }
 
         private void txtUnit_Terms_Leave(object sender, EventArgs e)
@@ -1661,6 +1685,11 @@ namespace WindowsFormsApplication1
         private void txtEmpNo_UUT_KeyPress(object sender, KeyPressEventArgs e)
         {
 
+        }
+
+        private void txtTransTo_UUT_Leave(object sender, EventArgs e)
+        {
+            CheckIfChangeInSite();
         }
     }
 }
