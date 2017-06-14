@@ -567,6 +567,7 @@
             this.btnClose.Text = "Minimize";
             this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Visible = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmReport
@@ -585,6 +586,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReport";
             this.Text = "View Items Report";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmReport_FormClosing);
             this.Load += new System.EventHandler(this.frmReport_Load);
             this.tabControl1.ResumeLayout(false);
             this.NPP.ResumeLayout(false);
@@ -615,7 +617,6 @@
         public System.Windows.Forms.ComboBox cboYearPP;
         public System.Windows.Forms.ComboBox cboPP;
         public System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TabPage NPP;
         private System.Windows.Forms.Button btnDel_NPP;
         private System.Windows.Forms.Button btnEdit_NPP;
@@ -637,5 +638,6 @@
         private System.Windows.Forms.Button btnEdit_Terms;
         private System.Windows.Forms.Button btnDel_Trans;
         private System.Windows.Forms.Button btnEdit_Trans;
+        private System.Windows.Forms.Button btnClose;
     }
 }

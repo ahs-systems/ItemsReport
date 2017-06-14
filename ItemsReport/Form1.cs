@@ -1330,6 +1330,7 @@ namespace WindowsFormsApplication1
                 _frmReport.cboItemsReport.SelectedItem = cboItemsReport.SelectedItem;
                 _frmReport.Show();
                 _frmReport.LoadAllData();
+                _frmReport.WindowState = FormWindowState.Normal;
                 _frmReport.Focus();
             }
             catch (Exception ex)
@@ -1617,6 +1618,7 @@ namespace WindowsFormsApplication1
 
         private void ItemsReport_FormClosing(object sender, FormClosingEventArgs e)
         {
+            _frmReport.CloseTheForm = true;
             _frmReport.Close();            
         }
 
@@ -1690,6 +1692,18 @@ namespace WindowsFormsApplication1
         private void txtTransTo_UUT_Leave(object sender, EventArgs e)
         {
             CheckIfChangeInSite();
+        }
+
+        private void mnuWorkingStatus_Click(object sender, EventArgs e)
+        {
+            frmWorkingStatus _frm = new frmWorkingStatus();
+            _frm.ShowDialog();
+            _frm.Dispose();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

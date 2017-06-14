@@ -14,17 +14,19 @@ namespace WindowsFormsApplication1
     {
         public ItemsReport _parentForm;
         public bool firstLoad = true;
+        public bool CloseTheForm = false;
+
         #region Disable Close Button
-        private const int CP_NOCLOSE_BUTTON = 0x200;
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams myCp = base.CreateParams;
-                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
-                return myCp;
-            }
-        } 
+        //private const int CP_NOCLOSE_BUTTON = 0x200;
+        //protected override CreateParams CreateParams
+        //{
+        //    get
+        //    {
+        //        CreateParams myCp = base.CreateParams;
+        //        myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+        //        return myCp;
+        //    }
+        //} 
         #endregion
 
         public frmReport()
@@ -550,6 +552,16 @@ namespace WindowsFormsApplication1
         private void dgvTrans_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Edit(dgvTrans, _parentForm.Load_Trans_Data);
-        }       
+        }
+
+        private void frmReport_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!CloseTheForm)
+            {
+                e.Cancel = true;
+                //base.OnFormClosing(e);
+                WindowState = FormWindowState.Minimized;
+            }
+        }
     }
 }

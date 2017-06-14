@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemsReport));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.NPP = new System.Windows.Forms.TabPage();
@@ -145,6 +146,11 @@
             this.cboYearPP = new System.Windows.Forms.ComboBox();
             this.cboItemsReport = new System.Windows.Forms.ComboBox();
             this.btnViewRpt = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuWorkingStatus = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tabControl1.SuspendLayout();
             this.NPP.SuspendLayout();
             this.UUT.SuspendLayout();
@@ -152,6 +158,7 @@
             this.OC.SuspendLayout();
             this.Terms.SuspendLayout();
             this.Trans.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -165,7 +172,7 @@
             this.tabControl1.Controls.Add(this.Terms);
             this.tabControl1.Controls.Add(this.Trans);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(5, 70);
+            this.tabControl1.Location = new System.Drawing.Point(5, 90);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(6, 6);
             this.tabControl1.SelectedIndex = 0;
@@ -1443,7 +1450,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(794, 13);
+            this.button1.Location = new System.Drawing.Point(794, 31);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 44);
             this.button1.TabIndex = 5;
@@ -1483,7 +1490,7 @@
             "24",
             "25",
             "26"});
-            this.cboPP.Location = new System.Drawing.Point(92, 25);
+            this.cboPP.Location = new System.Drawing.Point(92, 43);
             this.cboPP.Name = "cboPP";
             this.cboPP.Size = new System.Drawing.Size(65, 21);
             this.cboPP.TabIndex = 1;
@@ -1492,7 +1499,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label34.Location = new System.Drawing.Point(14, 27);
+            this.label34.Location = new System.Drawing.Point(14, 45);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(73, 13);
             this.label34.TabIndex = 55;
@@ -1502,7 +1509,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label35.Location = new System.Drawing.Point(169, 28);
+            this.label35.Location = new System.Drawing.Point(169, 46);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(37, 13);
             this.label35.TabIndex = 57;
@@ -1512,7 +1519,7 @@
             // 
             this.cboYearPP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboYearPP.FormattingEnabled = true;
-            this.cboYearPP.Location = new System.Drawing.Point(209, 25);
+            this.cboYearPP.Location = new System.Drawing.Point(209, 43);
             this.cboYearPP.Name = "cboYearPP";
             this.cboYearPP.Size = new System.Drawing.Size(140, 21);
             this.cboYearPP.TabIndex = 2;
@@ -1525,7 +1532,7 @@
             "Items Report A",
             "Items Report B",
             "Items Report C"});
-            this.cboItemsReport.Location = new System.Drawing.Point(374, 25);
+            this.cboItemsReport.Location = new System.Drawing.Point(374, 43);
             this.cboItemsReport.Name = "cboItemsReport";
             this.cboItemsReport.Size = new System.Drawing.Size(140, 21);
             this.cboItemsReport.TabIndex = 3;
@@ -1535,7 +1542,7 @@
             this.btnViewRpt.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnViewRpt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnViewRpt.Image = ((System.Drawing.Image)(resources.GetObject("btnViewRpt.Image")));
-            this.btnViewRpt.Location = new System.Drawing.Point(521, 13);
+            this.btnViewRpt.Location = new System.Drawing.Point(521, 31);
             this.btnViewRpt.Name = "btnViewRpt";
             this.btnViewRpt.Size = new System.Drawing.Size(146, 44);
             this.btnViewRpt.TabIndex = 4;
@@ -1544,12 +1551,54 @@
             this.btnViewRpt.UseVisualStyleBackColor = false;
             this.btnViewRpt.Click += new System.EventHandler(this.button2_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(18, 18);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(954, 25);
+            this.menuStrip1.TabIndex = 58;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuWorkingStatus,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(40, 21);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // mnuWorkingStatus
+            // 
+            this.mnuWorkingStatus.Image = ((System.Drawing.Image)(resources.GetObject("mnuWorkingStatus.Image")));
+            this.mnuWorkingStatus.Name = "mnuWorkingStatus";
+            this.mnuWorkingStatus.Size = new System.Drawing.Size(198, 24);
+            this.mnuWorkingStatus.Text = "Who\'s working on it?";
+            this.mnuWorkingStatus.Click += new System.EventHandler(this.mnuWorkingStatus_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(18, 18);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(64, 4);
+            // 
             // ItemsReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(954, 343);
+            this.ClientSize = new System.Drawing.Size(954, 365);
             this.Controls.Add(this.btnViewRpt);
             this.Controls.Add(this.cboItemsReport);
             this.Controls.Add(this.button1);
@@ -1558,9 +1607,11 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label34);
             this.Controls.Add(this.label35);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Verdana", 7.471698F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ItemsReport";
@@ -1581,6 +1632,8 @@
             this.Terms.PerformLayout();
             this.Trans.ResumeLayout(false);
             this.Trans.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1704,6 +1757,11 @@
         private System.Windows.Forms.Button btnCancel_OC;
         private System.Windows.Forms.Button btnCancel_Terms;
         private System.Windows.Forms.Button btnCancel_Trans;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuWorkingStatus;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 
