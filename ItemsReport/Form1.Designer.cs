@@ -1558,7 +1558,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(954, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(954, 24);
             this.menuStrip1.TabIndex = 58;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1616,7 +1616,7 @@
             this.MinimizeBox = false;
             this.Name = "ItemsReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Items Report v2017.06.08";
+            this.Text = "Items Report v2017.06.15";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ItemsReport_FormClosing);
             this.Load += new System.EventHandler(this.ItemsReport_Load);
             this.tabControl1.ResumeLayout(false);

@@ -1,0 +1,95 @@
+USE [esp_systems]
+GO
+
+/****** Object:  Index [ItemsRpt_NPP_IDX]    Script Date: 6/16/2017 10:37:58 AM ******/
+CREATE NONCLUSTERED INDEX [ItemsRpt_NPP_IDX] ON [dbo].[ItemsRpt_NewPrimaryPositions]
+(
+	[PayPeriod] ASC,
+	[PayPeriod_Year] ASC,
+	[ItemsReportLetter] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+
+======================================================
+
+USE [esp_systems]
+GO
+
+/****** Object:  Index [ItemsRpt_OC_IDX]    Script Date: 6/16/2017 10:48:57 AM ******/
+CREATE NONCLUSTERED INDEX [ItemsRpt_OC_IDX] ON [dbo].[ItemsRpt_OccupationChange]
+(
+	[PayPeriod] ASC,
+	[PayPeriod_Year] ASC,
+	[ItemsReportLetter] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+
+=========================================================
+
+USE [esp_systems]
+GO
+
+/****** Object:  Index [ItemsRpt_SC_IDX]    Script Date: 6/16/2017 10:49:17 AM ******/
+CREATE NONCLUSTERED INDEX [ItemsRpt_SC_IDX] ON [dbo].[ItemsRpt_StatusChange]
+(
+	[PayPeriod] ASC,
+	[PayPeriod_Year] ASC,
+	[ItemsReportLetter] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+
+===========================================================
+
+USE [esp_systems]
+GO
+
+/****** Object:  Index [ItemsRpt_Terms_IDX]    Script Date: 6/16/2017 10:49:33 AM ******/
+CREATE NONCLUSTERED INDEX [ItemsRpt_Terms_IDX] ON [dbo].[ItemsRpt_Terminations]
+(
+	[PayPeriod] ASC,
+	[PayPeriod_Year] ASC,
+	[ItemsReportLetter] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+
+=============================================================
+
+USE [esp_systems]
+GO
+
+/****** Object:  Index [ItemsRpt_Trans_IDX]    Script Date: 6/16/2017 10:49:54 AM ******/
+CREATE NONCLUSTERED INDEX [ItemsRpt_Trans_IDX] ON [dbo].[ItemsRpt_Transfers]
+(
+	[PayPeriod] ASC,
+	[PayPeriod_Year] ASC,
+	[ItemsReportLetter] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+
+==============================================================
+
+USE [esp_systems]
+GO
+
+/****** Object:  Index [ItemsRpt_UUT_IDX]    Script Date: 6/16/2017 10:50:31 AM ******/
+CREATE NONCLUSTERED INDEX [ItemsRpt_UUT_IDX] ON [dbo].[ItemsRpt_UnitToUnitTransfer]
+(
+	[PayPeriod] ASC,
+	[PayPeriod_Year] ASC,
+	[ItemsReportLetter] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+
+=============================================================
+
+USE [esp_systems]
+GO
+
+/****** Object:  Index [NonClusteredIndex-20170616-103431]    Script Date: 6/16/2017 10:50:50 AM ******/
+CREATE NONCLUSTERED INDEX [NonClusteredIndex-20170616-103431] ON [dbo].[ItemsRpt_WorkStatus]
+(
+	[workingDate] ASC,
+	[wName] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+

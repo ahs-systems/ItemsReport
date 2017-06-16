@@ -76,6 +76,7 @@ namespace WindowsFormsApplication1
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.rtbWorkers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmWorkingStatus";
