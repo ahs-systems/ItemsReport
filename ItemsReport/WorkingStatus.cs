@@ -115,10 +115,7 @@ namespace WindowsFormsApplication1
                         _dr.Read();
                         cboWorkingStatus.SelectedIndex = Convert.ToInt16(_dr["wStatus"]);
                     }
-                    else
-                    {
-                        cboWorkingStatus.SelectedIndex = 0;
-                    }
+                    
                     _dr.Close();
 
                     // Get the current workers working on the Items Report
