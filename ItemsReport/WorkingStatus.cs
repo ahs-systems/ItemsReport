@@ -15,6 +15,8 @@ namespace WindowsFormsApplication1
         private Button btnRefresh;
         private ComboBox cboWorkingStatus;
         private RichTextBox rtbWorkers;
+        private Label label1;
+        private bool firstLoad = true;
 
         public frmWorkingStatus()
         {
@@ -27,6 +29,7 @@ namespace WindowsFormsApplication1
             this.rtbWorkers = new System.Windows.Forms.RichTextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.cboWorkingStatus = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // rtbWorkers
@@ -36,7 +39,7 @@ namespace WindowsFormsApplication1
             this.rtbWorkers.Location = new System.Drawing.Point(12, 90);
             this.rtbWorkers.Name = "rtbWorkers";
             this.rtbWorkers.ReadOnly = true;
-            this.rtbWorkers.Size = new System.Drawing.Size(369, 175);
+            this.rtbWorkers.Size = new System.Drawing.Size(391, 145);
             this.rtbWorkers.TabIndex = 3;
             this.rtbWorkers.Text = "";
             // 
@@ -69,9 +72,21 @@ namespace WindowsFormsApplication1
             this.cboWorkingStatus.TabIndex = 1;
             this.cboWorkingStatus.SelectedIndexChanged += new System.EventHandler(this.cboWorkingStatus_SelectedIndexChanged);
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(12, 238);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(391, 34);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Note: The last person working on it is the one who usually sends the \'Items Repor" +
+    "t\' to SSO.";
+            // 
             // frmWorkingStatus
             // 
-            this.ClientSize = new System.Drawing.Size(392, 275);
+            this.ClientSize = new System.Drawing.Size(415, 274);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cboWorkingStatus);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.rtbWorkers);
@@ -115,6 +130,11 @@ namespace WindowsFormsApplication1
                         _dr.Read();
                         cboWorkingStatus.SelectedIndex = Convert.ToInt16(_dr["wStatus"]);
                     }
+                    else
+                    {
+                        firstLoad = false;
+                    }
+
                     
                     _dr.Close();
 
@@ -127,30 +147,40 @@ namespace WindowsFormsApplication1
                     _dr = myCommand.ExecuteReader();
                     if (_dr.HasRows)
                     {
+                        //bool thereAreStillWorkingOnIt = false;
+                        //string _lastWorker = "";
                         while (_dr.Read())
                         {
                             if (Convert.ToByte(_dr["wStatus"]) == (byte) WorkingStatus.WorkingOnIt)
                             {
-                                rtbWorkers.AppendText("[As of " + Convert.ToDateTime(_dr["dateUpdated"]).ToString("hh:mm:ss tt") + "] ");
-                                rtbWorkers.AppendText(_dr["wName"].ToString().Replace(@"HEALTHY\",""), Color.Red);
-                                rtbWorkers.AppendText(" is still working on it.");
+                                rtbWorkers.AppendText("[As of " + Convert.ToDateTime(_dr["dateUpdated"]).ToString("hh:mm:ss tt") + "] ", Color.AliceBlue);
+                                rtbWorkers.AppendText(_dr["wName"].ToString().Replace(@"HEALTHY\",""), Color.Red, true);
+                                rtbWorkers.AppendText(" is still working on it.", Color.DimGray, false);
                                 rtbWorkers.AppendText(Environment.NewLine);
+
+                                //thereAreStillWorkingOnIt = true;
                             }
                             else if (Convert.ToByte(_dr["wStatus"]) == (byte)WorkingStatus.DoneWorkingOnIt)
                             {
-                                rtbWorkers.AppendText("[As of " + Convert.ToDateTime(_dr["dateUpdated"]).ToString("hh:mm:ss tt") + "] ");
-                                rtbWorkers.AppendText(_dr["wName"].ToString().Replace(@"HEALTHY\", ""), Color.Green);
-                                rtbWorkers.AppendText(" is done working on it.");
+                                rtbWorkers.AppendText("[As of " + Convert.ToDateTime(_dr["dateUpdated"]).ToString("hh:mm:ss tt") + "] ", Color.DeepSkyBlue);
+                                rtbWorkers.AppendText(_dr["wName"].ToString().Replace(@"HEALTHY\", ""), Color.Green, true);
+                                rtbWorkers.AppendText(" is done working on it.", Color.DimGray, false);
                                 rtbWorkers.AppendText(Environment.NewLine);
                             }
                             else 
                             {
                                 rtbWorkers.AppendText("[As of " + Convert.ToDateTime(_dr["dateUpdated"]).ToString("hh:mm:ss tt") + "] ", Color.DarkGray);
-                                rtbWorkers.AppendText(_dr["wName"].ToString().Replace(@"HEALTHY\", ""), Color.DarkGray);
-                                rtbWorkers.AppendText(" is not working on it.", Color.DarkGray);
+                                rtbWorkers.AppendText(_dr["wName"].ToString().Replace(@"HEALTHY\", ""), Color.DarkGray, true);
+                                rtbWorkers.AppendText(" is not working on it.", Color.DarkGray, false);
                                 rtbWorkers.AppendText(Environment.NewLine);
                             }
+
+                            //_lastWorker = _dr["wName"].ToString();
                         }
+                        //if (_lastWorker == Common.CurrentUser && !thereAreStillWorkingOnIt)
+                        //{
+                        //    MessageBox.Show("It seems that you're the last person working on it.\n\nUsually the last person is the one who will send the 'Items Report' to SSO. \n\nThank you!","Message",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                        //}
                     }
                     else
                     {
@@ -170,6 +200,13 @@ namespace WindowsFormsApplication1
 
         private void cboWorkingStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // If form is first time loaded, dont update the timestamp of the current working status
+            if (firstLoad)
+            {
+                firstLoad = false;
+                return;
+            }
+
             try
             {
                 using (SqlConnection myConnection = new SqlConnection())
@@ -211,11 +248,28 @@ namespace WindowsFormsApplication1
 
     public static class RichTextBoxExtensions
     {
-        public static void AppendText(this RichTextBox box, string text, Color color)
+        public static void AppendText(this RichTextBox box, string text, Color color, bool _bold)
         {
             box.SelectionStart = box.TextLength;
             box.SelectionLength = 0;
             box.SelectionColor = color;
+            if (_bold)
+            {
+                box.SelectionFont = new Font(box.Font, FontStyle.Bold);
+            }
+            else
+            {
+                box.SelectionFont = new Font(box.Font, FontStyle.Regular);
+            }
+            box.AppendText(text);
+            box.SelectionColor = box.ForeColor;
+        }
+
+        public static void AppendText(this RichTextBox box, string text, Color color)
+        {
+            box.SelectionStart = box.TextLength;
+            box.SelectionLength = 0;
+            box.SelectionColor = color;            
             box.AppendText(text);
             box.SelectionColor = box.ForeColor;
         }

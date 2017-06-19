@@ -1616,7 +1616,7 @@
             this.MinimizeBox = false;
             this.Name = "ItemsReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Items Report v2017.06.16";
+            this.Text = "Items Report v2017.06.19";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ItemsReport_FormClosing);
             this.Load += new System.EventHandler(this.ItemsReport_Load);
             this.tabControl1.ResumeLayout(false);
