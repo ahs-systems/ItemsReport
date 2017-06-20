@@ -153,7 +153,7 @@ namespace WindowsFormsApplication1
                         {
                             if (Convert.ToByte(_dr["wStatus"]) == (byte) WorkingStatus.WorkingOnIt)
                             {
-                                rtbWorkers.AppendText("[As of " + Convert.ToDateTime(_dr["dateUpdated"]).ToString("hh:mm:ss tt") + "] ", Color.AliceBlue);
+                                rtbWorkers.AppendText("[As of " + Convert.ToDateTime(_dr["dateUpdated"]).ToString("hh:mm:ss tt") + "] ", Color.DeepSkyBlue);
                                 rtbWorkers.AppendText(_dr["wName"].ToString().Replace(@"HEALTHY\",""), Color.Red, true);
                                 rtbWorkers.AppendText(" is still working on it.", Color.DimGray, false);
                                 rtbWorkers.AppendText(Environment.NewLine);
@@ -181,11 +181,7 @@ namespace WindowsFormsApplication1
                         //{
                         //    MessageBox.Show("It seems that you're the last person working on it.\n\nUsually the last person is the one who will send the 'Items Report' to SSO. \n\nThank you!","Message",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                         //}
-                    }
-                    else
-                    {
-                        cboWorkingStatus.SelectedIndex = 0;
-                    }
+                    }                    
                     _dr.Close();
 
 
