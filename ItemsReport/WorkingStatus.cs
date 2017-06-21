@@ -12,6 +12,8 @@ namespace WindowsFormsApplication1
 {
     public partial class frmWorkingStatus: Form
     {
+        public ItemsReport frmMain;
+
         private Button btnRefresh;
         private ComboBox cboWorkingStatus;
         private RichTextBox rtbWorkers;
@@ -227,7 +229,8 @@ namespace WindowsFormsApplication1
                     myCommand.ExecuteNonQuery();                   
                     myCommand.Dispose();
 
-                    CheckStatus();
+                    frmMain.DisplayStatus(cboWorkingStatus.SelectedIndex);
+                    CheckStatus();                    
                 }
             }
             catch (Exception ex)
@@ -242,32 +245,5 @@ namespace WindowsFormsApplication1
         }
     }
 
-    public static class RichTextBoxExtensions
-    {
-        public static void AppendText(this RichTextBox box, string text, Color color, bool _bold)
-        {
-            box.SelectionStart = box.TextLength;
-            box.SelectionLength = 0;
-            box.SelectionColor = color;
-            if (_bold)
-            {
-                box.SelectionFont = new Font(box.Font, FontStyle.Bold);
-            }
-            else
-            {
-                box.SelectionFont = new Font(box.Font, FontStyle.Regular);
-            }
-            box.AppendText(text);
-            box.SelectionColor = box.ForeColor;
-        }
-
-        public static void AppendText(this RichTextBox box, string text, Color color)
-        {
-            box.SelectionStart = box.TextLength;
-            box.SelectionLength = 0;
-            box.SelectionColor = color;            
-            box.AppendText(text);
-            box.SelectionColor = box.ForeColor;
-        }
-    }
+    
 }

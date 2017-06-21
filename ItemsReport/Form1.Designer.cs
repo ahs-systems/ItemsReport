@@ -151,6 +151,7 @@
             this.mnuWorkingStatus = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.lblStatus = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.NPP.SuspendLayout();
             this.UUT.SuspendLayout();
@@ -172,7 +173,7 @@
             this.tabControl1.Controls.Add(this.Terms);
             this.tabControl1.Controls.Add(this.Trans);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(5, 90);
+            this.tabControl1.Location = new System.Drawing.Point(5, 134);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(6, 6);
             this.tabControl1.SelectedIndex = 0;
@@ -195,9 +196,9 @@
             this.NPP.Controls.Add(this.txtEmpName_NPP);
             this.NPP.Controls.Add(this.label3);
             this.NPP.Controls.Add(this.txtEmpNo_NPP);
-            this.NPP.Controls.Add(this.label2);
             this.NPP.Controls.Add(this.cboSite_NPP);
             this.NPP.Controls.Add(this.label30);
+            this.NPP.Controls.Add(this.label2);
             this.NPP.Controls.Add(this.label6);
             this.NPP.Location = new System.Drawing.Point(4, 36);
             this.NPP.Name = "NPP";
@@ -250,7 +251,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(101, 150);
+            this.label7.Location = new System.Drawing.Point(106, 150);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 18);
             this.label7.TabIndex = 12;
@@ -276,7 +277,7 @@
             // txtOcc_NPP
             // 
             this.txtOcc_NPP.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtOcc_NPP.Location = new System.Drawing.Point(371, 113);
+            this.txtOcc_NPP.Location = new System.Drawing.Point(327, 113);
             this.txtOcc_NPP.Name = "txtOcc_NPP";
             this.txtOcc_NPP.Size = new System.Drawing.Size(387, 24);
             this.txtOcc_NPP.TabIndex = 9;
@@ -285,7 +286,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(117, 46);
+            this.label5.Location = new System.Drawing.Point(122, 46);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 18);
             this.label5.TabIndex = 8;
@@ -305,7 +306,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(68, 78);
+            this.label4.Location = new System.Drawing.Point(73, 78);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 18);
             this.label4.TabIndex = 6;
@@ -324,7 +325,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(100, 16);
+            this.label3.Location = new System.Drawing.Point(105, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 18);
             this.label3.TabIndex = 4;
@@ -343,7 +344,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(360, 49);
+            this.label2.Location = new System.Drawing.Point(368, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 18);
             this.label2.TabIndex = 1;
@@ -371,7 +372,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(27, 114);
+            this.label30.Location = new System.Drawing.Point(32, 114);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(128, 18);
             this.label30.TabIndex = 15;
@@ -380,7 +381,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(269, 115);
+            this.label6.Location = new System.Drawing.Point(239, 114);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 18);
             this.label6.TabIndex = 10;
@@ -582,7 +583,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(340, 82);
+            this.label14.Location = new System.Drawing.Point(348, 81);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(102, 18);
             this.label14.TabIndex = 28;
@@ -601,7 +602,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(624, 81);
+            this.label13.Location = new System.Drawing.Point(630, 81);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(37, 18);
             this.label13.TabIndex = 15;
@@ -853,7 +854,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(350, 79);
+            this.label23.Location = new System.Drawing.Point(354, 79);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(37, 18);
             this.label23.TabIndex = 34;
@@ -1450,7 +1451,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(794, 31);
+            this.button1.Location = new System.Drawing.Point(794, 65);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 44);
             this.button1.TabIndex = 5;
@@ -1490,7 +1491,7 @@
             "24",
             "25",
             "26"});
-            this.cboPP.Location = new System.Drawing.Point(92, 43);
+            this.cboPP.Location = new System.Drawing.Point(92, 77);
             this.cboPP.Name = "cboPP";
             this.cboPP.Size = new System.Drawing.Size(65, 21);
             this.cboPP.TabIndex = 1;
@@ -1499,7 +1500,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label34.Location = new System.Drawing.Point(14, 45);
+            this.label34.Location = new System.Drawing.Point(14, 79);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(73, 13);
             this.label34.TabIndex = 55;
@@ -1509,7 +1510,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label35.Location = new System.Drawing.Point(169, 46);
+            this.label35.Location = new System.Drawing.Point(169, 80);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(37, 13);
             this.label35.TabIndex = 57;
@@ -1519,7 +1520,7 @@
             // 
             this.cboYearPP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboYearPP.FormattingEnabled = true;
-            this.cboYearPP.Location = new System.Drawing.Point(209, 43);
+            this.cboYearPP.Location = new System.Drawing.Point(209, 77);
             this.cboYearPP.Name = "cboYearPP";
             this.cboYearPP.Size = new System.Drawing.Size(140, 21);
             this.cboYearPP.TabIndex = 2;
@@ -1532,7 +1533,7 @@
             "Items Report A",
             "Items Report B",
             "Items Report C"});
-            this.cboItemsReport.Location = new System.Drawing.Point(374, 43);
+            this.cboItemsReport.Location = new System.Drawing.Point(374, 77);
             this.cboItemsReport.Name = "cboItemsReport";
             this.cboItemsReport.Size = new System.Drawing.Size(140, 21);
             this.cboItemsReport.TabIndex = 3;
@@ -1542,7 +1543,7 @@
             this.btnViewRpt.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnViewRpt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnViewRpt.Image = ((System.Drawing.Image)(resources.GetObject("btnViewRpt.Image")));
-            this.btnViewRpt.Location = new System.Drawing.Point(521, 31);
+            this.btnViewRpt.Location = new System.Drawing.Point(521, 65);
             this.btnViewRpt.Name = "btnViewRpt";
             this.btnViewRpt.Size = new System.Drawing.Size(146, 44);
             this.btnViewRpt.TabIndex = 4;
@@ -1593,12 +1594,22 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(64, 4);
             // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Verdana", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(14, 38);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 18);
+            this.lblStatus.TabIndex = 59;
+            // 
             // ItemsReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(954, 365);
+            this.ClientSize = new System.Drawing.Size(954, 405);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnViewRpt);
             this.Controls.Add(this.cboItemsReport);
             this.Controls.Add(this.button1);
@@ -1616,9 +1627,10 @@
             this.MinimizeBox = false;
             this.Name = "ItemsReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Items Report v2017.06.19";
+            this.Text = "Items Report v2017.06.21";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ItemsReport_FormClosing);
             this.Load += new System.EventHandler(this.ItemsReport_Load);
+            this.Shown += new System.EventHandler(this.ItemsReport_Shown);
             this.tabControl1.ResumeLayout(false);
             this.NPP.ResumeLayout(false);
             this.NPP.PerformLayout();
@@ -1762,6 +1774,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuWorkingStatus;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label lblStatus;
     }
 }
 

@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace WindowsFormsApplication1
 {
+
+
     class Common
     {
         public static string ESPServer = @"Server=wssqlc015v02\esp8; Initial Catalog = esp_cal_prod; Integrated Security = SSPI;";
@@ -39,6 +43,36 @@ namespace WindowsFormsApplication1
             {
                 if (_conn.State == System.Data.ConnectionState.Open) _conn.Close();
             }
+        }
+
+    }
+
+    public static class RichTextBoxExtensions
+    {
+        public static void AppendText(this RichTextBox box, string text, Color color, bool _bold)
+        {
+            box.SelectionStart = box.TextLength;
+            box.SelectionLength = 0;
+            box.SelectionColor = color;
+            if (_bold)
+            {
+                box.SelectionFont = new Font(box.Font, FontStyle.Bold);
+            }
+            else
+            {
+                box.SelectionFont = new Font(box.Font, FontStyle.Regular);
+            }
+            box.AppendText(text);
+            box.SelectionColor = box.ForeColor;
+        }
+
+        public static void AppendText(this RichTextBox box, string text, Color color)
+        {
+            box.SelectionStart = box.TextLength;
+            box.SelectionLength = 0;
+            box.SelectionColor = color;
+            box.AppendText(text);
+            box.SelectionColor = box.ForeColor;
         }
     }
 }

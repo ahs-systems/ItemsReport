@@ -20,6 +20,8 @@ namespace WindowsFormsApplication1
         public string itemsReportLetter;
         public string ID;
 
+        private WorkingStatus workingStatus;
+
 
         public ItemsReport()
         {
@@ -1697,6 +1699,7 @@ namespace WindowsFormsApplication1
         private void mnuWorkingStatus_Click(object sender, EventArgs e)
         {
             frmWorkingStatus _frm = new frmWorkingStatus();
+            _frm.frmMain = this;
             _frm.ShowDialog();
             _frm.Dispose();
         }
@@ -1704,6 +1707,124 @@ namespace WindowsFormsApplication1
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void ItemsReport_Shown(object sender, EventArgs e)
+        {
+            int _ret = CheckStatus();
+
+            if (_ret < 1) // if not currently working on it;
+            {
+                DialogResult _reply = MessageBox.Show("Are you currently working on it?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (_reply == DialogResult.Yes)
+                {
+                    UpdateStatus(1);
+                    DisplayStatus(1);
+                }
+                else
+                {                    
+                    DisplayStatus(0);
+                }
+            }
+            else
+            {
+                DisplayStatus(_ret);
+            }
+        }
+
+        private void UpdateStatus(int _stat)
+        {
+            try
+            {
+                using (SqlConnection myConnection = new SqlConnection())
+                {
+                    myConnection.ConnectionString = Common.SystemsServer;
+                    myConnection.Open();
+
+                    SqlCommand myCommand = myConnection.CreateCommand();
+
+                    myCommand.CommandText = "if exists (SELECT * FROM ItemsRpt_WorkStatus WHERE workingDate = @_workingDate and wName = @_wName) " +
+                                    "begin " +
+                                    "    UPDATE ItemsRpt_WorkStatus SET wStatus = @_wStatus, dateUpdated = sysdatetime() WHERE workingDate = @_workingDate and wName = @_wName " +
+                                    "end " +
+                                    "else " +
+                                    "begin " +
+                                    "    INSERT INTO ItemsRpt_WorkStatus(wName, wStatus, workingDate) VALUES(@_wName, @_wStatus, @_workingDate) " +
+                                    "end";
+                    myCommand.Parameters.AddWithValue("_workingDate", DateTime.Today.ToString("dd-MMM-yyyy"));
+                    myCommand.Parameters.AddWithValue("_wName", Common.CurrentUser);
+                    myCommand.Parameters.AddWithValue("_wStatus", _stat);
+
+                    myCommand.ExecuteNonQuery();
+                    myCommand.Dispose();
+
+                    CheckStatus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ooops, there's an error: " + ex.Message, "ERROR");
+            }
+        }
+
+        public void DisplayStatus(int _stat)
+        {
+            switch (_stat)
+            {
+                case 0:
+                    lblStatus.Text = "Status: Not working on it.";
+                    lblStatus.ForeColor = Color.DimGray;
+                    break;
+                case 1:
+                    lblStatus.Text = "Status: Still working on it.";
+                    lblStatus.ForeColor = Color.Maroon;
+                    break;
+                case 2:
+                    lblStatus.Text = "Status: Done working on it.";
+                    lblStatus.ForeColor = Color.Green;
+                    break;
+            }
+
+            workingStatus = (WorkingStatus)_stat;
+        }
+
+        private int CheckStatus()
+        {
+            int _ret = -1;
+
+            try
+            {
+                using (SqlConnection myConnection = new SqlConnection())
+                {
+                    myConnection.ConnectionString = Common.SystemsServer;
+                    myConnection.Open();
+
+                    SqlCommand myCommand = myConnection.CreateCommand();
+
+                    // Get your current working status
+                    myCommand.CommandText = "select * from ItemsRpt_WorkStatus where wName = @_name and workingDate = @_date";
+                    myCommand.Parameters.AddWithValue("_name", Common.CurrentUser);
+                    myCommand.Parameters.AddWithValue("_date", DateTime.Today.ToString("dd-MMM-yyyy"));
+
+                    SqlDataReader _dr = myCommand.ExecuteReader();
+
+                    if (_dr.HasRows)
+                    {
+                        _dr.Read();
+                        _ret = Convert.ToInt16(_dr["wStatus"]);
+                    }                   
+
+                    _dr.Close();
+                    myCommand.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ooops, there's an error: " + ex.Message, "ERROR");
+                _ret = -2;
+            }
+
+            return _ret;
         }
     }
 }
