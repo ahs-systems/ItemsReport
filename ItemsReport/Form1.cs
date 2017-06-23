@@ -1719,7 +1719,7 @@ namespace WindowsFormsApplication1
                 if (_reply == DialogResult.Yes)
                 {
                     UpdateStatus(1);
-                    DisplayStatus(1);
+                    DisplayStatus(1);                   
                 }
                 else
                 {                    
@@ -1772,15 +1772,15 @@ namespace WindowsFormsApplication1
             switch (_stat)
             {
                 case 0:
-                    lblStatus.Text = "Status: Not working on it.";
+                    lblStatus.Text = "Your status: Not working on it.";
                     lblStatus.ForeColor = Color.DimGray;
                     break;
                 case 1:
-                    lblStatus.Text = "Status: Still working on it.";
+                    lblStatus.Text = "Your status: Still working on it.";
                     lblStatus.ForeColor = Color.Maroon;
                     break;
                 case 2:
-                    lblStatus.Text = "Status: Done working on it.";
+                    lblStatus.Text = "Your status: Done working on it.";
                     lblStatus.ForeColor = Color.Green;
                     break;
             }
@@ -1825,6 +1825,11 @@ namespace WindowsFormsApplication1
             }
 
             return _ret;
+        }
+
+        private void cboItemsReport_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!tabControl1.Visible) tabControl1.Visible = true;
         }
     }
 }

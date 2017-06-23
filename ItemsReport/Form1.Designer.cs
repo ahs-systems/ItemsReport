@@ -44,9 +44,9 @@
             this.txtEmpName_NPP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtEmpNo_NPP = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.cboSite_NPP = new System.Windows.Forms.ComboBox();
             this.label30 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.UUT = new System.Windows.Forms.TabPage();
             this.btnCancel_UUT = new System.Windows.Forms.Button();
@@ -152,6 +152,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lblStatus = new System.Windows.Forms.Label();
+            this.lblSelectIRL = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.NPP.SuspendLayout();
             this.UUT.SuspendLayout();
@@ -180,6 +181,7 @@
             this.tabControl1.Size = new System.Drawing.Size(945, 269);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.TabStop = false;
+            this.tabControl1.Visible = false;
             // 
             // NPP
             // 
@@ -341,15 +343,6 @@
             this.txtEmpNo_NPP.TextChanged += new System.EventHandler(this.txtEmpNo_NPP_TextChanged);
             this.txtEmpNo_NPP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboSite_NPP_KeyPress);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(368, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 18);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Site:";
-            // 
             // cboSite_NPP
             // 
             this.cboSite_NPP.BackColor = System.Drawing.Color.Gainsboro;
@@ -377,6 +370,15 @@
             this.label30.Size = new System.Drawing.Size(128, 18);
             this.label30.TabIndex = 15;
             this.label30.Text = "Occupation Code:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(368, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 18);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Site:";
             // 
             // label6
             // 
@@ -1537,6 +1539,7 @@
             this.cboItemsReport.Name = "cboItemsReport";
             this.cboItemsReport.Size = new System.Drawing.Size(140, 21);
             this.cboItemsReport.TabIndex = 3;
+            this.cboItemsReport.SelectedIndexChanged += new System.EventHandler(this.cboItemsReport_SelectedIndexChanged);
             // 
             // btnViewRpt
             // 
@@ -1603,6 +1606,17 @@
             this.lblStatus.Size = new System.Drawing.Size(0, 18);
             this.lblStatus.TabIndex = 59;
             // 
+            // lblSelectIRL
+            // 
+            this.lblSelectIRL.AutoSize = true;
+            this.lblSelectIRL.Font = new System.Drawing.Font("Verdana", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectIRL.ForeColor = System.Drawing.Color.Maroon;
+            this.lblSelectIRL.Location = new System.Drawing.Point(160, 241);
+            this.lblSelectIRL.Name = "lblSelectIRL";
+            this.lblSelectIRL.Size = new System.Drawing.Size(676, 25);
+            this.lblSelectIRL.TabIndex = 61;
+            this.lblSelectIRL.Text = "Please select first the Items Report Letter from the drop down.";
+            // 
             // ItemsReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -1619,6 +1633,7 @@
             this.Controls.Add(this.label34);
             this.Controls.Add(this.label35);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.lblSelectIRL);
             this.Font = new System.Drawing.Font("Verdana", 7.471698F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1775,6 +1790,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblSelectIRL;
     }
 }
 
