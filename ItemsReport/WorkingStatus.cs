@@ -155,7 +155,7 @@ namespace WindowsFormsApplication1
                         {
                             if (Convert.ToByte(_dr["wStatus"]) == (byte) WorkingStatus.WorkingOnIt)
                             {
-                                rtbWorkers.AppendText("[As of " + Convert.ToDateTime(_dr["dateUpdated"]).ToString("hh:mm:ss tt") + "] ", Color.DeepSkyBlue);
+                                rtbWorkers.AppendText("[As of " + Convert.ToDateTime(_dr["dateUpdated"]).ToString("hh:mm:ss tt") + "] ", Color.DimGray);
                                 rtbWorkers.AppendText(_dr["wName"].ToString().Replace(@"HEALTHY\",""), Color.Red, true);
                                 rtbWorkers.AppendText(" is still working on it.", Color.DimGray, false);
                                 rtbWorkers.AppendText(Environment.NewLine);
@@ -164,14 +164,14 @@ namespace WindowsFormsApplication1
                             }
                             else if (Convert.ToByte(_dr["wStatus"]) == (byte)WorkingStatus.DoneWorkingOnIt)
                             {
-                                rtbWorkers.AppendText("[As of " + Convert.ToDateTime(_dr["dateUpdated"]).ToString("hh:mm:ss tt") + "] ", Color.DeepSkyBlue);
+                                rtbWorkers.AppendText("[As of " + Convert.ToDateTime(_dr["dateUpdated"]).ToString("hh:mm:ss tt") + "] ", Color.DimGray);
                                 rtbWorkers.AppendText(_dr["wName"].ToString().Replace(@"HEALTHY\", ""), Color.Green, true);
                                 rtbWorkers.AppendText(" is done working on it.", Color.DimGray, false);
                                 rtbWorkers.AppendText(Environment.NewLine);
                             }
                             else 
                             {
-                                rtbWorkers.AppendText("[As of " + Convert.ToDateTime(_dr["dateUpdated"]).ToString("hh:mm:ss tt") + "] ", Color.DarkGray);
+                                rtbWorkers.AppendText("[As of " + Convert.ToDateTime(_dr["dateUpdated"]).ToString("hh:mm:ss tt") + "] ", Color.DimGray);
                                 rtbWorkers.AppendText(_dr["wName"].ToString().Replace(@"HEALTHY\", ""), Color.DarkGray, true);
                                 rtbWorkers.AppendText(" is not working on it.", Color.DarkGray, false);
                                 rtbWorkers.AppendText(Environment.NewLine);

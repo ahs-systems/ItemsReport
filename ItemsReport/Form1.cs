@@ -301,13 +301,93 @@ namespace WindowsFormsApplication1
                     ((TextBox)_empNameTextBox).Text = _ret.Replace("(NFP)", "");
                 else
                     ((TextBox)_empNameTextBox).Text = _ret;
-            } 
+
+                // if on "Unit to Unit Transfer" tab, check if the EE is already uploaded automatically
+                CheckIfUploadedIn_UUT(((TextBox)sender).Text.Substring(0, 8));
+
+                // if on "Change in Occupation" tab, check if the EE is already uploaded automatically
+                CheckIfUploadedIn_OC(((TextBox)sender).Text.Substring(0, 8));
+            }
             else if(((TextBox)sender).Text.Trim().Length == 0)
             {
                 var _empNameTextBox = this.Controls.Find(((TextBox)sender).Tag.ToString(), true).SingleOrDefault();
                 ((TextBox)_empNameTextBox).Text = "";
             }
 
+        }
+
+        private void CheckIfUploadedIn_OC(string _empNo)
+        {
+            try
+            {
+
+                using (SqlConnection myConnection = new SqlConnection())
+                {
+                    myConnection.ConnectionString = Common.SystemsServer;
+                    myConnection.Open();
+
+                    SqlCommand myCommand = myConnection.CreateCommand();
+
+                    myCommand.CommandText = "select top 1 ID from ItemsRpt_OccupationChange where PayPeriod = @_pp and PayPeriod_Year = @_ppYear and ItemsReportLetter = @_IRL and Emp_Num LIKE @_EmpNum";
+
+                    myCommand.Parameters.AddWithValue("_pp", cboPP.SelectedItem.ToString());
+                    myCommand.Parameters.AddWithValue("_ppYear", cboYearPP.SelectedItem.ToString());
+                    myCommand.Parameters.AddWithValue("_IRL", cboItemsReport.SelectedItem.ToString());
+                    myCommand.Parameters.AddWithValue("_EmpNum", _empNo + "%");
+                    SqlDataReader myReader = myCommand.ExecuteReader();
+
+                    if (myReader.HasRows)
+                    {
+                        myReader.Read();
+                        ID = myReader["ID"].ToString();
+                        Load_OC_Data(ID);
+                    }
+
+                    myCommand.Dispose();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ooops, there's an error: " + ex.Message, "ERROR");
+            }
+        }
+
+        private void CheckIfUploadedIn_UUT(string _empNo)
+        {
+            try
+            {
+
+                using (SqlConnection myConnection = new SqlConnection())
+                {
+                    myConnection.ConnectionString = Common.SystemsServer;
+                    myConnection.Open();
+
+                    SqlCommand myCommand = myConnection.CreateCommand();
+
+                    myCommand.CommandText = "select top 1 ID from ItemsRpt_UnitToUnitTransfer where PayPeriod = @_pp and PayPeriod_Year = @_ppYear and ItemsReportLetter = @_IRL and Emp_Num LIKE @_EmpNum";
+
+                    myCommand.Parameters.AddWithValue("_pp", cboPP.SelectedItem.ToString());
+                    myCommand.Parameters.AddWithValue("_ppYear", cboYearPP.SelectedItem.ToString());
+                    myCommand.Parameters.AddWithValue("_IRL", cboItemsReport.SelectedItem.ToString());
+                    myCommand.Parameters.AddWithValue("_EmpNum", _empNo + "%");
+                    SqlDataReader myReader = myCommand.ExecuteReader();
+
+                    if (myReader.HasRows)
+                    {
+                        myReader.Read();
+                        ID = myReader["ID"].ToString();
+                        Load_UUT_Data(ID);
+                    }
+
+                    myCommand.Dispose();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ooops, there's an error: " + ex.Message, "ERROR");                
+            }
         }
 
         private string SearchEmpName(string _empNo)
