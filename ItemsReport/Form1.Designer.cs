@@ -153,6 +153,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblSelectIRL = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.NPP.SuspendLayout();
             this.UUT.SuspendLayout();
@@ -1617,12 +1618,23 @@
             this.lblSelectIRL.TabIndex = 61;
             this.lblSelectIRL.Text = "Please select first the Items Report Letter from the drop down.";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(172, 37);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 62;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // ItemsReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(954, 405);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnViewRpt);
             this.Controls.Add(this.cboItemsReport);
@@ -1790,6 +1802,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblSelectIRL;
+        private System.Windows.Forms.Button button2;
     }
 }
 

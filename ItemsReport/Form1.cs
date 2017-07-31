@@ -1911,5 +1911,37 @@ namespace WindowsFormsApplication1
         {
             if (!tabControl1.Visible) tabControl1.Visible = true;
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection myConnection = new SqlConnection())
+                {
+                    myConnection.ConnectionString = Common.LocalServer;
+                    myConnection.Open();
+
+                    SqlCommand myCommand = myConnection.CreateCommand();
+
+                    // Get your current working status
+                    myCommand.CommandText = "select * from sites where siteid = 2";                    
+
+                    SqlDataReader _dr = myCommand.ExecuteReader();
+
+                    if (_dr.HasRows)
+                    {
+                        _dr.Read();
+                        MessageBox.Show(_dr["siteDesc"].ToString());
+                    }
+
+                    _dr.Close();
+                    myCommand.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ooops, there's an error: " + ex.Message, "ERROR");               
+            }
+        }
     }
 }
