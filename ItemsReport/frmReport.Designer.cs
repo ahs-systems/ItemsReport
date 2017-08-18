@@ -99,7 +99,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(6, 6);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1297, 504);
+            this.tabControl1.Size = new System.Drawing.Size(1618, 504);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.Tag = "dgvTerms";
             // 
@@ -111,7 +111,7 @@
             this.NPP.Controls.Add(this.dgvNPP);
             this.NPP.Location = new System.Drawing.Point(4, 36);
             this.NPP.Name = "NPP";
-            this.NPP.Size = new System.Drawing.Size(1289, 464);
+            this.NPP.Size = new System.Drawing.Size(1610, 464);
             this.NPP.TabIndex = 2;
             this.NPP.Text = "New Primary Positions";
             // 
@@ -159,7 +159,7 @@
             this.dgvNPP.ReadOnly = true;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvNPP.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvNPP.Size = new System.Drawing.Size(1283, 404);
+            this.dgvNPP.Size = new System.Drawing.Size(1604, 404);
             this.dgvNPP.TabIndex = 45;
             this.dgvNPP.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNPP_CellDoubleClick);
             // 
@@ -574,7 +574,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 564);
+            this.ClientSize = new System.Drawing.Size(1621, 564);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cboItemsReport);

@@ -80,9 +80,9 @@ namespace WindowsFormsApplication1
                     _dgv.DataSource = null;
                     _dgv.Refresh();
 
-                    string _sqlString = "SELECT ID, S.SiteDesc, N.Emp_Num, N.Emp_Name, N.UnitFrom, N.UnitTo, N.Comments, N.EnteredBy " +
+                    string _sqlString = "SELECT ID, S.SiteDesc, N.Emp_Num, N.Emp_Name, N.UnitFrom, N.UnitTo, N.Comments, N.EnteredBy, N.EnteredDate " +
                                 "FROM ItemsRpt_Transfers N JOIN SITES S ON N.Site = S.SiteID WHERE N.PayPeriod = @_PP AND " +
-                                 "N.PayPeriod_Year = @_PPYear and N.ItemsReportLetter = @_IRL ORDER BY N.Site, N.Emp_Name";
+                                 "N.PayPeriod_Year = @_PPYear and N.ItemsReportLetter = @_IRL ORDER BY N.Site, N.Emp_Name, N.EnteredDate";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
                     {
@@ -126,9 +126,9 @@ namespace WindowsFormsApplication1
                     _dgv.DataSource = null;
                     _dgv.Refresh();
 
-                    string _sqlString = "SELECT ID, S.SiteDesc, N.Emp_Num, N.Emp_Name, N.Unit, N.TerminationDate, N.Comments, N.EnteredBy " +
+                    string _sqlString = "SELECT ID, S.SiteDesc, N.Emp_Num, N.Emp_Name, N.Unit, N.TerminationDate, N.Comments, N.EnteredBy, N.EnteredDate " +
                                 "FROM ItemsRpt_Terminations N JOIN SITES S ON N.Site = S.SiteID WHERE N.PayPeriod = @_PP AND " +
-                                 "N.PayPeriod_Year = @_PPYear and N.ItemsReportLetter = @_IRL ORDER BY N.Site, N.Emp_Name";
+                                 "N.PayPeriod_Year = @_PPYear and N.ItemsReportLetter = @_IRL ORDER BY N.Site, N.Emp_Name, N.EnteredDate";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
                     {
@@ -175,9 +175,9 @@ namespace WindowsFormsApplication1
                                         "    When 'TRUE' Then NCHAR(0x394) " +
                                         "    Else '' " +
                                         "End as ' ', " +
-                                        "U.Status, U.Comments, U.EnteredBy, U.ChangeInSite " +
+                                        "U.Status, U.Comments, U.EnteredBy, U.EnteredDate, U.ChangeInSite " +
                                         "from ItemsRpt_UnitToUnitTransfer U join Sites S on U.Site = S.SiteID WHERE U.PayPeriod = @_PP AND " +
-                                        "U.PayPeriod_Year = @_PPYear and U.ItemsReportLetter = @_IRL Order By U.Site, U.Emp_Name";
+                                        "U.PayPeriod_Year = @_PPYear and U.ItemsReportLetter = @_IRL Order By U.Site, U.Emp_Name, U.EnteredDate";
 
                     
 
@@ -232,9 +232,9 @@ namespace WindowsFormsApplication1
                     _dgv.DataSource = null;
                     _dgv.Refresh();
                     
-                    string _sqlString = "SELECT ID, S.SiteDesc, N.Emp_Num, N.Emp_Name, N.Unit, N.Occupation, N.Status, N.EnteredBy " +
+                    string _sqlString = "SELECT ID, S.SiteDesc, N.Emp_Num, N.Emp_Name, N.Unit, N.Occupation, N.Status, N.EnteredBy, N.EnteredDate " +
                                  "FROM ItemsRpt_NewPrimaryPositions N JOIN SITES S ON N.Site = S.SiteID WHERE N.PayPeriod = @_PP AND " +
-                                 "N.PayPeriod_Year = @_PPYear and N.ItemsReportLetter = @_IRL ORDER BY N.Site, N.Emp_Name";
+                                 "N.PayPeriod_Year = @_PPYear and N.ItemsReportLetter = @_IRL ORDER BY N.Site, N.Emp_Name, N.EnteredDate";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
                     {
@@ -279,9 +279,9 @@ namespace WindowsFormsApplication1
                     _dgv.DataSource = null;
                     _dgv.Refresh();
                                         
-                    string _sqlString = "SELECT ID, S.SiteDesc, N.Emp_Num, N.Emp_Name, N.Unit, N.StatusFrom, N.StatusTo, N.Comments, N.EnteredBy " +
+                    string _sqlString = "SELECT ID, S.SiteDesc, N.Emp_Num, N.Emp_Name, N.Unit, N.StatusFrom, N.StatusTo, N.Comments, N.EnteredBy, N.EnteredDate " +
                                 "FROM ItemsRpt_StatusChange N JOIN SITES S ON N.Site = S.SiteID WHERE N.PayPeriod = @_PP AND " +
-                                 "N.PayPeriod_Year = @_PPYear and N.ItemsReportLetter = @_IRL ORDER BY N.Site, N.Emp_Name";
+                                 "N.PayPeriod_Year = @_PPYear and N.ItemsReportLetter = @_IRL ORDER BY N.Site, N.Emp_Name, N.EnteredDate";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
                     {                        
@@ -325,9 +325,9 @@ namespace WindowsFormsApplication1
                     _dgv.DataSource = null;
                     _dgv.Refresh();
 
-                    string _sqlString = "SELECT ID, S.SiteDesc, N.Emp_Num, N.Emp_Name, N.Unit, N.OccFrom, N.OccTo, N.Comments, N.EnteredBy " +
+                    string _sqlString = "SELECT ID, S.SiteDesc, N.Emp_Num, N.Emp_Name, N.Unit, N.OccFrom, N.OccTo, N.Comments, N.EnteredBy, N.EnteredDate " +
                                  "FROM ItemsRpt_OccupationChange N JOIN SITES S ON N.Site = S.SiteID WHERE N.PayPeriod = @_PP AND " +
-                                 "N.PayPeriod_Year = @_PPYear and N.ItemsReportLetter = @_IRL ORDER BY N.Site, N.Emp_Name";
+                                 "N.PayPeriod_Year = @_PPYear and N.ItemsReportLetter = @_IRL ORDER BY N.Site, N.Emp_Name, N.EnteredDate";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
                     {
