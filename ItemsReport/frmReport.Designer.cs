@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReport));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.NPP = new System.Windows.Forms.TabPage();
             this.btnDel_NPP = new System.Windows.Forms.Button();
@@ -67,6 +68,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label35 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1.SuspendLayout();
             this.NPP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNPP)).BeginInit();
@@ -95,6 +97,7 @@
             this.tabControl1.Controls.Add(this.Terms);
             this.tabControl1.Controls.Add(this.Trans);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.ImageList = this.imageList1;
             this.tabControl1.Location = new System.Drawing.Point(2, 60);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(6, 6);
@@ -109,6 +112,7 @@
             this.NPP.Controls.Add(this.btnDel_NPP);
             this.NPP.Controls.Add(this.btnEdit_NPP);
             this.NPP.Controls.Add(this.dgvNPP);
+            this.NPP.ImageIndex = 0;
             this.NPP.Location = new System.Drawing.Point(4, 36);
             this.NPP.Name = "NPP";
             this.NPP.Size = new System.Drawing.Size(1610, 464);
@@ -157,8 +161,8 @@
             this.dgvNPP.Location = new System.Drawing.Point(3, 4);
             this.dgvNPP.Name = "dgvNPP";
             this.dgvNPP.ReadOnly = true;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvNPP.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvNPP.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvNPP.Size = new System.Drawing.Size(1604, 404);
             this.dgvNPP.TabIndex = 45;
             this.dgvNPP.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNPP_CellDoubleClick);
@@ -169,10 +173,11 @@
             this.UUT.Controls.Add(this.btnDel_UUT);
             this.UUT.Controls.Add(this.btnEdit_UUT);
             this.UUT.Controls.Add(this.dgvUUT);
+            this.UUT.ImageIndex = 1;
             this.UUT.Location = new System.Drawing.Point(4, 36);
             this.UUT.Name = "UUT";
             this.UUT.Padding = new System.Windows.Forms.Padding(3);
-            this.UUT.Size = new System.Drawing.Size(1289, 464);
+            this.UUT.Size = new System.Drawing.Size(1610, 464);
             this.UUT.TabIndex = 0;
             this.UUT.Text = "Unit To Unit Transfer";
             // 
@@ -218,9 +223,9 @@
             this.dgvUUT.Location = new System.Drawing.Point(3, 3);
             this.dgvUUT.Name = "dgvUUT";
             this.dgvUUT.ReadOnly = true;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvUUT.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvUUT.Size = new System.Drawing.Size(1283, 407);
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvUUT.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvUUT.Size = new System.Drawing.Size(1600, 407);
             this.dgvUUT.TabIndex = 42;
             this.dgvUUT.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUUT_CellDoubleClick);
             // 
@@ -230,10 +235,11 @@
             this.SC.Controls.Add(this.btnDel_SC);
             this.SC.Controls.Add(this.btnEdit_SC);
             this.SC.Controls.Add(this.dgvSC);
+            this.SC.ImageIndex = 2;
             this.SC.Location = new System.Drawing.Point(4, 36);
             this.SC.Name = "SC";
             this.SC.Padding = new System.Windows.Forms.Padding(3);
-            this.SC.Size = new System.Drawing.Size(1289, 464);
+            this.SC.Size = new System.Drawing.Size(1610, 464);
             this.SC.TabIndex = 1;
             this.SC.Text = "Status Change";
             // 
@@ -279,9 +285,9 @@
             this.dgvSC.Location = new System.Drawing.Point(3, 4);
             this.dgvSC.Name = "dgvSC";
             this.dgvSC.ReadOnly = true;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvSC.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvSC.Size = new System.Drawing.Size(1283, 406);
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvSC.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvSC.Size = new System.Drawing.Size(1600, 406);
             this.dgvSC.TabIndex = 48;
             this.dgvSC.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSC_CellDoubleClick);
             // 
@@ -291,9 +297,10 @@
             this.OC.Controls.Add(this.btnDel_OC);
             this.OC.Controls.Add(this.btnEdit_OC);
             this.OC.Controls.Add(this.dgvOC);
+            this.OC.ImageIndex = 3;
             this.OC.Location = new System.Drawing.Point(4, 36);
             this.OC.Name = "OC";
-            this.OC.Size = new System.Drawing.Size(1289, 464);
+            this.OC.Size = new System.Drawing.Size(1610, 464);
             this.OC.TabIndex = 3;
             this.OC.Text = "Occupation Changes";
             // 
@@ -339,9 +346,9 @@
             this.dgvOC.Location = new System.Drawing.Point(3, 4);
             this.dgvOC.Name = "dgvOC";
             this.dgvOC.ReadOnly = true;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvOC.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvOC.Size = new System.Drawing.Size(1283, 406);
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvOC.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvOC.Size = new System.Drawing.Size(1600, 406);
             this.dgvOC.TabIndex = 48;
             this.dgvOC.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOC_CellDoubleClick);
             // 
@@ -351,9 +358,10 @@
             this.Terms.Controls.Add(this.btnDel_Terms);
             this.Terms.Controls.Add(this.btnEdit_Terms);
             this.Terms.Controls.Add(this.dgvTerms);
+            this.Terms.ImageIndex = 4;
             this.Terms.Location = new System.Drawing.Point(4, 36);
             this.Terms.Name = "Terms";
-            this.Terms.Size = new System.Drawing.Size(1289, 464);
+            this.Terms.Size = new System.Drawing.Size(1610, 464);
             this.Terms.TabIndex = 4;
             this.Terms.Text = "Terminations";
             // 
@@ -399,9 +407,9 @@
             this.dgvTerms.Location = new System.Drawing.Point(3, 4);
             this.dgvTerms.Name = "dgvTerms";
             this.dgvTerms.ReadOnly = true;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvTerms.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvTerms.Size = new System.Drawing.Size(1283, 406);
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvTerms.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvTerms.Size = new System.Drawing.Size(1600, 406);
             this.dgvTerms.TabIndex = 48;
             this.dgvTerms.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTerms_CellDoubleClick);
             // 
@@ -411,9 +419,10 @@
             this.Trans.Controls.Add(this.btnDel_Trans);
             this.Trans.Controls.Add(this.btnEdit_Trans);
             this.Trans.Controls.Add(this.dgvTrans);
+            this.Trans.ImageIndex = 5;
             this.Trans.Location = new System.Drawing.Point(4, 36);
             this.Trans.Name = "Trans";
-            this.Trans.Size = new System.Drawing.Size(1289, 464);
+            this.Trans.Size = new System.Drawing.Size(1610, 464);
             this.Trans.TabIndex = 5;
             this.Trans.Text = "Transfers";
             // 
@@ -459,37 +468,43 @@
             this.dgvTrans.Location = new System.Drawing.Point(3, 4);
             this.dgvTrans.Name = "dgvTrans";
             this.dgvTrans.ReadOnly = true;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvTrans.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvTrans.Size = new System.Drawing.Size(1283, 406);
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvTrans.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvTrans.Size = new System.Drawing.Size(1600, 406);
             this.dgvTrans.TabIndex = 48;
             this.dgvTrans.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrans_CellDoubleClick);
             // 
             // cboItemsReport
             // 
             this.cboItemsReport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboItemsReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboItemsReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboItemsReport.FormattingEnabled = true;
             this.cboItemsReport.Items.AddRange(new object[] {
             "Items Report A",
             "Items Report B",
             "Items Report C"});
-            this.cboItemsReport.Location = new System.Drawing.Point(308, 17);
+            this.cboItemsReport.Location = new System.Drawing.Point(362, 17);
             this.cboItemsReport.Name = "cboItemsReport";
-            this.cboItemsReport.Size = new System.Drawing.Size(121, 21);
+            this.cboItemsReport.Size = new System.Drawing.Size(121, 24);
             this.cboItemsReport.TabIndex = 63;
             // 
             // cboYearPP
             // 
             this.cboYearPP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboYearPP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboYearPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboYearPP.FormattingEnabled = true;
-            this.cboYearPP.Location = new System.Drawing.Point(181, 17);
+            this.cboYearPP.Location = new System.Drawing.Point(219, 17);
             this.cboYearPP.Name = "cboYearPP";
-            this.cboYearPP.Size = new System.Drawing.Size(121, 21);
+            this.cboYearPP.Size = new System.Drawing.Size(121, 24);
             this.cboYearPP.TabIndex = 61;
             // 
             // cboPP
             // 
             this.cboPP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPP.FormattingEnabled = true;
             this.cboPP.Items.AddRange(new object[] {
             "01",
@@ -518,17 +533,18 @@
             "24",
             "25",
             "26"});
-            this.cboPP.Location = new System.Drawing.Point(81, 17);
+            this.cboPP.Location = new System.Drawing.Point(96, 17);
             this.cboPP.Name = "cboPP";
-            this.cboPP.Size = new System.Drawing.Size(56, 21);
+            this.cboPP.Size = new System.Drawing.Size(56, 24);
             this.cboPP.TabIndex = 59;
             // 
             // label34
             // 
             this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.Location = new System.Drawing.Point(14, 20);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(69, 15);
+            this.label34.Size = new System.Drawing.Size(81, 17);
             this.label34.TabIndex = 60;
             this.label34.Text = "Pay Period:";
             // 
@@ -537,7 +553,7 @@
             this.btnRefresh.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-            this.btnRefresh.Location = new System.Drawing.Point(435, 6);
+            this.btnRefresh.Location = new System.Drawing.Point(493, 7);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(104, 40);
             this.btnRefresh.TabIndex = 64;
@@ -549,9 +565,10 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(143, 20);
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(173, 20);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(35, 15);
+            this.label35.Size = new System.Drawing.Size(42, 17);
             this.label35.TabIndex = 62;
             this.label35.Text = "Year:";
             // 
@@ -569,6 +586,17 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Visible = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "doc4.png");
+            this.imageList1.Images.SetKeyName(1, "doc1.png");
+            this.imageList1.Images.SetKeyName(2, "doc2.png");
+            this.imageList1.Images.SetKeyName(3, "doc3.png");
+            this.imageList1.Images.SetKeyName(4, "file1.png");
+            this.imageList1.Images.SetKeyName(5, "doc5.png");
             // 
             // frmReport
             // 
@@ -639,5 +667,6 @@
         private System.Windows.Forms.Button btnDel_Trans;
         private System.Windows.Forms.Button btnEdit_Trans;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Windows.Forms;
+﻿using OfficeOpenXml;
+using System;
 using System.Data.SqlClient;
 using System.Drawing;
-using OfficeOpenXml;
 using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
@@ -33,20 +33,17 @@ namespace WindowsFormsApplication1
             Common.CurrentUser = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
 
             _frmReport._parentForm = this;
-            
+
             cboYearPP.Items.Add(DateTime.Today.Year); cboYearPP.Items.Add(DateTime.Today.Year - 1);
-            cboYearPP.SelectedIndex = 0;            
+            cboYearPP.SelectedIndex = 0;
 
             cboPP.SelectedItem = Common.GetPP(DateTime.Now.ToString("yyyy-MM-dd"));
 
-            PopulateUnitShortDesc(ref unitsShortDesc);                       
+            PopulateUnitShortDesc(ref unitsShortDesc);
             txtUnit_NPP.AutoCompleteCustomSource = txtTransFrom_UUT.AutoCompleteCustomSource = txtTransTo_UUT.AutoCompleteCustomSource = txtUnit_SC.AutoCompleteCustomSource = txtUnit_OC.AutoCompleteCustomSource = unitsShortDesc;
 
             PopulateUnitLongDesc(ref unitsLongDesc);
-            txtUnit_Terms.AutoCompleteCustomSource = txtUnitFrom_Trans.AutoCompleteCustomSource = unitsLongDesc;
-
-            //cboPP.SelectedIndex = 9;
-            //cboItemsReport.SelectedIndex = 1;
+            txtUnit_Terms.AutoCompleteCustomSource = txtUnitFrom_Trans.AutoCompleteCustomSource = unitsLongDesc;            
         }
 
         private int GetSiteNum_ShortDesc(string _unitShortDesc)
@@ -83,7 +80,7 @@ namespace WindowsFormsApplication1
                         }
                     }
                     myCommand.Dispose();
-                }               
+                }
             }
             catch (Exception ex)
             {
@@ -179,21 +176,21 @@ namespace WindowsFormsApplication1
                     SqlCommand myCommand = myConnection.CreateCommand();
 
                     myCommand.CommandText = "select U_ShortDesc from unit where (U_Desc like '0%' OR U_Desc like 'S%') AND U_Active = 1 ORDER BY U_ShortDesc";
-                                        
+
                     SqlDataReader myReader = myCommand.ExecuteReader();
 
                     if (myReader.HasRows)
                     {
-                        while(myReader.Read())
-                        _unitSource.Add(myReader["U_ShortDesc"].ToString().Trim());
+                        while (myReader.Read())
+                            _unitSource.Add(myReader["U_ShortDesc"].ToString().Trim());
                     }
 
-                    myCommand.Dispose();                    
+                    myCommand.Dispose();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ooops, there's an error: " + ex.Message, "ERROR");                
+                MessageBox.Show("Ooops, there's an error: " + ex.Message, "ERROR");
             }
         }
 
@@ -219,7 +216,7 @@ namespace WindowsFormsApplication1
             }
 
             try
-            {                
+            {
 
                 using (SqlConnection myConnection = new SqlConnection())
                 {
@@ -250,7 +247,7 @@ namespace WindowsFormsApplication1
 
                         myCommand.CommandText = "Update ItemsRpt_NewPrimaryPositions SET ItemsReportLetter = @_ItemsReportLetter, PayPeriod = @_PayPeriod, " +
                             "PayPeriod_Year = @_PayPeriod_Year, Site = @_Site, Emp_Num = @_Emp_Num, Emp_Name = @_Emp_Name, Unit = @_Unit, Occupation = @_Occupation, " +
-                            "Status = @_Status, EnteredBy = @_EnteredBy WHERE ID = " + ID;                       
+                            "Status = @_Status, EnteredBy = @_EnteredBy WHERE ID = " + ID;
                     }
 
                     myCommand.Parameters.AddWithValue("_ItemsReportLetter", _ItemsReportLetter);
@@ -274,7 +271,7 @@ namespace WindowsFormsApplication1
                     else
                     {
                         MessageBox.Show("Successfully Updated!", "Confirmation");
-                        HideCancelBtn((Control)sender, 0, "NPP");                        
+                        HideCancelBtn((Control)sender, 0, "NPP");
                     }
 
                     _frmReport.Load_NPP_Data(_pp, _ppYear, _ItemsReportLetter);
@@ -293,22 +290,40 @@ namespace WindowsFormsApplication1
         {
             if (((TextBox)sender).Text.Trim().Length > 7)
             {
-                string _ret = SearchEmpName(((TextBox)sender).Text.Substring(0,8));
-                var _empNameTextBox = this.Controls.Find(((TextBox)sender).Tag.ToString(), true).FirstOrDefault();
+                TextBox _empNameTextBox = (TextBox)this.Controls.Find(((TextBox)sender).Tag.ToString(), true).FirstOrDefault();
+                string _ret = SearchEmpName(((TextBox)sender).Text.Substring(0, 8));
+                _empNameTextBox.Text = _ret;
+
+                switch (tabControl1.SelectedIndex) // check if the EE is already existing then if true then just show it to edit
+                {
+                    case 0: // New Primary Positions
+                        CheckIfUploaded(Load_NPP_Data, "ItemsRpt_NewPrimaryPositions", ((TextBox)sender).Text.Substring(0, 8));
+                        break;
+                    case 1: // Unit to Unit Transfer
+                        CheckIfUploaded(Load_UUT_Data, "ItemsRpt_UnitToUnitTransfer", ((TextBox)sender).Text.Substring(0, 8));
+                        break;
+                    case 2: // Status Change
+                        CheckIfUploaded(Load_SC_Data, "ItemsRpt_StatusChange", ((TextBox)sender).Text.Substring(0, 8));
+                        break;
+                    case 3: // Change in Occupation
+                        CheckIfUploaded(Load_OC_Data, "ItemsRpt_OccupationChange", ((TextBox)sender).Text.Substring(0, 8));
+                        break;
+                    case 4: // Terminations
+                        CheckIfUploaded(Load_Terms_Data, "ItemsRpt_Terminations", ((TextBox)sender).Text.Substring(0, 8));
+                        break;
+                    case 5: // Transfers
+                        CheckIfUploaded(Load_Trans_Data, "ItemsRpt_Transfers", ((TextBox)sender).Text.Substring(0, 8));
+                        break;
+                }
 
                 // if on "Transfer" tab, remove the "(NFP)" in the Empname textbox
                 if (tabControl1.SelectedIndex == 5)
-                    ((TextBox)_empNameTextBox).Text = _ret.Replace("(NFP)", "");
-                else
-                    ((TextBox)_empNameTextBox).Text = _ret;
+                {
+                    _empNameTextBox.Text = _ret.Replace("(NFP)", "");
+                }
 
-                // if on "Unit to Unit Transfer" tab, check if the EE is already uploaded automatically
-                CheckIfUploadedIn_UUT(((TextBox)sender).Text.Substring(0, 8));
-
-                // if on "Change in Occupation" tab, check if the EE is already uploaded automatically
-                CheckIfUploadedIn_OC(((TextBox)sender).Text.Substring(0, 8));
             }
-            else if(((TextBox)sender).Text.Trim().Length == 0)
+            else if (((TextBox)sender).Text.Trim().Length == 0)
             {
                 var _empNameTextBox = this.Controls.Find(((TextBox)sender).Tag.ToString(), true).SingleOrDefault();
                 ((TextBox)_empNameTextBox).Text = "";
@@ -316,7 +331,7 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void CheckIfUploadedIn_OC(string _empNo)
+        private void CheckIfUploaded(Action<string> _method, string _tableName, string _empNo)
         {
             try
             {
@@ -328,7 +343,7 @@ namespace WindowsFormsApplication1
 
                     SqlCommand myCommand = myConnection.CreateCommand();
 
-                    myCommand.CommandText = "select top 1 ID from ItemsRpt_OccupationChange where PayPeriod = @_pp and PayPeriod_Year = @_ppYear and ItemsReportLetter = @_IRL and Emp_Num LIKE @_EmpNum";
+                    myCommand.CommandText = "select top 1 ID from " + _tableName + " where PayPeriod = @_pp and PayPeriod_Year = @_ppYear and ItemsReportLetter = @_IRL and Emp_Num LIKE @_EmpNum";
 
                     myCommand.Parameters.AddWithValue("_pp", cboPP.SelectedItem.ToString());
                     myCommand.Parameters.AddWithValue("_ppYear", cboYearPP.SelectedItem.ToString());
@@ -340,7 +355,7 @@ namespace WindowsFormsApplication1
                     {
                         myReader.Read();
                         ID = myReader["ID"].ToString();
-                        Load_OC_Data(ID);
+                        _method(ID);
                     }
 
                     myCommand.Dispose();
@@ -350,43 +365,6 @@ namespace WindowsFormsApplication1
             catch (Exception ex)
             {
                 MessageBox.Show("Ooops, there's an error: " + ex.Message, "ERROR");
-            }
-        }
-
-        private void CheckIfUploadedIn_UUT(string _empNo)
-        {
-            try
-            {
-
-                using (SqlConnection myConnection = new SqlConnection())
-                {
-                    myConnection.ConnectionString = Common.SystemsServer;
-                    myConnection.Open();
-
-                    SqlCommand myCommand = myConnection.CreateCommand();
-
-                    myCommand.CommandText = "select top 1 ID from ItemsRpt_UnitToUnitTransfer where PayPeriod = @_pp and PayPeriod_Year = @_ppYear and ItemsReportLetter = @_IRL and Emp_Num LIKE @_EmpNum";
-
-                    myCommand.Parameters.AddWithValue("_pp", cboPP.SelectedItem.ToString());
-                    myCommand.Parameters.AddWithValue("_ppYear", cboYearPP.SelectedItem.ToString());
-                    myCommand.Parameters.AddWithValue("_IRL", cboItemsReport.SelectedItem.ToString());
-                    myCommand.Parameters.AddWithValue("_EmpNum", _empNo + "%");
-                    SqlDataReader myReader = myCommand.ExecuteReader();
-
-                    if (myReader.HasRows)
-                    {
-                        myReader.Read();
-                        ID = myReader["ID"].ToString();
-                        Load_UUT_Data(ID);
-                    }
-
-                    myCommand.Dispose();
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ooops, there's an error: " + ex.Message, "ERROR");                
             }
         }
 
@@ -413,7 +391,7 @@ namespace WindowsFormsApplication1
                     {
                         myReader.Read();
                         _ret = myReader["DESC"].ToString();
-                    }                   
+                    }
 
                     myCommand.Dispose();
 
@@ -434,7 +412,7 @@ namespace WindowsFormsApplication1
                 string _ret = SearchOccupation(((TextBox)sender).Text.Trim());
                 var _empNameTextBox = this.Controls.Find(((TextBox)sender).Tag.ToString(), true).FirstOrDefault();
                 ((TextBox)_empNameTextBox).Text = _ret;
-            }            
+            }
         }
 
         private string SearchOccupation(string _code)
@@ -507,7 +485,7 @@ namespace WindowsFormsApplication1
                 return;
             }
 
-            string[] _sites = new string[] { "ACH", "FMC", "PLC", "RGH", "SPT", "SHC" };            
+            string[] _sites = new string[] { "ACH", "FMC", "PLC", "RGH", "SPT", "SHC" };
 
             try
             {
@@ -585,7 +563,7 @@ namespace WindowsFormsApplication1
 
                         #region Export Unit to Unit Transfer to Excel
 
-                        _lineCtr = 0;                        
+                        _lineCtr = 0;
 
                         ws = package.Workbook.Worksheets[2]; // Unit to Unit Transfer Sheet
                         ws.Cells[1, 1].Value = _PayPeriod; // set the payperiod and date on the sheet
@@ -687,7 +665,7 @@ namespace WindowsFormsApplication1
                                     ws.Cells[_row, 5].Value = _dr["StatusTo"].ToString();
                                     ws.Cells[_row, 6].Value = _dr["Unit"].ToString();
                                     ws.Cells[_row, 7].Value = _dr["Comments"].ToString();
-                                    _lineCtr++;                                   
+                                    _lineCtr++;
                                 }
                                 _row = 19 + _lineCtr; ws.InsertRow(_row, 1, _row + 1); ws.Cells[_row, 1].Value = ""; _lineCtr++; // Insert a blank line after each site
                             }
@@ -879,16 +857,16 @@ namespace WindowsFormsApplication1
                     {
                         package.SaveAs(new FileInfo(saveFileDialog1.FileName));
                         System.Diagnostics.Process.Start(saveFileDialog1.FileName);
-                    }                    
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
 
-           
+
+
         }
 
         private void cboSite_NPP_KeyPress(object sender, KeyPressEventArgs e)
@@ -952,7 +930,7 @@ namespace WindowsFormsApplication1
 
                         myCommand.CommandText = "Update ItemsRpt_UnitToUnitTransfer SET ItemsReportLetter = @_ItemsReportLetter, PayPeriod = @_PayPeriod, PayPeriod_Year = @_PayPeriod_Year, " +
                             "Site = @_Site, Emp_Num = @_Emp_Num, Emp_Name = @_Emp_Name, UnitFrom = @_UnitFrom, UnitTo = @_UnitTo, Occupation = @_Occupation, Status = @_Status, " +
-                            "ChangeInOccupation = @_ChangeInOccupation, ChangeInSite = @_ChangeInSite, Comments = @_Comments, EnteredBy = @_EnteredBy WHERE ID = " + ID;                            
+                            "ChangeInOccupation = @_ChangeInOccupation, ChangeInSite = @_ChangeInSite, Comments = @_Comments, EnteredBy = @_EnteredBy WHERE ID = " + ID;
                     }
 
                     myCommand.Parameters.AddWithValue("_ItemsReportLetter", _ItemsReportLetter);
@@ -980,13 +958,13 @@ namespace WindowsFormsApplication1
                     else
                     {
                         MessageBox.Show("Successfully Updated!", "Confirmation");
-                        HideCancelBtn((Control)sender, 1, "UUT");                        
+                        HideCancelBtn((Control)sender, 1, "UUT");
                     }
 
                     _frmReport.Show();
                     if (_frmReport.firstLoad) _frmReport.tabControl1.TabPages[1].Show();
-                    _frmReport.Load_UUT_Data(_pp, _ppYear, _ItemsReportLetter);                    
-                    _frmReport.tabControl1.SelectedIndex = 1;                   
+                    _frmReport.Load_UUT_Data(_pp, _ppYear, _ItemsReportLetter);
+                    _frmReport.tabControl1.SelectedIndex = 1;
                     ClearForm(tabControl1.TabPages[1]);
                 }
             }
@@ -1001,7 +979,7 @@ namespace WindowsFormsApplication1
             ((Button)_senderBtn).Text = "Save";
             var _CancelBtn = tabControl1.TabPages[_tabNumber].Controls.Find(((Button)_senderBtn).Tag.ToString(), true).FirstOrDefault();
             ((Button)_CancelBtn).Visible = false;
-            ToggleTabs(true, _tabName);            
+            ToggleTabs(true, _tabName);
         }
 
         private void ClearForm(Control _parent)
@@ -1014,7 +992,7 @@ namespace WindowsFormsApplication1
                 }
                 else if (c.GetType() == typeof(ComboBox))
                 {
-                    ((ComboBox)c).SelectedIndex = -1;                    
+                    ((ComboBox)c).SelectedIndex = -1;
                 }
                 else if (c.GetType() == typeof(CheckBox))
                 {
@@ -1024,7 +1002,7 @@ namespace WindowsFormsApplication1
         }
 
         private void ToggleTabs(bool _status, string _tabName)
-        {            
+        {
             foreach (TabPage t in tabControl1.TabPages)
             {
                 if (t.Name != _tabName) t.Enabled = _status;
@@ -1084,7 +1062,7 @@ namespace WindowsFormsApplication1
 
                         myCommand.CommandText = "UPDATE ItemsRpt_StatusChange SET ItemsReportLetter = @_ItemsReportLetter, PayPeriod = @_PayPeriod, PayPeriod_Year = @_PayPeriod_Year, " +
                             "Site = @_Site, Emp_Num = @_Emp_Num, Emp_Name = @_Emp_Name, StatusFrom = @_StatusFrom, StatusTo = @_StatusTo, Unit = @_Unit, Comments = @_Comments,  " +
-                            "EnteredBy = @_EnteredBy WHERE ID = " + ID;                        
+                            "EnteredBy = @_EnteredBy WHERE ID = " + ID;
                     }
 
                     myCommand.Parameters.AddWithValue("_ItemsReportLetter", _ItemsReportLetter);
@@ -1097,7 +1075,7 @@ namespace WindowsFormsApplication1
                     myCommand.Parameters.AddWithValue("_StatusTo", txtStatusTo.Text.Trim().ToUpper());
                     myCommand.Parameters.AddWithValue("_Unit", txtUnit_SC.Text.Trim());
                     myCommand.Parameters.AddWithValue("_Comments", txtComment_SC.Text.Trim());
-                    myCommand.Parameters.AddWithValue("_EnteredBy", Common.CurrentUser);                    
+                    myCommand.Parameters.AddWithValue("_EnteredBy", Common.CurrentUser);
 
                     myCommand.ExecuteNonQuery();
                     myCommand.Dispose();
@@ -1109,7 +1087,7 @@ namespace WindowsFormsApplication1
                     else
                     {
                         MessageBox.Show("Successfully Updated!", "Confirmation");
-                        HideCancelBtn((Control)sender, 2, "SC");                        
+                        HideCancelBtn((Control)sender, 2, "SC");
                     }
 
                     _frmReport.Load_SC_Data(_pp, _ppYear, _ItemsReportLetter);
@@ -1200,7 +1178,7 @@ namespace WindowsFormsApplication1
                     else
                     {
                         MessageBox.Show("Successfully Updated!", "Confirmation");
-                        HideCancelBtn((Control)sender, 3, "OC");                        
+                        HideCancelBtn((Control)sender, 3, "OC");
                     }
 
                     _frmReport.Load_OC_Data(_pp, _ppYear, _ItemsReportLetter);
@@ -1290,7 +1268,7 @@ namespace WindowsFormsApplication1
                     else
                     {
                         MessageBox.Show("Successfully Updated!", "Confirmation");
-                        HideCancelBtn((Control)sender, 4, "Terms");                        
+                        HideCancelBtn((Control)sender, 4, "Terms");
                     }
 
                     _frmReport.Load_Terms_Data(_pp, _ppYear, _ItemsReportLetter);
@@ -1384,7 +1362,7 @@ namespace WindowsFormsApplication1
                         _frmReport.Load_Trans_Data(_pp, _ppYear, _ItemsReportLetter);
                         _frmReport.Show();
                     }
-                    
+
                     _frmReport.Load_Trans_Data(_pp, _ppYear, _ItemsReportLetter);
                     _frmReport.Show();
                     _frmReport.tabControl1.SelectedIndex = 5;
@@ -1423,7 +1401,7 @@ namespace WindowsFormsApplication1
 
         private void btnCancel_UUT_Click(object sender, EventArgs e)
         {
-            HideCancelBtn(btnSave_UUT, 1, "UUT");            
+            HideCancelBtn(btnSave_UUT, 1, "UUT");
             ClearForm(tabControl1.TabPages[1]);
             _frmReport.Show();
         }
@@ -1441,7 +1419,7 @@ namespace WindowsFormsApplication1
 
                     myCommand.CommandText = "Select U.Site, U.PayPeriod, U.PayPeriod_Year, U.ItemsReportLetter, U.ID, U.Emp_Num, U.Emp_Name, U.UnitFrom, U.UnitTo, U.Occupation, U.ChangeInOccupation, " +
                         "U.Status, U.Comments, U.EnteredBy, U.ChangeInSite from ItemsRpt_UnitToUnitTransfer U where ID = @_ID";
-                    myCommand.Parameters.AddWithValue("_ID", _ID);                    
+                    myCommand.Parameters.AddWithValue("_ID", _ID);
 
                     SqlDataReader _dr = myCommand.ExecuteReader();
 
@@ -1467,7 +1445,7 @@ namespace WindowsFormsApplication1
                         btnCancel_UUT.Visible = true;
                         ToggleTabs(false, "UUT");
                     }
-                    myCommand.Dispose();                    
+                    myCommand.Dispose();
                 }
             }
             catch (Exception ex)
@@ -1482,7 +1460,7 @@ namespace WindowsFormsApplication1
             {
                 using (SqlConnection myConnection = new SqlConnection())
                 {
-                    myConnection.ConnectionString = Common.SystemsServer; 
+                    myConnection.ConnectionString = Common.SystemsServer;
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
@@ -1501,7 +1479,7 @@ namespace WindowsFormsApplication1
                         txtEmpName_NPP.Text = _dr["Emp_Name"].ToString();
                         txtUnit_NPP.Text = _dr["Unit"].ToString();
                         txtOcc_NPP.Text = _dr["Occupation"].ToString();
-                        txtStatus_NPP.Text = _dr["Status"].ToString();                        
+                        txtStatus_NPP.Text = _dr["Status"].ToString();
 
                         pp = _dr["PayPeriod"].ToString();
                         ppYear = _dr["PayPeriod_Year"].ToString();
@@ -1634,7 +1612,7 @@ namespace WindowsFormsApplication1
                         txtEmpNo_Terms.Text = _dr["Emp_Num"].ToString();
                         txtEmpName_Terms.Text = _dr["Emp_Name"].ToString();
                         txtUnit_Terms.Text = _dr["Unit"].ToString();
-                        dp_Terms.Value = Convert.ToDateTime(_dr["TerminationDate"]);                        
+                        dp_Terms.Value = Convert.ToDateTime(_dr["TerminationDate"]);
                         txtComments_Terms.Text = _dr["Comments"].ToString();
 
                         pp = _dr["PayPeriod"].ToString();
@@ -1701,7 +1679,7 @@ namespace WindowsFormsApplication1
         private void ItemsReport_FormClosing(object sender, FormClosingEventArgs e)
         {
             _frmReport.CloseTheForm = true;
-            _frmReport.Close();            
+            _frmReport.Close();
         }
 
         private void btnCancel_NPP_Click(object sender, EventArgs e)
@@ -1753,10 +1731,10 @@ namespace WindowsFormsApplication1
         {
             if (txtTransFrom_UUT.Text.Trim() == "" || txtTransTo_UUT.Text.Trim() == "") return;
 
-            byte _unitFrom = (byte) GetSiteNum_ShortDesc(txtTransFrom_UUT.Text.Trim().ToUpper());
+            byte _unitFrom = (byte)GetSiteNum_ShortDesc(txtTransFrom_UUT.Text.Trim().ToUpper());
             byte _unitTo = (byte)GetSiteNum_ShortDesc(txtTransTo_UUT.Text.Trim().ToUpper());
-            
-            chkChangeInSite_UUT.Checked = _unitFrom != _unitTo;            
+
+            chkChangeInSite_UUT.Checked = _unitFrom != _unitTo;
         }
 
         private void txtUnit_Terms_Leave(object sender, EventArgs e)
@@ -1799,10 +1777,10 @@ namespace WindowsFormsApplication1
                 if (_reply == DialogResult.Yes)
                 {
                     UpdateStatus(1);
-                    DisplayStatus(1);                   
+                    DisplayStatus(1);
                 }
                 else
-                {                    
+                {
                     DisplayStatus(0);
                 }
             }
@@ -1892,7 +1870,7 @@ namespace WindowsFormsApplication1
                     {
                         _dr.Read();
                         _ret = Convert.ToInt16(_dr["wStatus"]);
-                    }                   
+                    }
 
                     _dr.Close();
                     myCommand.Dispose();
@@ -1924,7 +1902,7 @@ namespace WindowsFormsApplication1
                     SqlCommand myCommand = myConnection.CreateCommand();
 
                     // Get your current working status
-                    myCommand.CommandText = "select * from sites where siteid = 2";                    
+                    myCommand.CommandText = "select * from sites where siteid = 2";
 
                     SqlDataReader _dr = myCommand.ExecuteReader();
 
@@ -1940,7 +1918,7 @@ namespace WindowsFormsApplication1
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ooops, there's an error: " + ex.Message, "ERROR");               
+                MessageBox.Show("Ooops, there's an error: " + ex.Message, "ERROR");
             }
         }
     }

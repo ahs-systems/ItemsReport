@@ -153,6 +153,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblSelectIRL = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1.SuspendLayout();
             this.NPP.SuspendLayout();
             this.UUT.SuspendLayout();
@@ -173,10 +174,11 @@
             this.tabControl1.Controls.Add(this.OC);
             this.tabControl1.Controls.Add(this.Terms);
             this.tabControl1.Controls.Add(this.Trans);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.ImageList = this.imageList1;
             this.tabControl1.Location = new System.Drawing.Point(5, 134);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.Padding = new System.Drawing.Point(6, 6);
+            this.tabControl1.Padding = new System.Drawing.Point(10, 6);
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(945, 269);
             this.tabControl1.TabIndex = 0;
@@ -202,10 +204,11 @@
             this.NPP.Controls.Add(this.label30);
             this.NPP.Controls.Add(this.label2);
             this.NPP.Controls.Add(this.label6);
-            this.NPP.Location = new System.Drawing.Point(4, 36);
+            this.NPP.ImageIndex = 0;
+            this.NPP.Location = new System.Drawing.Point(4, 33);
             this.NPP.Name = "NPP";
             this.NPP.Padding = new System.Windows.Forms.Padding(3);
-            this.NPP.Size = new System.Drawing.Size(937, 229);
+            this.NPP.Size = new System.Drawing.Size(937, 232);
             this.NPP.TabIndex = 0;
             this.NPP.Text = "New Primary Positions";
             // 
@@ -226,9 +229,11 @@
             // 
             // txtOccCode_NPP
             // 
+            this.txtOccCode_NPP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOccCode_NPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOccCode_NPP.Location = new System.Drawing.Point(160, 114);
             this.txtOccCode_NPP.Name = "txtOccCode_NPP";
-            this.txtOccCode_NPP.Size = new System.Drawing.Size(69, 24);
+            this.txtOccCode_NPP.Size = new System.Drawing.Size(69, 22);
             this.txtOccCode_NPP.TabIndex = 3;
             this.txtOccCode_NPP.Tag = "txtOcc_NPP";
             this.txtOccCode_NPP.TextChanged += new System.EventHandler(this.txtOccCode_NPP_TextChanged);
@@ -253,9 +258,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(106, 150);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 18);
+            this.label7.Size = new System.Drawing.Size(52, 17);
             this.label7.TabIndex = 12;
             this.label7.Text = "Status:";
             // 
@@ -269,28 +275,33 @@
             "RPT"});
             this.txtStatus_NPP.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtStatus_NPP.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtStatus_NPP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtStatus_NPP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtStatus_NPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStatus_NPP.Location = new System.Drawing.Point(160, 150);
             this.txtStatus_NPP.Name = "txtStatus_NPP";
-            this.txtStatus_NPP.Size = new System.Drawing.Size(116, 24);
+            this.txtStatus_NPP.Size = new System.Drawing.Size(116, 22);
             this.txtStatus_NPP.TabIndex = 4;
             this.txtStatus_NPP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboSite_NPP_KeyPress);
             // 
             // txtOcc_NPP
             // 
             this.txtOcc_NPP.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtOcc_NPP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOcc_NPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOcc_NPP.Location = new System.Drawing.Point(327, 113);
             this.txtOcc_NPP.Name = "txtOcc_NPP";
-            this.txtOcc_NPP.Size = new System.Drawing.Size(387, 24);
+            this.txtOcc_NPP.Size = new System.Drawing.Size(387, 22);
             this.txtOcc_NPP.TabIndex = 9;
             this.txtOcc_NPP.TabStop = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(122, 46);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(121, 46);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 18);
+            this.label5.Size = new System.Drawing.Size(37, 17);
             this.label5.TabIndex = 8;
             this.label5.Text = "Unit:";
             // 
@@ -298,9 +309,11 @@
             // 
             this.txtUnit_NPP.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtUnit_NPP.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtUnit_NPP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUnit_NPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnit_NPP.Location = new System.Drawing.Point(160, 46);
             this.txtUnit_NPP.Name = "txtUnit_NPP";
-            this.txtUnit_NPP.Size = new System.Drawing.Size(185, 24);
+            this.txtUnit_NPP.Size = new System.Drawing.Size(185, 22);
             this.txtUnit_NPP.TabIndex = 2;
             this.txtUnit_NPP.Tag = "cboSite_NPP";
             this.txtUnit_NPP.Leave += new System.EventHandler(this.txtUnit_NPP_Leave);
@@ -308,18 +321,21 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(73, 78);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(77, 78);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 18);
+            this.label4.Size = new System.Drawing.Size(81, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Emp Name:";
             // 
             // txtEmpName_NPP
             // 
             this.txtEmpName_NPP.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtEmpName_NPP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmpName_NPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpName_NPP.Location = new System.Drawing.Point(160, 78);
             this.txtEmpName_NPP.Name = "txtEmpName_NPP";
-            this.txtEmpName_NPP.Size = new System.Drawing.Size(277, 24);
+            this.txtEmpName_NPP.Size = new System.Drawing.Size(277, 22);
             this.txtEmpName_NPP.TabIndex = 3;
             this.txtEmpName_NPP.TabStop = false;
             this.txtEmpName_NPP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboSite_NPP_KeyPress);
@@ -327,17 +343,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(105, 16);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(106, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 18);
+            this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Emp #:";
             // 
             // txtEmpNo_NPP
             // 
+            this.txtEmpNo_NPP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmpNo_NPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpNo_NPP.Location = new System.Drawing.Point(160, 16);
             this.txtEmpNo_NPP.Name = "txtEmpNo_NPP";
-            this.txtEmpNo_NPP.Size = new System.Drawing.Size(116, 24);
+            this.txtEmpNo_NPP.Size = new System.Drawing.Size(116, 22);
             this.txtEmpNo_NPP.TabIndex = 1;
             this.txtEmpNo_NPP.Tag = "txtEmpName_NPP";
             this.txtEmpNo_NPP.TextChanged += new System.EventHandler(this.txtEmpNo_NPP_TextChanged);
@@ -347,6 +366,8 @@
             // 
             this.cboSite_NPP.BackColor = System.Drawing.Color.Gainsboro;
             this.cboSite_NPP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSite_NPP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboSite_NPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSite_NPP.FormattingEnabled = true;
             this.cboSite_NPP.Items.AddRange(new object[] {
             "ACH",
@@ -357,7 +378,7 @@
             "SHC"});
             this.cboSite_NPP.Location = new System.Drawing.Point(405, 46);
             this.cboSite_NPP.Name = "cboSite_NPP";
-            this.cboSite_NPP.Size = new System.Drawing.Size(118, 26);
+            this.cboSite_NPP.Size = new System.Drawing.Size(118, 24);
             this.cboSite_NPP.TabIndex = 0;
             this.cboSite_NPP.TabStop = false;
             this.cboSite_NPP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboSite_NPP_KeyPress);
@@ -365,27 +386,30 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(32, 114);
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(37, 114);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(128, 18);
+            this.label30.Size = new System.Drawing.Size(121, 17);
             this.label30.TabIndex = 15;
             this.label30.Text = "Occupation Code:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(368, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 18);
+            this.label2.Size = new System.Drawing.Size(36, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Site:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(239, 114);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 18);
+            this.label6.Size = new System.Drawing.Size(84, 17);
             this.label6.TabIndex = 10;
             this.label6.Text = "Occupation:";
             // 
@@ -414,10 +438,11 @@
             this.UUT.Controls.Add(this.label11);
             this.UUT.Controls.Add(this.label12);
             this.UUT.Controls.Add(this.label9);
-            this.UUT.Location = new System.Drawing.Point(4, 36);
+            this.UUT.ImageIndex = 1;
+            this.UUT.Location = new System.Drawing.Point(4, 33);
             this.UUT.Name = "UUT";
             this.UUT.Padding = new System.Windows.Forms.Padding(3);
-            this.UUT.Size = new System.Drawing.Size(937, 229);
+            this.UUT.Size = new System.Drawing.Size(937, 232);
             this.UUT.TabIndex = 1;
             this.UUT.Text = "Unit to Unit Transfer";
             // 
@@ -447,19 +472,23 @@
             "RPT"});
             this.txtStatus_UUT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtStatus_UUT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtStatus_UUT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtStatus_UUT.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtStatus_UUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStatus_UUT.Location = new System.Drawing.Point(160, 151);
             this.txtStatus_UUT.Name = "txtStatus_UUT";
-            this.txtStatus_UUT.Size = new System.Drawing.Size(116, 24);
+            this.txtStatus_UUT.Size = new System.Drawing.Size(116, 22);
             this.txtStatus_UUT.TabIndex = 6;
             // 
             // txtTransTo_UUT
             // 
             this.txtTransTo_UUT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtTransTo_UUT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtTransTo_UUT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTransTo_UUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTransTo_UUT.Location = new System.Drawing.Point(448, 79);
             this.txtTransTo_UUT.Name = "txtTransTo_UUT";
-            this.txtTransTo_UUT.Size = new System.Drawing.Size(150, 24);
+            this.txtTransTo_UUT.Size = new System.Drawing.Size(150, 22);
             this.txtTransTo_UUT.TabIndex = 4;
             this.txtTransTo_UUT.Leave += new System.EventHandler(this.txtTransTo_UUT_Leave);
             // 
@@ -467,18 +496,22 @@
             // 
             this.txtTransFrom_UUT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtTransFrom_UUT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtTransFrom_UUT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTransFrom_UUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTransFrom_UUT.Location = new System.Drawing.Point(160, 79);
             this.txtTransFrom_UUT.Name = "txtTransFrom_UUT";
-            this.txtTransFrom_UUT.Size = new System.Drawing.Size(150, 24);
+            this.txtTransFrom_UUT.Size = new System.Drawing.Size(150, 22);
             this.txtTransFrom_UUT.TabIndex = 3;
             this.txtTransFrom_UUT.Tag = "cboSite_UUT";
             this.txtTransFrom_UUT.Leave += new System.EventHandler(this.txtUnit_NPP_Leave);
             // 
             // txtOccCode_UUT
             // 
+            this.txtOccCode_UUT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOccCode_UUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOccCode_UUT.Location = new System.Drawing.Point(160, 115);
             this.txtOccCode_UUT.Name = "txtOccCode_UUT";
-            this.txtOccCode_UUT.Size = new System.Drawing.Size(69, 24);
+            this.txtOccCode_UUT.Size = new System.Drawing.Size(69, 22);
             this.txtOccCode_UUT.TabIndex = 5;
             this.txtOccCode_UUT.Tag = "txtOcc_UUT";
             this.txtOccCode_UUT.TextChanged += new System.EventHandler(this.txtOccCode_NPP_TextChanged);
@@ -486,14 +519,18 @@
             // txtOcc_UUT
             // 
             this.txtOcc_UUT.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtOcc_UUT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOcc_UUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOcc_UUT.Location = new System.Drawing.Point(341, 115);
             this.txtOcc_UUT.Name = "txtOcc_UUT";
-            this.txtOcc_UUT.Size = new System.Drawing.Size(441, 24);
+            this.txtOcc_UUT.Size = new System.Drawing.Size(441, 22);
             this.txtOcc_UUT.TabIndex = 33;
             this.txtOcc_UUT.TabStop = false;
             // 
             // txtComments_UUT
             // 
+            this.txtComments_UUT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtComments_UUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComments_UUT.Location = new System.Drawing.Point(602, 9);
             this.txtComments_UUT.Multiline = true;
             this.txtComments_UUT.Name = "txtComments_UUT";
@@ -504,9 +541,11 @@
             // chkChangeInSite_UUT
             // 
             this.chkChangeInSite_UUT.AutoSize = true;
+            this.chkChangeInSite_UUT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkChangeInSite_UUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkChangeInSite_UUT.Location = new System.Drawing.Point(540, 155);
             this.chkChangeInSite_UUT.Name = "chkChangeInSite_UUT";
-            this.chkChangeInSite_UUT.Size = new System.Drawing.Size(250, 22);
+            this.chkChangeInSite_UUT.Size = new System.Drawing.Size(241, 21);
             this.chkChangeInSite_UUT.TabIndex = 8;
             this.chkChangeInSite_UUT.Text = "Change In Site (highlight in yellow)";
             this.chkChangeInSite_UUT.UseVisualStyleBackColor = true;
@@ -514,9 +553,11 @@
             // chkChangeInOcc_UUT
             // 
             this.chkChangeInOcc_UUT.AutoSize = true;
+            this.chkChangeInOcc_UUT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkChangeInOcc_UUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkChangeInOcc_UUT.Location = new System.Drawing.Point(299, 153);
             this.chkChangeInOcc_UUT.Name = "chkChangeInOcc_UUT";
-            this.chkChangeInOcc_UUT.Size = new System.Drawing.Size(201, 22);
+            this.chkChangeInOcc_UUT.Size = new System.Drawing.Size(192, 21);
             this.chkChangeInOcc_UUT.TabIndex = 7;
             this.chkChangeInOcc_UUT.Text = "Change In Occupation: (∆)";
             this.chkChangeInOcc_UUT.UseVisualStyleBackColor = true;
@@ -540,17 +581,21 @@
             // txtEmpName_UUT
             // 
             this.txtEmpName_UUT.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtEmpName_UUT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmpName_UUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpName_UUT.Location = new System.Drawing.Point(160, 43);
             this.txtEmpName_UUT.Name = "txtEmpName_UUT";
-            this.txtEmpName_UUT.Size = new System.Drawing.Size(277, 24);
+            this.txtEmpName_UUT.Size = new System.Drawing.Size(277, 22);
             this.txtEmpName_UUT.TabIndex = 2;
             this.txtEmpName_UUT.TabStop = false;
             // 
             // txtEmpNo_UUT
             // 
+            this.txtEmpNo_UUT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmpNo_UUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpNo_UUT.Location = new System.Drawing.Point(160, 7);
             this.txtEmpNo_UUT.Name = "txtEmpNo_UUT";
-            this.txtEmpNo_UUT.Size = new System.Drawing.Size(116, 24);
+            this.txtEmpNo_UUT.Size = new System.Drawing.Size(116, 22);
             this.txtEmpNo_UUT.TabIndex = 1;
             this.txtEmpNo_UUT.Tag = "txtEmpName_UUT";
             this.txtEmpNo_UUT.TextChanged += new System.EventHandler(this.txtEmpNo_NPP_TextChanged);
@@ -559,6 +604,8 @@
             // 
             this.cboSite_UUT.BackColor = System.Drawing.Color.Gainsboro;
             this.cboSite_UUT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSite_UUT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboSite_UUT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSite_UUT.FormattingEnabled = true;
             this.cboSite_UUT.Items.AddRange(new object[] {
             "ACH",
@@ -569,31 +616,33 @@
             "SHC"});
             this.cboSite_UUT.Location = new System.Drawing.Point(664, 78);
             this.cboSite_UUT.Name = "cboSite_UUT";
-            this.cboSite_UUT.Size = new System.Drawing.Size(118, 26);
+            this.cboSite_UUT.Size = new System.Drawing.Size(118, 24);
             this.cboSite_UUT.TabIndex = 14;
             this.cboSite_UUT.TabStop = false;
             // 
             // label31
             // 
             this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(255, 116);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(88, 18);
+            this.label31.Size = new System.Drawing.Size(84, 17);
             this.label31.TabIndex = 34;
             this.label31.Text = "Occupation:";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(348, 81);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(102, 18);
+            this.label14.Size = new System.Drawing.Size(99, 17);
             this.label14.TabIndex = 28;
             this.label14.Text = "Unit Trans To:";
             // 
             // label15
             // 
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(364, 7);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(234, 45);
@@ -604,54 +653,60 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(630, 81);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(37, 18);
+            this.label13.Size = new System.Drawing.Size(36, 17);
             this.label13.TabIndex = 15;
             this.label13.Text = "Site:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(110, 154);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 18);
+            this.label1.Size = new System.Drawing.Size(52, 17);
             this.label1.TabIndex = 25;
             this.label1.Text = "Status:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(44, 81);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(48, 81);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(120, 18);
+            this.label10.Size = new System.Drawing.Size(114, 17);
             this.label10.TabIndex = 21;
             this.label10.Text = "Unit Trans From:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(77, 44);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(81, 44);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(87, 18);
+            this.label11.Size = new System.Drawing.Size(81, 17);
             this.label11.TabIndex = 19;
             this.label11.Text = "Emp Name:";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(109, 7);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(110, 7);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 18);
+            this.label12.Size = new System.Drawing.Size(52, 17);
             this.label12.TabIndex = 17;
             this.label12.Text = "Emp #:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(36, 118);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(41, 118);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(128, 18);
+            this.label9.Size = new System.Drawing.Size(121, 17);
             this.label9.TabIndex = 36;
             this.label9.Text = "Occupation Code:";
             // 
@@ -674,10 +729,11 @@
             this.SC.Controls.Add(this.label22);
             this.SC.Controls.Add(this.label17);
             this.SC.Controls.Add(this.label23);
-            this.SC.Location = new System.Drawing.Point(4, 36);
+            this.SC.ImageIndex = 2;
+            this.SC.Location = new System.Drawing.Point(4, 33);
             this.SC.Name = "SC";
             this.SC.Padding = new System.Windows.Forms.Padding(3);
-            this.SC.Size = new System.Drawing.Size(937, 229);
+            this.SC.Size = new System.Drawing.Size(937, 232);
             this.SC.TabIndex = 2;
             this.SC.Text = "Status Change";
             // 
@@ -700,9 +756,11 @@
             // 
             this.txtUnit_SC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtUnit_SC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtUnit_SC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUnit_SC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnit_SC.Location = new System.Drawing.Point(146, 77);
             this.txtUnit_SC.Name = "txtUnit_SC";
-            this.txtUnit_SC.Size = new System.Drawing.Size(150, 24);
+            this.txtUnit_SC.Size = new System.Drawing.Size(150, 22);
             this.txtUnit_SC.TabIndex = 3;
             this.txtUnit_SC.Tag = "cboSite_SC";
             this.txtUnit_SC.Leave += new System.EventHandler(this.txtUnit_NPP_Leave);
@@ -717,10 +775,12 @@
             "RPT"});
             this.txtStatusTo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtStatusTo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtStatusTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtStatusTo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtStatusTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStatusTo.Location = new System.Drawing.Point(146, 143);
             this.txtStatusTo.Name = "txtStatusTo";
-            this.txtStatusTo.Size = new System.Drawing.Size(116, 24);
+            this.txtStatusTo.Size = new System.Drawing.Size(116, 22);
             this.txtStatusTo.TabIndex = 5;
             // 
             // txtStatusFrom
@@ -733,15 +793,19 @@
             "RPT"});
             this.txtStatusFrom.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtStatusFrom.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtStatusFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtStatusFrom.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtStatusFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStatusFrom.Location = new System.Drawing.Point(146, 110);
             this.txtStatusFrom.Name = "txtStatusFrom";
-            this.txtStatusFrom.Size = new System.Drawing.Size(116, 24);
+            this.txtStatusFrom.Size = new System.Drawing.Size(116, 22);
             this.txtStatusFrom.TabIndex = 4;
             // 
             // txtComment_SC
             // 
-            this.txtComment_SC.Location = new System.Drawing.Point(567, 11);
+            this.txtComment_SC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtComment_SC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComment_SC.Location = new System.Drawing.Point(562, 11);
             this.txtComment_SC.Multiline = true;
             this.txtComment_SC.Name = "txtComment_SC";
             this.txtComment_SC.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -751,9 +815,10 @@
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(481, 10);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(86, 18);
+            this.label16.Size = new System.Drawing.Size(78, 17);
             this.label16.TabIndex = 48;
             this.label16.Text = "Comments:";
             // 
@@ -775,17 +840,21 @@
             // txtEmpName_SC
             // 
             this.txtEmpName_SC.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtEmpName_SC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmpName_SC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpName_SC.Location = new System.Drawing.Point(146, 44);
             this.txtEmpName_SC.Name = "txtEmpName_SC";
-            this.txtEmpName_SC.Size = new System.Drawing.Size(277, 24);
+            this.txtEmpName_SC.Size = new System.Drawing.Size(277, 22);
             this.txtEmpName_SC.TabIndex = 2;
             this.txtEmpName_SC.TabStop = false;
             // 
             // txtEmpNo_SC
             // 
+            this.txtEmpNo_SC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmpNo_SC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpNo_SC.Location = new System.Drawing.Point(146, 11);
             this.txtEmpNo_SC.Name = "txtEmpNo_SC";
-            this.txtEmpNo_SC.Size = new System.Drawing.Size(116, 24);
+            this.txtEmpNo_SC.Size = new System.Drawing.Size(116, 22);
             this.txtEmpNo_SC.TabIndex = 1;
             this.txtEmpNo_SC.Tag = "txtEmpName_SC";
             this.txtEmpNo_SC.TextChanged += new System.EventHandler(this.txtEmpNo_NPP_TextChanged);
@@ -794,6 +863,8 @@
             // 
             this.cboSite_SC.BackColor = System.Drawing.Color.Gainsboro;
             this.cboSite_SC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSite_SC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboSite_SC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSite_SC.FormattingEnabled = true;
             this.cboSite_SC.Items.AddRange(new object[] {
             "ACH",
@@ -804,61 +875,67 @@
             "SHC"});
             this.cboSite_SC.Location = new System.Drawing.Point(390, 76);
             this.cboSite_SC.Name = "cboSite_SC";
-            this.cboSite_SC.Size = new System.Drawing.Size(118, 26);
+            this.cboSite_SC.Size = new System.Drawing.Size(118, 24);
             this.cboSite_SC.TabIndex = 33;
             this.cboSite_SC.TabStop = false;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(109, 77);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(38, 18);
+            this.label19.Size = new System.Drawing.Size(37, 17);
             this.label19.TabIndex = 42;
             this.label19.Text = "Unit:";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(53, 109);
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(58, 109);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(94, 18);
+            this.label20.Size = new System.Drawing.Size(88, 17);
             this.label20.TabIndex = 40;
             this.label20.Text = "Status From:";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(60, 45);
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(65, 45);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(87, 18);
+            this.label21.Size = new System.Drawing.Size(81, 17);
             this.label21.TabIndex = 38;
             this.label21.Text = "Emp Name:";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(92, 13);
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(94, 13);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(55, 18);
+            this.label22.Size = new System.Drawing.Size(52, 17);
             this.label22.TabIndex = 36;
             this.label22.Text = "Emp #:";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(71, 141);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(73, 141);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(76, 18);
+            this.label17.Size = new System.Drawing.Size(73, 17);
             this.label17.TabIndex = 50;
             this.label17.Text = "Status To:";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(354, 79);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(37, 18);
+            this.label23.Size = new System.Drawing.Size(36, 17);
             this.label23.TabIndex = 34;
             this.label23.Text = "Site:";
             // 
@@ -879,16 +956,17 @@
             this.OC.Controls.Add(this.cboSite_OC);
             this.OC.Controls.Add(this.label32);
             this.OC.Controls.Add(this.label29);
+            this.OC.Controls.Add(this.label28);
             this.OC.Controls.Add(this.label33);
             this.OC.Controls.Add(this.label24);
             this.OC.Controls.Add(this.label26);
             this.OC.Controls.Add(this.label27);
             this.OC.Controls.Add(this.label25);
-            this.OC.Controls.Add(this.label28);
-            this.OC.Location = new System.Drawing.Point(4, 36);
+            this.OC.ImageIndex = 3;
+            this.OC.Location = new System.Drawing.Point(4, 33);
             this.OC.Name = "OC";
             this.OC.Padding = new System.Windows.Forms.Padding(3);
-            this.OC.Size = new System.Drawing.Size(937, 229);
+            this.OC.Size = new System.Drawing.Size(937, 232);
             this.OC.TabIndex = 3;
             this.OC.Text = "Occupation Change";
             // 
@@ -911,27 +989,33 @@
             // 
             this.txtUnit_OC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtUnit_OC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtUnit_OC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUnit_OC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnit_OC.Location = new System.Drawing.Point(226, 80);
             this.txtUnit_OC.Name = "txtUnit_OC";
-            this.txtUnit_OC.Size = new System.Drawing.Size(150, 24);
+            this.txtUnit_OC.Size = new System.Drawing.Size(150, 22);
             this.txtUnit_OC.TabIndex = 2;
             this.txtUnit_OC.Tag = "cboSite_OC";
             this.txtUnit_OC.Leave += new System.EventHandler(this.txtUnit_NPP_Leave);
             // 
             // txtOccCodeTo_OC
             // 
+            this.txtOccCodeTo_OC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOccCodeTo_OC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOccCodeTo_OC.Location = new System.Drawing.Point(226, 152);
             this.txtOccCodeTo_OC.Name = "txtOccCodeTo_OC";
-            this.txtOccCodeTo_OC.Size = new System.Drawing.Size(69, 24);
+            this.txtOccCodeTo_OC.Size = new System.Drawing.Size(69, 22);
             this.txtOccCodeTo_OC.TabIndex = 4;
             this.txtOccCodeTo_OC.Tag = "txtOccTo_OC";
             this.txtOccCodeTo_OC.TextChanged += new System.EventHandler(this.txtOccCode_NPP_TextChanged);
             // 
             // txtOccCodeFrom_OC
             // 
+            this.txtOccCodeFrom_OC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOccCodeFrom_OC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOccCodeFrom_OC.Location = new System.Drawing.Point(226, 116);
             this.txtOccCodeFrom_OC.Name = "txtOccCodeFrom_OC";
-            this.txtOccCodeFrom_OC.Size = new System.Drawing.Size(69, 24);
+            this.txtOccCodeFrom_OC.Size = new System.Drawing.Size(69, 22);
             this.txtOccCodeFrom_OC.TabIndex = 3;
             this.txtOccCodeFrom_OC.Tag = "txtOccFrom_OC";
             this.txtOccCodeFrom_OC.TextChanged += new System.EventHandler(this.txtOccCode_NPP_TextChanged);
@@ -939,23 +1023,29 @@
             // txtOccTo_OC
             // 
             this.txtOccTo_OC.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtOccTo_OC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOccTo_OC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOccTo_OC.Location = new System.Drawing.Point(400, 152);
             this.txtOccTo_OC.Name = "txtOccTo_OC";
-            this.txtOccTo_OC.Size = new System.Drawing.Size(375, 24);
+            this.txtOccTo_OC.Size = new System.Drawing.Size(375, 22);
             this.txtOccTo_OC.TabIndex = 69;
             this.txtOccTo_OC.TabStop = false;
             // 
             // txtOccFrom_OC
             // 
             this.txtOccFrom_OC.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtOccFrom_OC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOccFrom_OC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOccFrom_OC.Location = new System.Drawing.Point(400, 117);
             this.txtOccFrom_OC.Name = "txtOccFrom_OC";
-            this.txtOccFrom_OC.Size = new System.Drawing.Size(375, 24);
+            this.txtOccFrom_OC.Size = new System.Drawing.Size(375, 22);
             this.txtOccFrom_OC.TabIndex = 65;
             this.txtOccFrom_OC.TabStop = false;
             // 
             // txtComments_OC
             // 
+            this.txtComments_OC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtComments_OC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComments_OC.Location = new System.Drawing.Point(617, 28);
             this.txtComments_OC.Multiline = true;
             this.txtComments_OC.Name = "txtComments_OC";
@@ -966,9 +1056,10 @@
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(614, 7);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(274, 18);
+            this.label18.Size = new System.Drawing.Size(259, 17);
             this.label18.TabIndex = 63;
             this.label18.Text = "Change Occupation Non-Primary Pools:";
             // 
@@ -990,17 +1081,21 @@
             // txtEmpName_OC
             // 
             this.txtEmpName_OC.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtEmpName_OC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmpName_OC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpName_OC.Location = new System.Drawing.Point(226, 41);
             this.txtEmpName_OC.Name = "txtEmpName_OC";
-            this.txtEmpName_OC.Size = new System.Drawing.Size(277, 24);
+            this.txtEmpName_OC.Size = new System.Drawing.Size(277, 22);
             this.txtEmpName_OC.TabIndex = 3;
             this.txtEmpName_OC.TabStop = false;
             // 
             // txtEmpNo_OC
             // 
+            this.txtEmpNo_OC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmpNo_OC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpNo_OC.Location = new System.Drawing.Point(226, 7);
             this.txtEmpNo_OC.Name = "txtEmpNo_OC";
-            this.txtEmpNo_OC.Size = new System.Drawing.Size(116, 24);
+            this.txtEmpNo_OC.Size = new System.Drawing.Size(116, 22);
             this.txtEmpNo_OC.TabIndex = 1;
             this.txtEmpNo_OC.Tag = "txtEmpName_OC";
             this.txtEmpNo_OC.TextChanged += new System.EventHandler(this.txtEmpNo_NPP_TextChanged);
@@ -1009,6 +1104,8 @@
             // 
             this.cboSite_OC.BackColor = System.Drawing.Color.Gainsboro;
             this.cboSite_OC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSite_OC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboSite_OC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSite_OC.FormattingEnabled = true;
             this.cboSite_OC.Items.AddRange(new object[] {
             "ACH",
@@ -1019,79 +1116,87 @@
             "SHC"});
             this.cboSite_OC.Location = new System.Drawing.Point(446, 78);
             this.cboSite_OC.Name = "cboSite_OC";
-            this.cboSite_OC.Size = new System.Drawing.Size(118, 26);
+            this.cboSite_OC.Size = new System.Drawing.Size(118, 24);
             this.cboSite_OC.TabIndex = 51;
             this.cboSite_OC.TabStop = false;
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(302, 154);
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(315, 154);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(88, 18);
+            this.label32.Size = new System.Drawing.Size(84, 17);
             this.label32.TabIndex = 70;
             this.label32.Text = "Occupation:";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(302, 117);
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(315, 117);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(88, 18);
+            this.label29.Size = new System.Drawing.Size(84, 17);
             this.label29.TabIndex = 66;
             this.label29.Text = "Occupation:";
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(75, 153);
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(83, 153);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(153, 18);
+            this.label33.Size = new System.Drawing.Size(145, 17);
             this.label33.TabIndex = 72;
             this.label33.Text = "Occupation Code TO:";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(190, 81);
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(191, 81);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(38, 18);
+            this.label24.Size = new System.Drawing.Size(37, 17);
             this.label24.TabIndex = 60;
             this.label24.Text = "Unit:";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(141, 42);
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(147, 42);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(87, 18);
+            this.label26.Size = new System.Drawing.Size(81, 17);
             this.label26.TabIndex = 56;
             this.label26.Text = "Emp Name:";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(173, 8);
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(176, 8);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(55, 18);
+            this.label27.Size = new System.Drawing.Size(52, 17);
             this.label27.TabIndex = 54;
             this.label27.Text = "Emp #:";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(51, 117);
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(63, 117);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(177, 18);
+            this.label25.Size = new System.Drawing.Size(165, 17);
             this.label25.TabIndex = 68;
             this.label25.Text = "Occupation Code FROM:";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.Location = new System.Drawing.Point(412, 81);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(37, 18);
+            this.label28.Size = new System.Drawing.Size(36, 17);
             this.label28.TabIndex = 52;
             this.label28.Text = "Site:";
             // 
@@ -1112,10 +1217,11 @@
             this.Terms.Controls.Add(this.label37);
             this.Terms.Controls.Add(this.label38);
             this.Terms.Controls.Add(this.label39);
-            this.Terms.Location = new System.Drawing.Point(4, 36);
+            this.Terms.ImageIndex = 4;
+            this.Terms.Location = new System.Drawing.Point(4, 33);
             this.Terms.Name = "Terms";
             this.Terms.Padding = new System.Windows.Forms.Padding(3);
-            this.Terms.Size = new System.Drawing.Size(937, 229);
+            this.Terms.Size = new System.Drawing.Size(937, 232);
             this.Terms.TabIndex = 4;
             this.Terms.Text = "Terminations";
             // 
@@ -1151,24 +1257,29 @@
             // 
             // dp_Terms
             // 
+            this.dp_Terms.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dp_Terms.Location = new System.Drawing.Point(218, 139);
             this.dp_Terms.Name = "dp_Terms";
-            this.dp_Terms.Size = new System.Drawing.Size(233, 24);
+            this.dp_Terms.Size = new System.Drawing.Size(233, 22);
             this.dp_Terms.TabIndex = 3;
             // 
             // txtUnit_Terms
             // 
             this.txtUnit_Terms.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtUnit_Terms.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtUnit_Terms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUnit_Terms.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnit_Terms.Location = new System.Drawing.Point(218, 56);
             this.txtUnit_Terms.Name = "txtUnit_Terms";
-            this.txtUnit_Terms.Size = new System.Drawing.Size(317, 24);
+            this.txtUnit_Terms.Size = new System.Drawing.Size(317, 22);
             this.txtUnit_Terms.TabIndex = 2;
             this.txtUnit_Terms.Tag = "cboSite_Terms";
             this.txtUnit_Terms.Leave += new System.EventHandler(this.txtUnit_Terms_Leave);
             // 
             // txtComments_Terms
             // 
+            this.txtComments_Terms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtComments_Terms.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComments_Terms.Location = new System.Drawing.Point(552, 122);
             this.txtComments_Terms.Multiline = true;
             this.txtComments_Terms.Name = "txtComments_Terms";
@@ -1179,27 +1290,32 @@
             // label36
             // 
             this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.LightGray;
-            this.label36.Location = new System.Drawing.Point(548, 101);
+            this.label36.Location = new System.Drawing.Point(551, 102);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(141, 18);
+            this.label36.Size = new System.Drawing.Size(129, 17);
             this.label36.TabIndex = 83;
             this.label36.Text = "Check / Comments:";
             // 
             // txtEmpName_Terms
             // 
             this.txtEmpName_Terms.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtEmpName_Terms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmpName_Terms.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpName_Terms.Location = new System.Drawing.Point(218, 98);
             this.txtEmpName_Terms.Name = "txtEmpName_Terms";
-            this.txtEmpName_Terms.Size = new System.Drawing.Size(277, 24);
+            this.txtEmpName_Terms.Size = new System.Drawing.Size(277, 22);
             this.txtEmpName_Terms.TabIndex = 3;
             this.txtEmpName_Terms.TabStop = false;
             // 
             // txtEmpNo_Terms
             // 
+            this.txtEmpNo_Terms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmpNo_Terms.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpNo_Terms.Location = new System.Drawing.Point(218, 18);
             this.txtEmpNo_Terms.Name = "txtEmpNo_Terms";
-            this.txtEmpNo_Terms.Size = new System.Drawing.Size(116, 24);
+            this.txtEmpNo_Terms.Size = new System.Drawing.Size(116, 22);
             this.txtEmpNo_Terms.TabIndex = 1;
             this.txtEmpNo_Terms.Tag = "txtEmpName_Terms";
             this.txtEmpNo_Terms.TextChanged += new System.EventHandler(this.txtEmpNo_NPP_TextChanged);
@@ -1208,6 +1324,8 @@
             // 
             this.cboSite_Terms.BackColor = System.Drawing.Color.Gainsboro;
             this.cboSite_Terms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSite_Terms.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboSite_Terms.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSite_Terms.FormattingEnabled = true;
             this.cboSite_Terms.Items.AddRange(new object[] {
             "ACH",
@@ -1218,57 +1336,62 @@
             "SHC"});
             this.cboSite_Terms.Location = new System.Drawing.Point(623, 56);
             this.cboSite_Terms.Name = "cboSite_Terms";
-            this.cboSite_Terms.Size = new System.Drawing.Size(118, 26);
+            this.cboSite_Terms.Size = new System.Drawing.Size(118, 24);
             this.cboSite_Terms.TabIndex = 76;
             this.cboSite_Terms.TabStop = false;
             // 
             // label40
             // 
             this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label40.ForeColor = System.Drawing.Color.LightGray;
             this.label40.Location = new System.Drawing.Point(584, 59);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(37, 18);
+            this.label40.Size = new System.Drawing.Size(36, 17);
             this.label40.TabIndex = 77;
             this.label40.Text = "Site:";
             // 
             // label41
             // 
             this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.LightGray;
-            this.label41.Location = new System.Drawing.Point(36, 141);
+            this.label41.Location = new System.Drawing.Point(41, 141);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(185, 18);
+            this.label41.Size = new System.Drawing.Size(179, 17);
             this.label41.TabIndex = 86;
             this.label41.Text = "Termination Effective Date:";
             // 
             // label37
             // 
             this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.ForeColor = System.Drawing.Color.LightGray;
             this.label37.Location = new System.Drawing.Point(183, 58);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(38, 18);
+            this.label37.Size = new System.Drawing.Size(37, 17);
             this.label37.TabIndex = 82;
             this.label37.Text = "Unit:";
             // 
             // label38
             // 
             this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.ForeColor = System.Drawing.Color.LightGray;
-            this.label38.Location = new System.Drawing.Point(134, 100);
+            this.label38.Location = new System.Drawing.Point(139, 100);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(87, 18);
+            this.label38.Size = new System.Drawing.Size(81, 17);
             this.label38.TabIndex = 81;
             this.label38.Text = "Emp Name:";
             // 
             // label39
             // 
             this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.ForeColor = System.Drawing.Color.LightGray;
-            this.label39.Location = new System.Drawing.Point(166, 20);
+            this.label39.Location = new System.Drawing.Point(168, 20);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(55, 18);
+            this.label39.Size = new System.Drawing.Size(52, 17);
             this.label39.TabIndex = 79;
             this.label39.Text = "Emp #:";
             // 
@@ -1281,17 +1404,18 @@
             this.Trans.Controls.Add(this.txtComments_Trans);
             this.Trans.Controls.Add(this.label47);
             this.Trans.Controls.Add(this.txtUnitFrom_Trans);
-            this.Trans.Controls.Add(this.label42);
             this.Trans.Controls.Add(this.txtEmpName_Trans);
             this.Trans.Controls.Add(this.txtEmpNo_Trans);
-            this.Trans.Controls.Add(this.label44);
             this.Trans.Controls.Add(this.cboSite_Trans);
             this.Trans.Controls.Add(this.label45);
             this.Trans.Controls.Add(this.label46);
             this.Trans.Controls.Add(this.label43);
-            this.Trans.Location = new System.Drawing.Point(4, 36);
+            this.Trans.Controls.Add(this.label42);
+            this.Trans.Controls.Add(this.label44);
+            this.Trans.ImageIndex = 5;
+            this.Trans.Location = new System.Drawing.Point(4, 33);
             this.Trans.Name = "Trans";
-            this.Trans.Size = new System.Drawing.Size(937, 229);
+            this.Trans.Size = new System.Drawing.Size(937, 232);
             this.Trans.TabIndex = 5;
             this.Trans.Text = "Transfers";
             // 
@@ -1312,9 +1436,11 @@
             // 
             // txtUnitTo_Trans
             // 
+            this.txtUnitTo_Trans.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUnitTo_Trans.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnitTo_Trans.Location = new System.Drawing.Point(161, 105);
             this.txtUnitTo_Trans.Name = "txtUnitTo_Trans";
-            this.txtUnitTo_Trans.Size = new System.Drawing.Size(277, 24);
+            this.txtUnitTo_Trans.Size = new System.Drawing.Size(277, 22);
             this.txtUnitTo_Trans.TabIndex = 4;
             // 
             // btnSave_Trans
@@ -1334,6 +1460,8 @@
             // 
             // txtComments_Trans
             // 
+            this.txtComments_Trans.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtComments_Trans.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComments_Trans.Location = new System.Drawing.Point(478, 131);
             this.txtComments_Trans.Multiline = true;
             this.txtComments_Trans.Name = "txtComments_Trans";
@@ -1344,10 +1472,11 @@
             // label47
             // 
             this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label47.ForeColor = System.Drawing.Color.White;
             this.label47.Location = new System.Drawing.Point(475, 110);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(141, 18);
+            this.label47.Size = new System.Drawing.Size(129, 17);
             this.label47.TabIndex = 92;
             this.label47.Text = "Check / Comments:";
             // 
@@ -1355,9 +1484,11 @@
             // 
             this.txtUnitFrom_Trans.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtUnitFrom_Trans.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtUnitFrom_Trans.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUnitFrom_Trans.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnitFrom_Trans.Location = new System.Drawing.Point(161, 56);
             this.txtUnitFrom_Trans.Name = "txtUnitFrom_Trans";
-            this.txtUnitFrom_Trans.Size = new System.Drawing.Size(277, 24);
+            this.txtUnitFrom_Trans.Size = new System.Drawing.Size(277, 22);
             this.txtUnitFrom_Trans.TabIndex = 3;
             this.txtUnitFrom_Trans.Tag = "cboSite_Trans";
             this.txtUnitFrom_Trans.Leave += new System.EventHandler(this.txtUnit_Terms_Leave);
@@ -1365,27 +1496,32 @@
             // label42
             // 
             this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.ForeColor = System.Drawing.Color.White;
-            this.label42.Location = new System.Drawing.Point(354, 17);
+            this.label42.Location = new System.Drawing.Point(369, 14);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(87, 18);
+            this.label42.Size = new System.Drawing.Size(81, 17);
             this.label42.TabIndex = 87;
             this.label42.Text = "Emp Name:";
             // 
             // txtEmpName_Trans
             // 
             this.txtEmpName_Trans.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtEmpName_Trans.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmpName_Trans.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpName_Trans.Location = new System.Drawing.Point(447, 14);
             this.txtEmpName_Trans.Name = "txtEmpName_Trans";
-            this.txtEmpName_Trans.Size = new System.Drawing.Size(277, 24);
+            this.txtEmpName_Trans.Size = new System.Drawing.Size(277, 22);
             this.txtEmpName_Trans.TabIndex = 2;
             this.txtEmpName_Trans.TabStop = false;
             // 
             // txtEmpNo_Trans
             // 
+            this.txtEmpNo_Trans.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmpNo_Trans.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpNo_Trans.Location = new System.Drawing.Point(161, 13);
             this.txtEmpNo_Trans.Name = "txtEmpNo_Trans";
-            this.txtEmpNo_Trans.Size = new System.Drawing.Size(116, 24);
+            this.txtEmpNo_Trans.Size = new System.Drawing.Size(116, 22);
             this.txtEmpNo_Trans.TabIndex = 1;
             this.txtEmpNo_Trans.Tag = "txtEmpName_Trans";
             this.txtEmpNo_Trans.TextChanged += new System.EventHandler(this.txtEmpNo_NPP_TextChanged);
@@ -1393,10 +1529,11 @@
             // label44
             // 
             this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.ForeColor = System.Drawing.Color.White;
-            this.label44.Location = new System.Drawing.Point(477, 59);
+            this.label44.Location = new System.Drawing.Point(485, 58);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(37, 18);
+            this.label44.Size = new System.Drawing.Size(36, 17);
             this.label44.TabIndex = 83;
             this.label44.Text = "Site:";
             // 
@@ -1404,6 +1541,8 @@
             // 
             this.cboSite_Trans.BackColor = System.Drawing.Color.Gainsboro;
             this.cboSite_Trans.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSite_Trans.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboSite_Trans.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSite_Trans.FormattingEnabled = true;
             this.cboSite_Trans.Items.AddRange(new object[] {
             "ACH",
@@ -1414,37 +1553,40 @@
             "SHC"});
             this.cboSite_Trans.Location = new System.Drawing.Point(520, 56);
             this.cboSite_Trans.Name = "cboSite_Trans";
-            this.cboSite_Trans.Size = new System.Drawing.Size(118, 26);
+            this.cboSite_Trans.Size = new System.Drawing.Size(118, 24);
             this.cboSite_Trans.TabIndex = 82;
             this.cboSite_Trans.TabStop = false;
             // 
             // label45
             // 
             this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label45.ForeColor = System.Drawing.Color.White;
-            this.label45.Location = new System.Drawing.Point(44, 59);
+            this.label45.Location = new System.Drawing.Point(49, 59);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(120, 18);
+            this.label45.Size = new System.Drawing.Size(114, 17);
             this.label45.TabIndex = 88;
             this.label45.Text = "Unit Trans From:";
             // 
             // label46
             // 
             this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.ForeColor = System.Drawing.Color.White;
-            this.label46.Location = new System.Drawing.Point(62, 106);
+            this.label46.Location = new System.Drawing.Point(64, 106);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(102, 18);
+            this.label46.Size = new System.Drawing.Size(99, 17);
             this.label46.TabIndex = 89;
             this.label46.Text = "Unit Trans To:";
             // 
             // label43
             // 
             this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.ForeColor = System.Drawing.Color.White;
-            this.label43.Location = new System.Drawing.Point(109, 14);
+            this.label43.Location = new System.Drawing.Point(111, 14);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(55, 18);
+            this.label43.Size = new System.Drawing.Size(52, 17);
             this.label43.TabIndex = 85;
             this.label43.Text = "Emp #:";
             // 
@@ -1465,6 +1607,8 @@
             // cboPP
             // 
             this.cboPP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboPP.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPP.FormattingEnabled = true;
             this.cboPP.Items.AddRange(new object[] {
             "01",
@@ -1493,9 +1637,9 @@
             "24",
             "25",
             "26"});
-            this.cboPP.Location = new System.Drawing.Point(92, 77);
+            this.cboPP.Location = new System.Drawing.Point(92, 76);
             this.cboPP.Name = "cboPP";
-            this.cboPP.Size = new System.Drawing.Size(65, 21);
+            this.cboPP.Size = new System.Drawing.Size(65, 22);
             this.cboPP.TabIndex = 1;
             // 
             // label34
@@ -1521,23 +1665,27 @@
             // cboYearPP
             // 
             this.cboYearPP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboYearPP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboYearPP.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboYearPP.FormattingEnabled = true;
-            this.cboYearPP.Location = new System.Drawing.Point(209, 77);
+            this.cboYearPP.Location = new System.Drawing.Point(209, 76);
             this.cboYearPP.Name = "cboYearPP";
-            this.cboYearPP.Size = new System.Drawing.Size(140, 21);
+            this.cboYearPP.Size = new System.Drawing.Size(140, 22);
             this.cboYearPP.TabIndex = 2;
             // 
             // cboItemsReport
             // 
             this.cboItemsReport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboItemsReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboItemsReport.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboItemsReport.FormattingEnabled = true;
             this.cboItemsReport.Items.AddRange(new object[] {
             "Items Report A",
             "Items Report B",
             "Items Report C"});
-            this.cboItemsReport.Location = new System.Drawing.Point(374, 77);
+            this.cboItemsReport.Location = new System.Drawing.Point(374, 76);
             this.cboItemsReport.Name = "cboItemsReport";
-            this.cboItemsReport.Size = new System.Drawing.Size(140, 21);
+            this.cboItemsReport.Size = new System.Drawing.Size(140, 22);
             this.cboItemsReport.TabIndex = 3;
             this.cboItemsReport.SelectedIndexChanged += new System.EventHandler(this.cboItemsReport_SelectedIndexChanged);
             // 
@@ -1579,7 +1727,7 @@
             // 
             this.mnuWorkingStatus.Image = ((System.Drawing.Image)(resources.GetObject("mnuWorkingStatus.Image")));
             this.mnuWorkingStatus.Name = "mnuWorkingStatus";
-            this.mnuWorkingStatus.Size = new System.Drawing.Size(198, 24);
+            this.mnuWorkingStatus.Size = new System.Drawing.Size(197, 24);
             this.mnuWorkingStatus.Text = "Who\'s working on it?";
             this.mnuWorkingStatus.Click += new System.EventHandler(this.mnuWorkingStatus_Click);
             // 
@@ -1587,7 +1735,7 @@
             // 
             this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -1595,7 +1743,7 @@
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(64, 4);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // lblStatus
             // 
@@ -1616,6 +1764,17 @@
             this.lblSelectIRL.Size = new System.Drawing.Size(676, 25);
             this.lblSelectIRL.TabIndex = 61;
             this.lblSelectIRL.Text = "Please select first the Items Report Letter from the drop down.";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "doc4.png");
+            this.imageList1.Images.SetKeyName(1, "doc1.png");
+            this.imageList1.Images.SetKeyName(2, "doc2.png");
+            this.imageList1.Images.SetKeyName(3, "doc3.png");
+            this.imageList1.Images.SetKeyName(4, "file1.png");
+            this.imageList1.Images.SetKeyName(5, "doc5.png");
             // 
             // ItemsReport
             // 
@@ -1641,7 +1800,7 @@
             this.MaximizeBox = false;
             this.Name = "ItemsReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Items Report v2017.08.18";
+            this.Text = "Items Report v2017.09.28";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ItemsReport_FormClosing);
             this.Load += new System.EventHandler(this.ItemsReport_Load);
             this.Shown += new System.EventHandler(this.ItemsReport_Shown);
@@ -1790,6 +1949,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblSelectIRL;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 
