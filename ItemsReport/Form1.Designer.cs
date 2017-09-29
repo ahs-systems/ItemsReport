@@ -103,12 +103,12 @@
             this.cboSite_OC = new System.Windows.Forms.ComboBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
             this.Terms = new System.Windows.Forms.TabPage();
             this.btnCancel_Terms = new System.Windows.Forms.Button();
             this.btnSave_Terms = new System.Windows.Forms.Button();
@@ -131,14 +131,15 @@
             this.txtComments_Trans = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
             this.txtUnitFrom_Trans = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
             this.txtEmpName_Trans = new System.Windows.Forms.TextBox();
             this.txtEmpNo_Trans = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
             this.cboSite_Trans = new System.Windows.Forms.ComboBox();
             this.label45 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.cboPP = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
@@ -153,7 +154,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblSelectIRL = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1.SuspendLayout();
             this.NPP.SuspendLayout();
             this.UUT.SuspendLayout();
@@ -1140,6 +1140,16 @@
             this.label29.TabIndex = 66;
             this.label29.Text = "Occupation:";
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(412, 81);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(36, 17);
+            this.label28.TabIndex = 52;
+            this.label28.Text = "Site:";
+            // 
             // label33
             // 
             this.label33.AutoSize = true;
@@ -1189,16 +1199,6 @@
             this.label25.Size = new System.Drawing.Size(165, 17);
             this.label25.TabIndex = 68;
             this.label25.Text = "Occupation Code FROM:";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(412, 81);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(36, 17);
-            this.label28.TabIndex = 52;
-            this.label28.Text = "Site:";
             // 
             // Terms
             // 
@@ -1493,17 +1493,6 @@
             this.txtUnitFrom_Trans.Tag = "cboSite_Trans";
             this.txtUnitFrom_Trans.Leave += new System.EventHandler(this.txtUnit_Terms_Leave);
             // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.ForeColor = System.Drawing.Color.White;
-            this.label42.Location = new System.Drawing.Point(369, 14);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(81, 17);
-            this.label42.TabIndex = 87;
-            this.label42.Text = "Emp Name:";
-            // 
             // txtEmpName_Trans
             // 
             this.txtEmpName_Trans.BackColor = System.Drawing.Color.Gainsboro;
@@ -1525,17 +1514,6 @@
             this.txtEmpNo_Trans.TabIndex = 1;
             this.txtEmpNo_Trans.Tag = "txtEmpName_Trans";
             this.txtEmpNo_Trans.TextChanged += new System.EventHandler(this.txtEmpNo_NPP_TextChanged);
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.ForeColor = System.Drawing.Color.White;
-            this.label44.Location = new System.Drawing.Point(485, 58);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(36, 17);
-            this.label44.TabIndex = 83;
-            this.label44.Text = "Site:";
             // 
             // cboSite_Trans
             // 
@@ -1590,6 +1568,39 @@
             this.label43.TabIndex = 85;
             this.label43.Text = "Emp #:";
             // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.ForeColor = System.Drawing.Color.White;
+            this.label42.Location = new System.Drawing.Point(369, 14);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(81, 17);
+            this.label42.TabIndex = 87;
+            this.label42.Text = "Emp Name:";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.ForeColor = System.Drawing.Color.White;
+            this.label44.Location = new System.Drawing.Point(485, 58);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(36, 17);
+            this.label44.TabIndex = 83;
+            this.label44.Text = "Site:";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "doc4.png");
+            this.imageList1.Images.SetKeyName(1, "doc1.png");
+            this.imageList1.Images.SetKeyName(2, "doc2.png");
+            this.imageList1.Images.SetKeyName(3, "doc3.png");
+            this.imageList1.Images.SetKeyName(4, "file1.png");
+            this.imageList1.Images.SetKeyName(5, "doc5.png");
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -1608,7 +1619,7 @@
             // 
             this.cboPP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboPP.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPP.FormattingEnabled = true;
             this.cboPP.Items.AddRange(new object[] {
             "01",
@@ -1639,26 +1650,28 @@
             "26"});
             this.cboPP.Location = new System.Drawing.Point(92, 76);
             this.cboPP.Name = "cboPP";
-            this.cboPP.Size = new System.Drawing.Size(65, 22);
+            this.cboPP.Size = new System.Drawing.Size(65, 24);
             this.cboPP.TabIndex = 1;
             // 
             // label34
             // 
             this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.label34.Location = new System.Drawing.Point(14, 79);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(73, 13);
+            this.label34.Size = new System.Drawing.Size(81, 17);
             this.label34.TabIndex = 55;
             this.label34.Text = "Pay Period:";
             // 
             // label35
             // 
             this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.label35.Location = new System.Drawing.Point(169, 80);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(37, 13);
+            this.label35.Size = new System.Drawing.Size(42, 17);
             this.label35.TabIndex = 57;
             this.label35.Text = "Year:";
             // 
@@ -1666,18 +1679,18 @@
             // 
             this.cboYearPP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboYearPP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboYearPP.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboYearPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboYearPP.FormattingEnabled = true;
             this.cboYearPP.Location = new System.Drawing.Point(209, 76);
             this.cboYearPP.Name = "cboYearPP";
-            this.cboYearPP.Size = new System.Drawing.Size(140, 22);
+            this.cboYearPP.Size = new System.Drawing.Size(140, 24);
             this.cboYearPP.TabIndex = 2;
             // 
             // cboItemsReport
             // 
             this.cboItemsReport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboItemsReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboItemsReport.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboItemsReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboItemsReport.FormattingEnabled = true;
             this.cboItemsReport.Items.AddRange(new object[] {
             "Items Report A",
@@ -1685,7 +1698,7 @@
             "Items Report C"});
             this.cboItemsReport.Location = new System.Drawing.Point(374, 76);
             this.cboItemsReport.Name = "cboItemsReport";
-            this.cboItemsReport.Size = new System.Drawing.Size(140, 22);
+            this.cboItemsReport.Size = new System.Drawing.Size(140, 24);
             this.cboItemsReport.TabIndex = 3;
             this.cboItemsReport.SelectedIndexChanged += new System.EventHandler(this.cboItemsReport_SelectedIndexChanged);
             // 
@@ -1765,17 +1778,6 @@
             this.lblSelectIRL.TabIndex = 61;
             this.lblSelectIRL.Text = "Please select first the Items Report Letter from the drop down.";
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "doc4.png");
-            this.imageList1.Images.SetKeyName(1, "doc1.png");
-            this.imageList1.Images.SetKeyName(2, "doc2.png");
-            this.imageList1.Images.SetKeyName(3, "doc3.png");
-            this.imageList1.Images.SetKeyName(4, "file1.png");
-            this.imageList1.Images.SetKeyName(5, "doc5.png");
-            // 
             // ItemsReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -1800,7 +1802,7 @@
             this.MaximizeBox = false;
             this.Name = "ItemsReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Items Report v2017.09.28";
+            this.Text = "Items Report v2017.09.29";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ItemsReport_FormClosing);
             this.Load += new System.EventHandler(this.ItemsReport_Load);
             this.Shown += new System.EventHandler(this.ItemsReport_Shown);

@@ -493,7 +493,7 @@ namespace WindowsFormsApplication1
                 {
                     ExcelWorksheet ws;
 
-                    string _PayPeriod = "Pay Period: " + cboPP.SelectedItem + "/" + cboYearPP.SelectedItem + "   Changes Effective " + GetStartPP(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString());
+                    string _PayPeriod = "Processed on Pay Period " + cboPP.SelectedItem + "-" + cboYearPP.SelectedItem; // + "   Changes Effective " + GetStartPP(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString());
 
                     using (SqlConnection myConnection = new SqlConnection())
                     {
