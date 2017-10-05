@@ -22,7 +22,6 @@ namespace WindowsFormsApplication1
 
         private WorkingStatus workingStatus;
 
-
         public ItemsReport()
         {
             InitializeComponent();
@@ -43,7 +42,7 @@ namespace WindowsFormsApplication1
             txtUnit_NPP.AutoCompleteCustomSource = txtTransFrom_UUT.AutoCompleteCustomSource = txtTransTo_UUT.AutoCompleteCustomSource = txtUnit_SC.AutoCompleteCustomSource = txtUnit_OC.AutoCompleteCustomSource = unitsShortDesc;
 
             PopulateUnitLongDesc(ref unitsLongDesc);
-            txtUnit_Terms.AutoCompleteCustomSource = txtUnitFrom_Trans.AutoCompleteCustomSource = unitsLongDesc;            
+            txtUnit_Terms.AutoCompleteCustomSource = txtUnitFrom_Trans.AutoCompleteCustomSource = unitsLongDesc;
         }
 
         private int GetSiteNum_ShortDesc(string _unitShortDesc)
@@ -217,18 +216,18 @@ namespace WindowsFormsApplication1
 
             try
             {
+                string _pp;
+                string _ppYear;
+                string _ItemsReportLetter;
 
                 using (SqlConnection myConnection = new SqlConnection())
                 {
+
                     //myConnection.ConnectionString = @"Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=" + Application.StartupPath + @"\items.mdb;Uid=Admin;Pwd=;";
                     myConnection.ConnectionString = Common.SystemsServer;
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
-
-                    string _pp;
-                    string _ppYear;
-                    string _ItemsReportLetter;
 
                     if (((Button)sender).Text == "Save")
                     {
@@ -263,22 +262,23 @@ namespace WindowsFormsApplication1
 
                     myCommand.ExecuteNonQuery();
                     myCommand.Dispose();
-
-                    if (((Button)sender).Text == "Save")
-                    {
-                        MessageBox.Show("Successfully Saved!", "Confirmation");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Successfully Updated!", "Confirmation");
-                        HideCancelBtn((Control)sender, 0, "NPP");
-                    }
-
-                    _frmReport.Load_NPP_Data(_pp, _ppYear, _ItemsReportLetter);
-                    _frmReport.Show();
-                    _frmReport.tabControl1.SelectedIndex = 0;
-                    ClearForm(tabControl1.TabPages[0]);
                 }
+
+                if (((Button)sender).Text == "Save")
+                {
+                    MessageBox.Show("Successfully Saved!", "Confirmation");
+                }
+                else
+                {
+                    MessageBox.Show("Successfully Updated!", "Confirmation");
+                    HideCancelBtn((Control)sender, 0, "NPP");
+                }
+
+                _frmReport.Load_NPP_Data(_pp, _ppYear, _ItemsReportLetter);
+                _frmReport.Show();
+                _frmReport.tabControl1.SelectedIndex = 0;
+                ClearForm(tabControl1.TabPages[0]);
+
             }
             catch (Exception ex)
             {
