@@ -1604,7 +1604,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.Location = new System.Drawing.Point(794, 65);
             this.button1.Name = "button1";
@@ -1705,7 +1705,7 @@
             // btnViewRpt
             // 
             this.btnViewRpt.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnViewRpt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnViewRpt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewRpt.Image = ((System.Drawing.Image)(resources.GetObject("btnViewRpt.Image")));
             this.btnViewRpt.Location = new System.Drawing.Point(521, 65);
             this.btnViewRpt.Name = "btnViewRpt";
@@ -1723,7 +1723,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(954, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(954, 27);
             this.menuStrip1.TabIndex = 58;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1733,14 +1733,14 @@
             this.mnuWorkingStatus,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(41, 23);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // mnuWorkingStatus
             // 
             this.mnuWorkingStatus.Image = ((System.Drawing.Image)(resources.GetObject("mnuWorkingStatus.Image")));
             this.mnuWorkingStatus.Name = "mnuWorkingStatus";
-            this.mnuWorkingStatus.Size = new System.Drawing.Size(197, 24);
+            this.mnuWorkingStatus.Size = new System.Drawing.Size(209, 24);
             this.mnuWorkingStatus.Text = "Who\'s working on it?";
             this.mnuWorkingStatus.Click += new System.EventHandler(this.mnuWorkingStatus_Click);
             // 
@@ -1748,7 +1748,7 @@
             // 
             this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(209, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -1802,7 +1802,7 @@
             this.MaximizeBox = false;
             this.Name = "ItemsReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Items Report v2017.09.29";
+            this.Text = "Items Report v2017.10.11";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ItemsReport_FormClosing);
             this.Load += new System.EventHandler(this.ItemsReport_Load);
             this.Shown += new System.EventHandler(this.ItemsReport_Shown);

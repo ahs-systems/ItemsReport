@@ -429,7 +429,7 @@ namespace WindowsFormsApplication1
 
                     SqlCommand myCommand = myConnection.CreateCommand();
 
-                    myCommand.CommandText = "SELECT LTRIM(RTRIM(O_CODE)) + ' - ' + O_DESC 'DESC' FROM OCCUPATION WHERE O_CODE LIKE @V_O_CODE order by o_code";
+                    myCommand.CommandText = "SELECT LTRIM(RTRIM(O_CODE)) + ' - ' + O_DESC 'DESC' FROM OCCUPATION WHERE O_CODE LIKE @V_O_CODE AND O_OccClassID <> 612 order by o_code";
 
                     myCommand.Parameters.Add(new SqlParameter("V_O_CODE", _code + "%"));
                     SqlDataReader myReader = myCommand.ExecuteReader();
