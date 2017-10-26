@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1
 {
@@ -57,12 +54,13 @@ namespace WindowsFormsApplication1
                 tabControl1.TabPages[1].Show();
             }
 
-            Load_UUT_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());            
+            Load_UUT_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
             Load_NPP_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
             Load_SC_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
             Load_OC_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
             Load_Terms_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
             Load_Trans_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
+            Load_NFPChecking();
         }
 
         public void Load_Trans_Data(string _pp, string _ppYear, string _IRL)
@@ -179,7 +177,7 @@ namespace WindowsFormsApplication1
                                         "from ItemsRpt_UnitToUnitTransfer U join Sites S on U.Site = S.SiteID WHERE U.PayPeriod = @_PP AND " +
                                         "U.PayPeriod_Year = @_PPYear and U.ItemsReportLetter = @_IRL Order By U.Site, U.Emp_Name, U.EnteredDate";
 
-                    
+
 
                     using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
                     {
@@ -191,7 +189,7 @@ namespace WindowsFormsApplication1
                         DataTable t = new DataTable();
                         da.Fill(t);
                         dgvUUT.DataSource = t;
-                                               
+
                         foreach (DataGridViewColumn column in dgvUUT.Columns)
                         {
                             column.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -200,14 +198,14 @@ namespace WindowsFormsApplication1
 
                         foreach (DataGridViewRow row in dgvUUT.Rows)
                         {
-                           if (row.Cells[dgvUUT.Columns.Count-1].Value.ToString().ToUpper() == "TRUE")
+                            if (row.Cells[dgvUUT.Columns.Count - 1].Value.ToString().ToUpper() == "TRUE")
                             {
-                                row.DefaultCellStyle.BackColor = Color.Yellow;                                
+                                row.DefaultCellStyle.BackColor = Color.Yellow;
                             }
-                        }                                                
+                        }
 
                         //Hide Record ID and ChangeInSite Column
-                        dgvUUT.Columns[1].Visible = dgvUUT.Columns[dgvUUT.Columns.Count-1].Visible = false;
+                        dgvUUT.Columns[1].Visible = dgvUUT.Columns[dgvUUT.Columns.Count - 1].Visible = false;
                     }
                 }
             }
@@ -231,7 +229,7 @@ namespace WindowsFormsApplication1
 
                     _dgv.DataSource = null;
                     _dgv.Refresh();
-                    
+
                     string _sqlString = "SELECT ID, S.SiteDesc, N.Emp_Num, N.Emp_Name, N.Unit, N.Occupation, N.Status, N.EnteredBy, N.EnteredDate " +
                                  "FROM ItemsRpt_NewPrimaryPositions N JOIN SITES S ON N.Site = S.SiteID WHERE N.PayPeriod = @_PP AND " +
                                  "N.PayPeriod_Year = @_PPYear and N.ItemsReportLetter = @_IRL ORDER BY N.Site, N.Emp_Name, N.EnteredDate";
@@ -251,7 +249,7 @@ namespace WindowsFormsApplication1
                         {
                             column.SortMode = DataGridViewColumnSortMode.NotSortable;
                             column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        }                       
+                        }
 
                         //Hide Record ID Column
                         _dgv.Columns[0].Visible = false;
@@ -278,13 +276,13 @@ namespace WindowsFormsApplication1
 
                     _dgv.DataSource = null;
                     _dgv.Refresh();
-                                        
+
                     string _sqlString = "SELECT ID, S.SiteDesc, N.Emp_Num, N.Emp_Name, N.Unit, N.StatusFrom, N.StatusTo, N.Comments, N.EnteredBy, N.EnteredDate " +
                                 "FROM ItemsRpt_StatusChange N JOIN SITES S ON N.Site = S.SiteID WHERE N.PayPeriod = @_PP AND " +
                                  "N.PayPeriod_Year = @_PPYear and N.ItemsReportLetter = @_IRL ORDER BY N.Site, N.Emp_Name, N.EnteredDate";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
-                    {                        
+                    {
                         da.SelectCommand.Parameters.AddWithValue("_PP", _pp);
                         da.SelectCommand.Parameters.AddWithValue("_PPYear", _ppYear);
                         da.SelectCommand.Parameters.AddWithValue("_IRL", _IRL);
@@ -356,6 +354,53 @@ namespace WindowsFormsApplication1
             }
         }
 
+        public void Load_NFPChecking()
+        {
+            DataGridView _dgv = dgvNFPChecking;
+
+            try
+            {
+                using (SqlConnection _conn = new SqlConnection())
+                {
+                    _conn.ConnectionString = Common.SystemsServer;
+
+                    _dgv.DataSource = null;
+                    _dgv.Refresh();
+
+                    string _sqlString = "SELECT * FROM NFPChecking WHERE CurrentStat = 0";
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
+                    {
+                        DataTable t = new DataTable();
+                        da.Fill(t);
+                        _dgv.DataSource = t;
+
+                        foreach (DataGridViewColumn column in _dgv.Columns)
+                        {
+                            column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        }
+
+                        foreach(DataGridViewColumn _col in _dgv.Columns)
+                        {
+                            if (_col.Name != "CurrentStat")
+                            {
+                                _col.ReadOnly = true;
+                            }
+                        }
+
+                        //Hide Record ID Column
+                        _dgv.Columns[0].Visible = false;
+                        
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void dgvUUT_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Edit(dgvUUT, _parentForm.Load_UUT_Data);
@@ -392,7 +437,7 @@ namespace WindowsFormsApplication1
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
-        {            
+        {
             LoadAllData();
         }
 
@@ -482,7 +527,7 @@ namespace WindowsFormsApplication1
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error in deleting the entry: " + ex.Message);
-                }                        
+                }
             }
         }
 
@@ -493,7 +538,7 @@ namespace WindowsFormsApplication1
 
         private void dgvNPP_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Edit(dgvNPP, _parentForm.Load_NPP_Data);            
+            Edit(dgvNPP, _parentForm.Load_NPP_Data);
         }
 
         private void btnEdit_NPP_Click(object sender, EventArgs e)
@@ -503,13 +548,13 @@ namespace WindowsFormsApplication1
 
         private void btnDel_NPP_Click(object sender, EventArgs e)
         {
-            var _dgv = (DataGridView) tabControl1.TabPages[tabControl1.SelectedIndex].Controls.Find(((Button)sender).Tag.ToString(), true).FirstOrDefault();            
+            var _dgv = (DataGridView)tabControl1.TabPages[tabControl1.SelectedIndex].Controls.Find(((Button)sender).Tag.ToString(), true).FirstOrDefault();
 
             if (_dgv.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Please highlight first the row(s) that you want to delete by clicking (and dragging if you want to select more than one row) the left most column.");
                 return;
-            }           
+            }
             //DeleteItem(_dgv.Rows[_dgv.CurrentCell.RowIndex].Cells["Emp_Name"].Value.ToString(), _dgv.Rows[_dgv.CurrentCell.RowIndex].Cells["ID"].Value.ToString(), _dgv.Parent.Name);
             DeleteItem(_dgv.SelectedRows, _dgv.Parent.Name);
         }
@@ -562,6 +607,11 @@ namespace WindowsFormsApplication1
                 //base.OnFormClosing(e);
                 WindowState = FormWindowState.Minimized;
             }
+        }
+
+        private void dgvNFPChecking_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show(dgvNFPChecking.CurrentRow.Cells[8].Value.ToString() + " _ " + dgvNFPChecking.CurrentRow.Cells[0].Value.ToString());
         }
     }
 }

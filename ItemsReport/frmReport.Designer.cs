@@ -36,6 +36,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.NPP = new System.Windows.Forms.TabPage();
             this.btnDel_NPP = new System.Windows.Forms.Button();
@@ -61,6 +62,8 @@
             this.btnDel_Trans = new System.Windows.Forms.Button();
             this.btnEdit_Trans = new System.Windows.Forms.Button();
             this.dgvTrans = new System.Windows.Forms.DataGridView();
+            this.NFPs = new System.Windows.Forms.TabPage();
+            this.dgvNFPChecking = new System.Windows.Forms.DataGridView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.cboItemsReport = new System.Windows.Forms.ComboBox();
             this.cboYearPP = new System.Windows.Forms.ComboBox();
@@ -82,6 +85,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTerms)).BeginInit();
             this.Trans.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrans)).BeginInit();
+            this.NFPs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNFPChecking)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -96,6 +101,7 @@
             this.tabControl1.Controls.Add(this.OC);
             this.tabControl1.Controls.Add(this.Terms);
             this.tabControl1.Controls.Add(this.Trans);
+            this.tabControl1.Controls.Add(this.NFPs);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ImageList = this.imageList1;
             this.tabControl1.Location = new System.Drawing.Point(2, 60);
@@ -474,6 +480,34 @@
             this.dgvTrans.TabIndex = 48;
             this.dgvTrans.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrans_CellDoubleClick);
             // 
+            // NFPs
+            // 
+            this.NFPs.Controls.Add(this.dgvNFPChecking);
+            this.NFPs.ImageIndex = 6;
+            this.NFPs.Location = new System.Drawing.Point(4, 36);
+            this.NFPs.Name = "NFPs";
+            this.NFPs.Padding = new System.Windows.Forms.Padding(3);
+            this.NFPs.Size = new System.Drawing.Size(1610, 464);
+            this.NFPs.TabIndex = 6;
+            this.NFPs.Text = "NFP Checking";
+            this.NFPs.UseVisualStyleBackColor = true;
+            // 
+            // dgvNFPChecking
+            // 
+            this.dgvNFPChecking.AllowUserToAddRows = false;
+            this.dgvNFPChecking.AllowUserToDeleteRows = false;
+            this.dgvNFPChecking.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvNFPChecking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNFPChecking.Location = new System.Drawing.Point(3, 6);
+            this.dgvNFPChecking.Name = "dgvNFPChecking";
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvNFPChecking.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvNFPChecking.Size = new System.Drawing.Size(1604, 404);
+            this.dgvNFPChecking.TabIndex = 46;
+            this.dgvNFPChecking.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNFPChecking_CellValueChanged);
+            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -484,6 +518,7 @@
             this.imageList1.Images.SetKeyName(3, "doc3.png");
             this.imageList1.Images.SetKeyName(4, "file1.png");
             this.imageList1.Images.SetKeyName(5, "doc5.png");
+            this.imageList1.Images.SetKeyName(6, "check.png");
             // 
             // cboItemsReport
             // 
@@ -629,6 +664,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTerms)).EndInit();
             this.Trans.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrans)).EndInit();
+            this.NFPs.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNFPChecking)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -668,5 +705,7 @@
         private System.Windows.Forms.Button btnEdit_Trans;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.TabPage NFPs;
+        private System.Windows.Forms.DataGridView dgvNFPChecking;
     }
 }
