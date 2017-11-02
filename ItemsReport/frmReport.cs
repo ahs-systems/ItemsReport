@@ -60,6 +60,9 @@ namespace WindowsFormsApplication1
             Load_OC_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
             Load_Terms_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
             Load_Trans_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
+
+            dpNFPcheckingFrom.Value = DateTime.Today.AddDays(-7);
+            dpNFPcheckingTo.Value = DateTime.Today;
             Load_NFPChecking();
         }
 
@@ -367,11 +370,13 @@ namespace WindowsFormsApplication1
                     _dgv.DataSource = null;
                     _dgv.Refresh();
 
-                    string _sqlString = "SELECT * FROM NFPChecking WHERE CurrentStat = 0";
+                    string _sqlString = "SELECT * FROM NFPChecking WHERE CurrentStat = 0 OR CheckedDate BETWEEN @_from and @_to";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
                     {
                         DataTable t = new DataTable();
+                        da.SelectCommand.Parameters.AddWithValue("_from", dpNFPcheckingFrom.Value.ToString("dd-MMM-yyyy"));
+                        da.SelectCommand.Parameters.AddWithValue("_to", dpNFPcheckingTo.Value.AddDays(1).ToString("dd-MMM-yyyy"));
                         da.Fill(t);
                         _dgv.DataSource = t;
 
@@ -611,7 +616,31 @@ namespace WindowsFormsApplication1
 
         private void dgvNFPChecking_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(dgvNFPChecking.CurrentRow.Cells[8].Value.ToString() + " _ " + dgvNFPChecking.CurrentRow.Cells[0].Value.ToString());
+            try
+            {
+                using (SqlConnection _conn = new SqlConnection(Common.SystemsServer))
+                {
+                    _conn.Open();
+                    using (SqlCommand _comm = _conn.CreateCommand())
+                    {
+                        _comm.CommandText = "UPDATE NFPChecking SET CheckedBy = @_currUser,  CheckedDate = getdate(), CurrentStat = @_stat  WHERE ID = @_id";
+                        _comm.Parameters.AddWithValue("_currUser", Common.CurrentUser);
+                        _comm.Parameters.AddWithValue("_stat", (bool)dgvNFPChecking.CurrentRow.Cells[8].Value ? "1": "0");
+                        _comm.Parameters.AddWithValue("_id", dgvNFPChecking.CurrentRow.Cells[0].Value.ToString());
+                        _comm.ExecuteNonQuery();
+                    }
+                }
+                Load_NFPChecking();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error in NFP Checking: " + ex.Message);
+            }
         }
+
+        private void dgvNFPChecking_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            MessageBox.Show(dgvNFPChecking.CurrentRow.Cells[8].Value.ToString() + " _ " + dgvNFPChecking.CurrentRow.Cells[0].Value.ToString());
+        }       
     }
 }

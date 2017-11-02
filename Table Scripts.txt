@@ -241,4 +241,38 @@ CREATE TABLE [dbo].[Sites](
 GO
 
 
+=====================================================================================================================================
+
+USE [esp_systems]
+GO
+
+/****** Object:  Table [dbo].[NFPChecking]    Script Date: 10/26/2017 3:43:17 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[NFPChecking](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Type] [smallint] NOT NULL,
+	[DateEntered] [datetime] NOT NULL,
+	[EmpID] [nchar](10) NOT NULL,
+	[Name] [nvarchar](100) NOT NULL,
+	[Prev_Unit] [nvarchar](50) NOT NULL,
+	[UpdatedBy] [nvarchar](50) NULL,
+	[UpdatedDate] [datetime] NULL,
+	[CurrentStat] [bit] NOT NULL,
+ CONSTRAINT [PK_NFPChecking] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[NFPChecking] ADD  CONSTRAINT [DF_NFPChecking_DateEntered]  DEFAULT (getdate()) FOR [DateEntered]
+GO
+
+
 
