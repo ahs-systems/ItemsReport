@@ -38,6 +38,8 @@ namespace WindowsFormsApplication1
         {
             //cboPP.SelectedIndex = 9;
             //cboItemsReport.SelectedIndex = 1;
+            dpNFPcheckingFrom.Value = DateTime.Today.AddDays(-7);
+            dpNFPcheckingTo.Value = DateTime.Today;
         }
 
         public void LoadAllData()
@@ -59,10 +61,7 @@ namespace WindowsFormsApplication1
             Load_SC_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
             Load_OC_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
             Load_Terms_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
-            Load_Trans_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
-
-            dpNFPcheckingFrom.Value = DateTime.Today.AddDays(-7);
-            dpNFPcheckingTo.Value = DateTime.Today;
+            Load_Trans_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());            
             Load_NFPChecking();
         }
 
@@ -641,6 +640,11 @@ namespace WindowsFormsApplication1
         private void dgvNFPChecking_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             MessageBox.Show(dgvNFPChecking.CurrentRow.Cells[8].Value.ToString() + " _ " + dgvNFPChecking.CurrentRow.Cells[0].Value.ToString());
-        }       
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Load_NFPChecking();
+        }
     }
 }

@@ -63,7 +63,12 @@
             this.btnEdit_Trans = new System.Windows.Forms.Button();
             this.dgvTrans = new System.Windows.Forms.DataGridView();
             this.NFPs = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dpNFPcheckingTo = new System.Windows.Forms.DateTimePicker();
+            this.dpNFPcheckingFrom = new System.Windows.Forms.DateTimePicker();
             this.dgvNFPChecking = new System.Windows.Forms.DataGridView();
+            this.lblUpdatedFrom = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.cboItemsReport = new System.Windows.Forms.ComboBox();
             this.cboYearPP = new System.Windows.Forms.ComboBox();
@@ -72,11 +77,6 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label35 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.dpNFPcheckingFrom = new System.Windows.Forms.DateTimePicker();
-            this.dpNFPcheckingTo = new System.Windows.Forms.DateTimePicker();
-            this.lblUpdatedFrom = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.NPP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNPP)).BeginInit();
@@ -502,6 +502,44 @@
             this.NFPs.Text = "NFP Checking";
             this.NFPs.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(819, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 40);
+            this.button1.TabIndex = 65;
+            this.button1.Text = "Refresh";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(475, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 17);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "To:";
+            // 
+            // dpNFPcheckingTo
+            // 
+            this.dpNFPcheckingTo.Location = new System.Drawing.Point(515, 15);
+            this.dpNFPcheckingTo.Name = "dpNFPcheckingTo";
+            this.dpNFPcheckingTo.Size = new System.Drawing.Size(292, 24);
+            this.dpNFPcheckingTo.TabIndex = 48;
+            // 
+            // dpNFPcheckingFrom
+            // 
+            this.dpNFPcheckingFrom.Location = new System.Drawing.Point(170, 15);
+            this.dpNFPcheckingFrom.Name = "dpNFPcheckingFrom";
+            this.dpNFPcheckingFrom.Size = new System.Drawing.Size(292, 24);
+            this.dpNFPcheckingFrom.TabIndex = 47;
+            // 
             // dgvNFPChecking
             // 
             this.dgvNFPChecking.AllowUserToAddRows = false;
@@ -517,6 +555,16 @@
             this.dgvNFPChecking.Size = new System.Drawing.Size(1604, 404);
             this.dgvNFPChecking.TabIndex = 46;
             this.dgvNFPChecking.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNFPChecking_CellValueChanged);
+            // 
+            // lblUpdatedFrom
+            // 
+            this.lblUpdatedFrom.AutoSize = true;
+            this.lblUpdatedFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdatedFrom.Location = new System.Drawing.Point(30, 17);
+            this.lblUpdatedFrom.Name = "lblUpdatedFrom";
+            this.lblUpdatedFrom.Size = new System.Drawing.Size(140, 17);
+            this.lblUpdatedFrom.TabIndex = 61;
+            this.lblUpdatedFrom.Text = "Those updated from:";
             // 
             // imageList1
             // 
@@ -642,53 +690,6 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Visible = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // dpNFPcheckingFrom
-            // 
-            this.dpNFPcheckingFrom.Location = new System.Drawing.Point(170, 15);
-            this.dpNFPcheckingFrom.Name = "dpNFPcheckingFrom";
-            this.dpNFPcheckingFrom.Size = new System.Drawing.Size(292, 24);
-            this.dpNFPcheckingFrom.TabIndex = 47;
-            // 
-            // dpNFPcheckingTo
-            // 
-            this.dpNFPcheckingTo.Location = new System.Drawing.Point(515, 15);
-            this.dpNFPcheckingTo.Name = "dpNFPcheckingTo";
-            this.dpNFPcheckingTo.Size = new System.Drawing.Size(292, 24);
-            this.dpNFPcheckingTo.TabIndex = 48;
-            // 
-            // lblUpdatedFrom
-            // 
-            this.lblUpdatedFrom.AutoSize = true;
-            this.lblUpdatedFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdatedFrom.Location = new System.Drawing.Point(30, 17);
-            this.lblUpdatedFrom.Name = "lblUpdatedFrom";
-            this.lblUpdatedFrom.Size = new System.Drawing.Size(140, 17);
-            this.lblUpdatedFrom.TabIndex = 61;
-            this.lblUpdatedFrom.Text = "Those updated from:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(475, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 17);
-            this.label1.TabIndex = 63;
-            this.label1.Text = "To:";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(819, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 40);
-            this.button1.TabIndex = 65;
-            this.button1.Text = "Refresh";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // frmReport
             // 
