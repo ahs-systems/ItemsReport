@@ -1,7 +1,9 @@
-﻿using System;
+﻿using OfficeOpenXml;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -40,6 +42,7 @@ namespace WindowsFormsApplication1
             //cboItemsReport.SelectedIndex = 1;
             dpNFPcheckingFrom.Value = DateTime.Today.AddDays(-7);
             dpNFPcheckingTo.Value = DateTime.Today;
+            cboNFPchecking.SelectedIndex = 0;
         }
 
         public void LoadAllData()
@@ -61,7 +64,7 @@ namespace WindowsFormsApplication1
             Load_SC_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
             Load_OC_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
             Load_Terms_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
-            Load_Trans_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());            
+            Load_Trans_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
             Load_NFPChecking();
         }
 
@@ -356,9 +359,9 @@ namespace WindowsFormsApplication1
             }
         }
 
-        public void Load_NFPChecking()
+        public DataTable GetNFPList()
         {
-            DataGridView _dgv = dgvNFPChecking;
+            DataTable _ret = new DataTable();
 
             try
             {
@@ -366,37 +369,67 @@ namespace WindowsFormsApplication1
                 {
                     _conn.ConnectionString = Common.SystemsServer;
 
-                    _dgv.DataSource = null;
-                    _dgv.Refresh();
+                    string _filter = "";
+                    switch (cboNFPchecking.SelectedIndex)
+                    {
+                        case 0:
+                            _filter = "";
+                            break;
+                        case 1:
+                            _filter = "AND UPPER(Prev_Unit) LIKE '%NOT FOR PAYROLL%'";
+                            break;
+                        case 2:
+                            _filter = "AND UPPER(Prev_Unit) LIKE '%INACTIVE%'";
+                            break;
+                    }
 
-                    string _sqlString = "SELECT * FROM NFPChecking WHERE CurrentStat = 0 OR CheckedDate BETWEEN @_from and @_to";
+                    string _sqlString = "SELECT * FROM NFPChecking WHERE (CurrentStat = 0 OR CheckedDate BETWEEN @_from and @_to) " + _filter;
 
                     using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
                     {
-                        DataTable t = new DataTable();
                         da.SelectCommand.Parameters.AddWithValue("_from", dpNFPcheckingFrom.Value.ToString("dd-MMM-yyyy"));
                         da.SelectCommand.Parameters.AddWithValue("_to", dpNFPcheckingTo.Value.AddDays(1).ToString("dd-MMM-yyyy"));
-                        da.Fill(t);
-                        _dgv.DataSource = t;
-
-                        foreach (DataGridViewColumn column in _dgv.Columns)
-                        {
-                            column.SortMode = DataGridViewColumnSortMode.NotSortable;
-                            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        }
-
-                        foreach(DataGridViewColumn _col in _dgv.Columns)
-                        {
-                            if (_col.Name != "CurrentStat")
-                            {
-                                _col.ReadOnly = true;
-                            }
-                        }
-
-                        //Hide Record ID Column
-                        _dgv.Columns[0].Visible = false;
-                        
+                        da.Fill(_ret);
                     }
+
+                    return _ret;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
+        public void Load_NFPChecking()
+        {
+            DataGridView _dgv = dgvNFPChecking;
+
+            try
+            {
+                _dgv.DataSource = GetNFPList();
+
+                if (_dgv.DataSource != null)
+                {
+
+                    foreach (DataGridViewColumn column in _dgv.Columns)
+                    {
+                        column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                        column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    }
+
+                    foreach (DataGridViewColumn _col in _dgv.Columns)
+                    {
+                        if (_col.Name != "CurrentStat")
+                        {
+                            _col.ReadOnly = true;
+                        }
+                    }
+
+                    //Hide Record ID Column
+                    _dgv.Columns[0].Visible = false;
+
                 }
             }
             catch (Exception ex)
@@ -624,27 +657,114 @@ namespace WindowsFormsApplication1
                     {
                         _comm.CommandText = "UPDATE NFPChecking SET CheckedBy = @_currUser,  CheckedDate = getdate(), CurrentStat = @_stat  WHERE ID = @_id";
                         _comm.Parameters.AddWithValue("_currUser", Common.CurrentUser);
-                        _comm.Parameters.AddWithValue("_stat", (bool)dgvNFPChecking.CurrentRow.Cells[8].Value ? "1": "0");
+                        _comm.Parameters.AddWithValue("_stat", (bool)dgvNFPChecking.CurrentRow.Cells[8].Value ? "1" : "0");
                         _comm.Parameters.AddWithValue("_id", dgvNFPChecking.CurrentRow.Cells[0].Value.ToString());
                         _comm.ExecuteNonQuery();
                     }
                 }
                 Load_NFPChecking();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error in NFP Checking: " + ex.Message);
             }
         }
 
-        private void dgvNFPChecking_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
-        {
-            MessageBox.Show(dgvNFPChecking.CurrentRow.Cells[8].Value.ToString() + " _ " + dgvNFPChecking.CurrentRow.Cells[0].Value.ToString());
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Load_NFPChecking();
+        }
+
+        private void btnNFPtoExcel_Click(object sender, EventArgs e)
+        {
+
+            DataTable t = GetNFPList();
+
+            if (t == null)
+            {
+                MessageBox.Show("Error in getting NFP and Inactive list", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                using (var package = new ExcelPackage())
+                {
+                    // add a new worksheet to the empty workbook
+                    ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("From NFP and Inactive");
+
+                    // Set Page Settings
+                    worksheet.PrinterSettings.Orientation = eOrientation.Landscape;
+                    worksheet.PrinterSettings.ShowGridLines = true;
+                    worksheet.PrinterSettings.HorizontalCentered = true;
+                    worksheet.PrinterSettings.TopMargin = (decimal)1.5 / 2.54M;
+                    worksheet.PrinterSettings.BottomMargin = (decimal)1.5 / 2.54M;
+                    worksheet.PrinterSettings.LeftMargin = (decimal)0.25 / 2.54M;
+                    worksheet.PrinterSettings.RightMargin = (decimal)0.25 / 2.54M;
+                    worksheet.PrinterSettings.HeaderMargin = (decimal)0.5 / 2.54M;
+                    worksheet.PrinterSettings.FooterMargin = (decimal)0.5 / 2.54M;
+                    worksheet.HeaderFooter.OddHeader.LeftAlignedText = DateTime.Now.ToString("ddMMMyyyy HH:mm:ss");
+                    worksheet.HeaderFooter.OddHeader.RightAlignedText = "";
+                    worksheet.HeaderFooter.OddHeader.CenteredText = "From NFP and Inactive to ESP";
+                    worksheet.HeaderFooter.OddFooter.RightAlignedText = string.Format("Page {0} of {1}", ExcelHeaderFooter.PageNumber, ExcelHeaderFooter.NumberOfPages);
+                    worksheet.View.PageBreakView = true;
+                    worksheet.PrinterSettings.RepeatRows = new ExcelAddress("$1:$1");
+                    worksheet.PrinterSettings.FitToPage = true; worksheet.PrinterSettings.FitToWidth = 1; worksheet.PrinterSettings.FitToHeight = 0;
+
+                    //Setting Header Style
+                    worksheet.Row(1).Height = 25;
+                    worksheet.Cells[1, 1].Value = "Record Type"; //worksheet.Column(2).Width = 12.30;
+                    worksheet.Cells[1, 2].Value = "Date Uploaded"; //worksheet.Column(3).Width = 10.43; //worksheet.Column(3).AutoFit(); //
+                    worksheet.Cells[1, 3].Value = "Emp ID"; //worksheet.Column(4).Width = 22;
+                    worksheet.Cells[1, 4].Value = "Name"; //worksheet.Column(5).Width = 35;
+                    worksheet.Cells[1, 5].Value = "Previous Unit"; //worksheet.Column(6).Width = 35;
+                    worksheet.Cells[1, 6].Value = "Comments"; //worksheet.Column(7).Width = 9.86; worksheet.Cells[1, 7].Style.WrapText = true;
+
+                    var range = worksheet.Cells[1, 1, 1, 6];
+                    range.Style.Font.Bold = true;
+                    range.Style.Font.Size = 11;
+                    range.Style.Font.Name = "Verdana";
+
+
+                    int lineCtr = 2;
+
+                    foreach (DataRow _row in t.Rows)
+                    {
+
+                        worksheet.Row(lineCtr).Height = 25;
+                        worksheet.Row(lineCtr).Style.Font.Name = "Verdana";
+                        worksheet.Row(lineCtr).Style.Font.Size = 11;
+                        worksheet.Row(lineCtr).Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+                        worksheet.Cells[lineCtr, 1].Value = _row["Type"];
+                        worksheet.Cells[lineCtr, 2].Value = Convert.ToDateTime(_row["DateUploaded"]).ToString("dd-MMM-yyyy HH:mm");
+                        worksheet.Cells[lineCtr, 3].Value = _row["EmpID"];
+                        worksheet.Cells[lineCtr, 4].Value = _row["Name"];
+                        worksheet.Cells[lineCtr, 5].Value = _row["Prev_Unit"];
+                        lineCtr++;
+
+                        if (lineCtr % 9 == 0) worksheet.Row(lineCtr).PageBreak = true;
+
+                    }
+
+                    worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+                    worksheet.Column(6).Width = 38; // expand the width for column "Comments"                                       
+
+                    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                    saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                    saveFileDialog1.FilterIndex = 1;
+                    saveFileDialog1.FileName = DateTime.Today.ToString("dd-MMM-yyyy ") + "From NFP and Inactive";
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        package.SaveAs(new FileInfo(saveFileDialog1.FileName));
+                        System.Diagnostics.Process.Start(saveFileDialog1.FileName);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

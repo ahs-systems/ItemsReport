@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReport));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.NPP = new System.Windows.Forms.TabPage();
             this.btnDel_NPP = new System.Windows.Forms.Button();
@@ -77,6 +77,8 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label35 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnNFPtoExcel = new System.Windows.Forms.Button();
+            this.cboNFPchecking = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.NPP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNPP)).BeginInit();
@@ -172,8 +174,8 @@
             this.dgvNPP.Location = new System.Drawing.Point(3, 4);
             this.dgvNPP.Name = "dgvNPP";
             this.dgvNPP.ReadOnly = true;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvNPP.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvNPP.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvNPP.Size = new System.Drawing.Size(1604, 404);
             this.dgvNPP.TabIndex = 45;
             this.dgvNPP.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNPP_CellDoubleClick);
@@ -234,8 +236,8 @@
             this.dgvUUT.Location = new System.Drawing.Point(3, 3);
             this.dgvUUT.Name = "dgvUUT";
             this.dgvUUT.ReadOnly = true;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvUUT.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvUUT.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvUUT.Size = new System.Drawing.Size(1600, 407);
             this.dgvUUT.TabIndex = 42;
             this.dgvUUT.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUUT_CellDoubleClick);
@@ -296,8 +298,8 @@
             this.dgvSC.Location = new System.Drawing.Point(3, 4);
             this.dgvSC.Name = "dgvSC";
             this.dgvSC.ReadOnly = true;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvSC.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvSC.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvSC.Size = new System.Drawing.Size(1600, 406);
             this.dgvSC.TabIndex = 48;
             this.dgvSC.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSC_CellDoubleClick);
@@ -357,8 +359,8 @@
             this.dgvOC.Location = new System.Drawing.Point(3, 4);
             this.dgvOC.Name = "dgvOC";
             this.dgvOC.ReadOnly = true;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvOC.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvOC.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvOC.Size = new System.Drawing.Size(1600, 406);
             this.dgvOC.TabIndex = 48;
             this.dgvOC.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOC_CellDoubleClick);
@@ -418,8 +420,8 @@
             this.dgvTerms.Location = new System.Drawing.Point(3, 4);
             this.dgvTerms.Name = "dgvTerms";
             this.dgvTerms.ReadOnly = true;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvTerms.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvTerms.RowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvTerms.Size = new System.Drawing.Size(1600, 406);
             this.dgvTerms.TabIndex = 48;
             this.dgvTerms.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTerms_CellDoubleClick);
@@ -479,14 +481,16 @@
             this.dgvTrans.Location = new System.Drawing.Point(3, 4);
             this.dgvTrans.Name = "dgvTrans";
             this.dgvTrans.ReadOnly = true;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvTrans.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvTrans.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvTrans.Size = new System.Drawing.Size(1600, 406);
             this.dgvTrans.TabIndex = 48;
             this.dgvTrans.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrans_CellDoubleClick);
             // 
             // NFPs
             // 
+            this.NFPs.Controls.Add(this.cboNFPchecking);
+            this.NFPs.Controls.Add(this.btnNFPtoExcel);
             this.NFPs.Controls.Add(this.button1);
             this.NFPs.Controls.Add(this.label1);
             this.NFPs.Controls.Add(this.dpNFPcheckingTo);
@@ -504,10 +508,11 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(819, 6);
+            this.button1.Location = new System.Drawing.Point(1334, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 40);
             this.button1.TabIndex = 65;
@@ -550,8 +555,8 @@
             this.dgvNFPChecking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNFPChecking.Location = new System.Drawing.Point(3, 51);
             this.dgvNFPChecking.Name = "dgvNFPChecking";
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvNFPChecking.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvNFPChecking.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvNFPChecking.Size = new System.Drawing.Size(1604, 404);
             this.dgvNFPChecking.TabIndex = 46;
             this.dgvNFPChecking.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNFPChecking_CellValueChanged);
@@ -654,12 +659,14 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Verdana", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
             this.btnRefresh.Location = new System.Drawing.Point(493, 7);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(104, 40);
+            this.btnRefresh.Size = new System.Drawing.Size(117, 43);
             this.btnRefresh.TabIndex = 64;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -690,6 +697,36 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Visible = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnNFPtoExcel
+            // 
+            this.btnNFPtoExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnNFPtoExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNFPtoExcel.ForeColor = System.Drawing.Color.White;
+            this.btnNFPtoExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnNFPtoExcel.Image")));
+            this.btnNFPtoExcel.Location = new System.Drawing.Point(1444, 6);
+            this.btnNFPtoExcel.Name = "btnNFPtoExcel";
+            this.btnNFPtoExcel.Size = new System.Drawing.Size(159, 40);
+            this.btnNFPtoExcel.TabIndex = 66;
+            this.btnNFPtoExcel.Text = "Export to Excel";
+            this.btnNFPtoExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNFPtoExcel.UseVisualStyleBackColor = false;
+            this.btnNFPtoExcel.Click += new System.EventHandler(this.btnNFPtoExcel_Click);
+            // 
+            // cboNFPchecking
+            // 
+            this.cboNFPchecking.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNFPchecking.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboNFPchecking.Font = new System.Drawing.Font("Verdana", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboNFPchecking.FormattingEnabled = true;
+            this.cboNFPchecking.Items.AddRange(new object[] {
+            "Both NFP and InActive",
+            "NFP Only",
+            "InActive Only"});
+            this.cboNFPchecking.Location = new System.Drawing.Point(813, 14);
+            this.cboNFPchecking.Name = "cboNFPchecking";
+            this.cboNFPchecking.Size = new System.Drawing.Size(214, 26);
+            this.cboNFPchecking.TabIndex = 66;
             // 
             // frmReport
             // 
@@ -771,5 +808,7 @@
         private System.Windows.Forms.DateTimePicker dpNFPcheckingTo;
         private System.Windows.Forms.DateTimePicker dpNFPcheckingFrom;
         private System.Windows.Forms.Label lblUpdatedFrom;
+        private System.Windows.Forms.Button btnNFPtoExcel;
+        public System.Windows.Forms.ComboBox cboNFPchecking;
     }
 }
