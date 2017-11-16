@@ -376,14 +376,14 @@ namespace WindowsFormsApplication1
                             _filter = "";
                             break;
                         case 1:
-                            _filter = "AND UPPER(Prev_Unit) LIKE '%NOT FOR PAYROLL%'";
+                            _filter = " AND UPPER(Prev_Unit) LIKE '%NOT FOR PAYROLL%'";
                             break;
                         case 2:
-                            _filter = "AND UPPER(Prev_Unit) LIKE '%INACTIVE%'";
+                            _filter = " AND UPPER(Prev_Unit) LIKE '%INACTIVE%'";
                             break;
                     }
 
-                    string _sqlString = "SELECT * FROM NFPChecking WHERE (CurrentStat = 0 OR CheckedDate BETWEEN @_from and @_to) " + _filter;
+                    string _sqlString = "SELECT * FROM NFPChecking WHERE (CurrentStat = 0 OR CheckedDate BETWEEN @_from and @_to)" + _filter + " ORDER BY DateUploaded";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
                     {
@@ -408,6 +408,8 @@ namespace WindowsFormsApplication1
 
             try
             {
+                _dgv.DataSource = null;
+
                 _dgv.DataSource = GetNFPList();
 
                 if (_dgv.DataSource != null)
@@ -416,12 +418,23 @@ namespace WindowsFormsApplication1
                     foreach (DataGridViewColumn column in _dgv.Columns)
                     {
                         column.SortMode = DataGridViewColumnSortMode.NotSortable;
-                        column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        // Fill the length of the grid with the last column
+                        if (column.Name != "Comments")
+                            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        else
+                            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     }
+
+                    //foreach (DataGridViewColumn column in _dgv.Columns)
+                    //{
+                    //    int colw = column.Width;
+                    //    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                    //    column.Width = colw;
+                    //}
 
                     foreach (DataGridViewColumn _col in _dgv.Columns)
                     {
-                        if (_col.Name != "CurrentStat")
+                        if (_col.Name != "CurrentStat" && _col.Name != "Comments")
                         {
                             _col.ReadOnly = true;
                         }
@@ -429,6 +442,8 @@ namespace WindowsFormsApplication1
 
                     //Hide Record ID Column
                     _dgv.Columns[0].Visible = false;
+
+                    
 
                 }
             }
@@ -655,10 +670,11 @@ namespace WindowsFormsApplication1
                     _conn.Open();
                     using (SqlCommand _comm = _conn.CreateCommand())
                     {
-                        _comm.CommandText = "UPDATE NFPChecking SET CheckedBy = @_currUser,  CheckedDate = getdate(), CurrentStat = @_stat  WHERE ID = @_id";
+                        _comm.CommandText = "UPDATE NFPChecking SET CheckedBy = @_currUser,  CheckedDate = getdate(), CurrentStat = @_stat, Comments = @_comments  WHERE ID = @_id";
                         _comm.Parameters.AddWithValue("_currUser", Common.CurrentUser);
                         _comm.Parameters.AddWithValue("_stat", (bool)dgvNFPChecking.CurrentRow.Cells[8].Value ? "1" : "0");
                         _comm.Parameters.AddWithValue("_id", dgvNFPChecking.CurrentRow.Cells[0].Value.ToString());
+                        _comm.Parameters.AddWithValue("_comments", dgvNFPChecking.CurrentRow.Cells[9].Value.ToString());
                         _comm.ExecuteNonQuery();
                     }
                 }
@@ -730,20 +746,22 @@ namespace WindowsFormsApplication1
 
                     foreach (DataRow _row in t.Rows)
                     {
+                        if (_row["CheckedBy"].ToString().Trim() == "")
+                        {
+                            worksheet.Row(lineCtr).Height = 25;
+                            worksheet.Row(lineCtr).Style.Font.Name = "Verdana";
+                            worksheet.Row(lineCtr).Style.Font.Size = 11;
+                            worksheet.Row(lineCtr).Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+                            worksheet.Cells[lineCtr, 1].Value = _row["Type"];
+                            worksheet.Cells[lineCtr, 2].Value = Convert.ToDateTime(_row["DateUploaded"]).ToString("dd-MMM-yyyy HH:mm");
+                            worksheet.Cells[lineCtr, 3].Value = _row["EmpID"];
+                            worksheet.Cells[lineCtr, 4].Value = _row["Name"];
+                            worksheet.Cells[lineCtr, 5].Value = _row["Prev_Unit"];
+                            worksheet.Cells[lineCtr, 6].Value = _row["Comments"];
+                            lineCtr++;
 
-                        worksheet.Row(lineCtr).Height = 25;
-                        worksheet.Row(lineCtr).Style.Font.Name = "Verdana";
-                        worksheet.Row(lineCtr).Style.Font.Size = 11;
-                        worksheet.Row(lineCtr).Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
-                        worksheet.Cells[lineCtr, 1].Value = _row["Type"];
-                        worksheet.Cells[lineCtr, 2].Value = Convert.ToDateTime(_row["DateUploaded"]).ToString("dd-MMM-yyyy HH:mm");
-                        worksheet.Cells[lineCtr, 3].Value = _row["EmpID"];
-                        worksheet.Cells[lineCtr, 4].Value = _row["Name"];
-                        worksheet.Cells[lineCtr, 5].Value = _row["Prev_Unit"];
-                        lineCtr++;
-
-                        if (lineCtr % 9 == 0) worksheet.Row(lineCtr).PageBreak = true;
-
+                            if (lineCtr % 9 == 0) worksheet.Row(lineCtr).PageBreak = true;
+                        }
                     }
 
                     worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
@@ -758,7 +776,6 @@ namespace WindowsFormsApplication1
                         package.SaveAs(new FileInfo(saveFileDialog1.FileName));
                         System.Diagnostics.Process.Start(saveFileDialog1.FileName);
                     }
-
                 }
             }
             catch (Exception ex)

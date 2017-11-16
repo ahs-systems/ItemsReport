@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReport));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.NPP = new System.Windows.Forms.TabPage();
             this.btnDel_NPP = new System.Windows.Forms.Button();
@@ -63,6 +63,8 @@
             this.btnEdit_Trans = new System.Windows.Forms.Button();
             this.dgvTrans = new System.Windows.Forms.DataGridView();
             this.NFPs = new System.Windows.Forms.TabPage();
+            this.cboNFPchecking = new System.Windows.Forms.ComboBox();
+            this.btnNFPtoExcel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dpNFPcheckingTo = new System.Windows.Forms.DateTimePicker();
@@ -77,8 +79,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label35 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnNFPtoExcel = new System.Windows.Forms.Button();
-            this.cboNFPchecking = new System.Windows.Forms.ComboBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1.SuspendLayout();
             this.NPP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNPP)).BeginInit();
@@ -135,8 +136,10 @@
             // btnDel_NPP
             // 
             this.btnDel_NPP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDel_NPP.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDel_NPP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnDel_NPP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDel_NPP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDel_NPP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnDel_NPP.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_NPP.Image")));
             this.btnDel_NPP.Location = new System.Drawing.Point(116, 416);
             this.btnDel_NPP.Name = "btnDel_NPP";
@@ -151,8 +154,10 @@
             // btnEdit_NPP
             // 
             this.btnEdit_NPP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEdit_NPP.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEdit_NPP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnEdit_NPP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit_NPP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEdit_NPP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnEdit_NPP.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_NPP.Image")));
             this.btnEdit_NPP.Location = new System.Drawing.Point(6, 416);
             this.btnEdit_NPP.Name = "btnEdit_NPP";
@@ -174,8 +179,8 @@
             this.dgvNPP.Location = new System.Drawing.Point(3, 4);
             this.dgvNPP.Name = "dgvNPP";
             this.dgvNPP.ReadOnly = true;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvNPP.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvNPP.RowsDefaultCellStyle = dataGridViewCellStyle30;
             this.dgvNPP.Size = new System.Drawing.Size(1604, 404);
             this.dgvNPP.TabIndex = 45;
             this.dgvNPP.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNPP_CellDoubleClick);
@@ -197,8 +202,10 @@
             // btnDel_UUT
             // 
             this.btnDel_UUT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDel_UUT.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDel_UUT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnDel_UUT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDel_UUT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDel_UUT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnDel_UUT.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_UUT.Image")));
             this.btnDel_UUT.Location = new System.Drawing.Point(116, 416);
             this.btnDel_UUT.Name = "btnDel_UUT";
@@ -213,8 +220,10 @@
             // btnEdit_UUT
             // 
             this.btnEdit_UUT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEdit_UUT.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEdit_UUT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnEdit_UUT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit_UUT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEdit_UUT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnEdit_UUT.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_UUT.Image")));
             this.btnEdit_UUT.Location = new System.Drawing.Point(6, 416);
             this.btnEdit_UUT.Name = "btnEdit_UUT";
@@ -236,8 +245,8 @@
             this.dgvUUT.Location = new System.Drawing.Point(3, 3);
             this.dgvUUT.Name = "dgvUUT";
             this.dgvUUT.ReadOnly = true;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvUUT.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvUUT.RowsDefaultCellStyle = dataGridViewCellStyle31;
             this.dgvUUT.Size = new System.Drawing.Size(1600, 407);
             this.dgvUUT.TabIndex = 42;
             this.dgvUUT.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUUT_CellDoubleClick);
@@ -259,8 +268,10 @@
             // btnDel_SC
             // 
             this.btnDel_SC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDel_SC.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDel_SC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnDel_SC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDel_SC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDel_SC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnDel_SC.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_SC.Image")));
             this.btnDel_SC.Location = new System.Drawing.Point(116, 416);
             this.btnDel_SC.Name = "btnDel_SC";
@@ -275,8 +286,10 @@
             // btnEdit_SC
             // 
             this.btnEdit_SC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEdit_SC.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEdit_SC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnEdit_SC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit_SC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEdit_SC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnEdit_SC.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_SC.Image")));
             this.btnEdit_SC.Location = new System.Drawing.Point(6, 416);
             this.btnEdit_SC.Name = "btnEdit_SC";
@@ -298,8 +311,8 @@
             this.dgvSC.Location = new System.Drawing.Point(3, 4);
             this.dgvSC.Name = "dgvSC";
             this.dgvSC.ReadOnly = true;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvSC.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvSC.RowsDefaultCellStyle = dataGridViewCellStyle32;
             this.dgvSC.Size = new System.Drawing.Size(1600, 406);
             this.dgvSC.TabIndex = 48;
             this.dgvSC.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSC_CellDoubleClick);
@@ -320,8 +333,10 @@
             // btnDel_OC
             // 
             this.btnDel_OC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDel_OC.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDel_OC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnDel_OC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDel_OC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDel_OC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnDel_OC.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_OC.Image")));
             this.btnDel_OC.Location = new System.Drawing.Point(116, 416);
             this.btnDel_OC.Name = "btnDel_OC";
@@ -336,8 +351,10 @@
             // btnEdit_OC
             // 
             this.btnEdit_OC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEdit_OC.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEdit_OC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnEdit_OC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit_OC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEdit_OC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnEdit_OC.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_OC.Image")));
             this.btnEdit_OC.Location = new System.Drawing.Point(6, 416);
             this.btnEdit_OC.Name = "btnEdit_OC";
@@ -359,8 +376,8 @@
             this.dgvOC.Location = new System.Drawing.Point(3, 4);
             this.dgvOC.Name = "dgvOC";
             this.dgvOC.ReadOnly = true;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvOC.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvOC.RowsDefaultCellStyle = dataGridViewCellStyle33;
             this.dgvOC.Size = new System.Drawing.Size(1600, 406);
             this.dgvOC.TabIndex = 48;
             this.dgvOC.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOC_CellDoubleClick);
@@ -381,8 +398,10 @@
             // btnDel_Terms
             // 
             this.btnDel_Terms.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDel_Terms.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDel_Terms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnDel_Terms.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDel_Terms.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDel_Terms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnDel_Terms.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_Terms.Image")));
             this.btnDel_Terms.Location = new System.Drawing.Point(116, 416);
             this.btnDel_Terms.Name = "btnDel_Terms";
@@ -397,8 +416,10 @@
             // btnEdit_Terms
             // 
             this.btnEdit_Terms.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEdit_Terms.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEdit_Terms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnEdit_Terms.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit_Terms.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEdit_Terms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnEdit_Terms.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_Terms.Image")));
             this.btnEdit_Terms.Location = new System.Drawing.Point(6, 416);
             this.btnEdit_Terms.Name = "btnEdit_Terms";
@@ -420,8 +441,8 @@
             this.dgvTerms.Location = new System.Drawing.Point(3, 4);
             this.dgvTerms.Name = "dgvTerms";
             this.dgvTerms.ReadOnly = true;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvTerms.RowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvTerms.RowsDefaultCellStyle = dataGridViewCellStyle34;
             this.dgvTerms.Size = new System.Drawing.Size(1600, 406);
             this.dgvTerms.TabIndex = 48;
             this.dgvTerms.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTerms_CellDoubleClick);
@@ -442,8 +463,10 @@
             // btnDel_Trans
             // 
             this.btnDel_Trans.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDel_Trans.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDel_Trans.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnDel_Trans.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDel_Trans.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDel_Trans.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnDel_Trans.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_Trans.Image")));
             this.btnDel_Trans.Location = new System.Drawing.Point(116, 416);
             this.btnDel_Trans.Name = "btnDel_Trans";
@@ -458,8 +481,10 @@
             // btnEdit_Trans
             // 
             this.btnEdit_Trans.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEdit_Trans.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEdit_Trans.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnEdit_Trans.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit_Trans.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEdit_Trans.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnEdit_Trans.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_Trans.Image")));
             this.btnEdit_Trans.Location = new System.Drawing.Point(6, 416);
             this.btnEdit_Trans.Name = "btnEdit_Trans";
@@ -481,8 +506,8 @@
             this.dgvTrans.Location = new System.Drawing.Point(3, 4);
             this.dgvTrans.Name = "dgvTrans";
             this.dgvTrans.ReadOnly = true;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvTrans.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvTrans.RowsDefaultCellStyle = dataGridViewCellStyle35;
             this.dgvTrans.Size = new System.Drawing.Size(1600, 406);
             this.dgvTrans.TabIndex = 48;
             this.dgvTrans.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrans_CellDoubleClick);
@@ -506,13 +531,46 @@
             this.NFPs.Text = "NFP Checking";
             this.NFPs.UseVisualStyleBackColor = true;
             // 
+            // cboNFPchecking
+            // 
+            this.cboNFPchecking.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNFPchecking.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboNFPchecking.Font = new System.Drawing.Font("Verdana", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboNFPchecking.FormattingEnabled = true;
+            this.cboNFPchecking.Items.AddRange(new object[] {
+            "Both NFP and InActive",
+            "NFP Only",
+            "InActive Only"});
+            this.cboNFPchecking.Location = new System.Drawing.Point(813, 14);
+            this.cboNFPchecking.Name = "cboNFPchecking";
+            this.cboNFPchecking.Size = new System.Drawing.Size(214, 26);
+            this.cboNFPchecking.TabIndex = 66;
+            // 
+            // btnNFPtoExcel
+            // 
+            this.btnNFPtoExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnNFPtoExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNFPtoExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNFPtoExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
+            this.btnNFPtoExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnNFPtoExcel.Image")));
+            this.btnNFPtoExcel.Location = new System.Drawing.Point(1148, 5);
+            this.btnNFPtoExcel.Name = "btnNFPtoExcel";
+            this.btnNFPtoExcel.Size = new System.Drawing.Size(159, 40);
+            this.btnNFPtoExcel.TabIndex = 66;
+            this.btnNFPtoExcel.Text = "Export to Excel";
+            this.btnNFPtoExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnNFPtoExcel, "Only the items that are not yet \"Checked\" will be exported.");
+            this.btnNFPtoExcel.UseVisualStyleBackColor = false;
+            this.btnNFPtoExcel.Click += new System.EventHandler(this.btnNFPtoExcel_Click);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1334, 6);
+            this.button1.Location = new System.Drawing.Point(1038, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 40);
             this.button1.TabIndex = 65;
@@ -555,8 +613,8 @@
             this.dgvNFPChecking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNFPChecking.Location = new System.Drawing.Point(3, 51);
             this.dgvNFPChecking.Name = "dgvNFPChecking";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvNFPChecking.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvNFPChecking.RowsDefaultCellStyle = dataGridViewCellStyle29;
             this.dgvNFPChecking.Size = new System.Drawing.Size(1604, 404);
             this.dgvNFPChecking.TabIndex = 46;
             this.dgvNFPChecking.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNFPChecking_CellValueChanged);
@@ -660,9 +718,10 @@
             // btnRefresh
             // 
             this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Font = new System.Drawing.Font("Verdana", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
             this.btnRefresh.Location = new System.Drawing.Point(493, 7);
             this.btnRefresh.Name = "btnRefresh";
@@ -698,35 +757,13 @@
             this.btnClose.Visible = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnNFPtoExcel
+            // toolTip1
             // 
-            this.btnNFPtoExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.btnNFPtoExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNFPtoExcel.ForeColor = System.Drawing.Color.White;
-            this.btnNFPtoExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnNFPtoExcel.Image")));
-            this.btnNFPtoExcel.Location = new System.Drawing.Point(1444, 6);
-            this.btnNFPtoExcel.Name = "btnNFPtoExcel";
-            this.btnNFPtoExcel.Size = new System.Drawing.Size(159, 40);
-            this.btnNFPtoExcel.TabIndex = 66;
-            this.btnNFPtoExcel.Text = "Export to Excel";
-            this.btnNFPtoExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNFPtoExcel.UseVisualStyleBackColor = false;
-            this.btnNFPtoExcel.Click += new System.EventHandler(this.btnNFPtoExcel_Click);
-            // 
-            // cboNFPchecking
-            // 
-            this.cboNFPchecking.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboNFPchecking.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboNFPchecking.Font = new System.Drawing.Font("Verdana", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboNFPchecking.FormattingEnabled = true;
-            this.cboNFPchecking.Items.AddRange(new object[] {
-            "Both NFP and InActive",
-            "NFP Only",
-            "InActive Only"});
-            this.cboNFPchecking.Location = new System.Drawing.Point(813, 14);
-            this.cboNFPchecking.Name = "cboNFPchecking";
-            this.cboNFPchecking.Size = new System.Drawing.Size(214, 26);
-            this.cboNFPchecking.TabIndex = 66;
+            this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
+            this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Tip:";
             // 
             // frmReport
             // 
@@ -810,5 +847,6 @@
         private System.Windows.Forms.Label lblUpdatedFrom;
         private System.Windows.Forms.Button btnNFPtoExcel;
         public System.Windows.Forms.ComboBox cboNFPchecking;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

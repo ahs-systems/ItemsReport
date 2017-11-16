@@ -214,12 +214,15 @@
             // 
             // btnCancel_NPP
             // 
-            this.btnCancel_NPP.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancel_NPP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnCancel_NPP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel_NPP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel_NPP.Font = new System.Drawing.Font("Century Gothic", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel_NPP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnCancel_NPP.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel_NPP.Image")));
-            this.btnCancel_NPP.Location = new System.Drawing.Point(283, 182);
+            this.btnCancel_NPP.Location = new System.Drawing.Point(286, 180);
             this.btnCancel_NPP.Name = "btnCancel_NPP";
-            this.btnCancel_NPP.Size = new System.Drawing.Size(110, 37);
+            this.btnCancel_NPP.Size = new System.Drawing.Size(120, 43);
             this.btnCancel_NPP.TabIndex = 6;
             this.btnCancel_NPP.Text = "Cancel";
             this.btnCancel_NPP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -241,12 +244,15 @@
             // 
             // btnSave_NPP
             // 
-            this.btnSave_NPP.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSave_NPP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnSave_NPP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave_NPP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSave_NPP.Font = new System.Drawing.Font("Century Gothic", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave_NPP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnSave_NPP.Image = ((System.Drawing.Image)(resources.GetObject("btnSave_NPP.Image")));
-            this.btnSave_NPP.Location = new System.Drawing.Point(160, 183);
+            this.btnSave_NPP.Location = new System.Drawing.Point(160, 180);
             this.btnSave_NPP.Name = "btnSave_NPP";
-            this.btnSave_NPP.Size = new System.Drawing.Size(119, 36);
+            this.btnSave_NPP.Size = new System.Drawing.Size(120, 43);
             this.btnSave_NPP.TabIndex = 5;
             this.btnSave_NPP.Tag = "btnCancel_NPP";
             this.btnSave_NPP.Text = "Save";
@@ -448,13 +454,15 @@
             // 
             // btnCancel_UUT
             // 
-            this.btnCancel_UUT.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancel_UUT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnCancel_UUT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel_UUT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel_UUT.Font = new System.Drawing.Font("Century Gothic", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel_UUT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnCancel_UUT.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel_UUT.Image")));
-            this.btnCancel_UUT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel_UUT.Location = new System.Drawing.Point(274, 184);
+            this.btnCancel_UUT.Location = new System.Drawing.Point(283, 182);
             this.btnCancel_UUT.Name = "btnCancel_UUT";
-            this.btnCancel_UUT.Size = new System.Drawing.Size(110, 37);
+            this.btnCancel_UUT.Size = new System.Drawing.Size(120, 43);
             this.btnCancel_UUT.TabIndex = 11;
             this.btnCancel_UUT.Text = "Cancel";
             this.btnCancel_UUT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -564,13 +572,15 @@
             // 
             // btnSave_UUT
             // 
-            this.btnSave_UUT.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSave_UUT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnSave_UUT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave_UUT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSave_UUT.Font = new System.Drawing.Font("Century Gothic", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave_UUT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnSave_UUT.Image = ((System.Drawing.Image)(resources.GetObject("btnSave_UUT.Image")));
-            this.btnSave_UUT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave_UUT.Location = new System.Drawing.Point(157, 184);
+            this.btnSave_UUT.Location = new System.Drawing.Point(157, 182);
             this.btnSave_UUT.Name = "btnSave_UUT";
-            this.btnSave_UUT.Size = new System.Drawing.Size(110, 37);
+            this.btnSave_UUT.Size = new System.Drawing.Size(120, 43);
             this.btnSave_UUT.TabIndex = 10;
             this.btnSave_UUT.Tag = "btnCancel_UUT";
             this.btnSave_UUT.Text = "Save";
@@ -739,12 +749,15 @@
             // 
             // btnCancel_SC
             // 
-            this.btnCancel_SC.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancel_SC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnCancel_SC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel_SC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel_SC.Font = new System.Drawing.Font("Century Gothic", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel_SC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnCancel_SC.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel_SC.Image")));
-            this.btnCancel_SC.Location = new System.Drawing.Point(262, 184);
+            this.btnCancel_SC.Location = new System.Drawing.Point(272, 179);
             this.btnCancel_SC.Name = "btnCancel_SC";
-            this.btnCancel_SC.Size = new System.Drawing.Size(110, 37);
+            this.btnCancel_SC.Size = new System.Drawing.Size(120, 43);
             this.btnCancel_SC.TabIndex = 8;
             this.btnCancel_SC.Text = "Cancel";
             this.btnCancel_SC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -824,12 +837,15 @@
             // 
             // btnSave_SC
             // 
-            this.btnSave_SC.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSave_SC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnSave_SC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave_SC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSave_SC.Font = new System.Drawing.Font("Century Gothic", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave_SC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnSave_SC.Image = ((System.Drawing.Image)(resources.GetObject("btnSave_SC.Image")));
-            this.btnSave_SC.Location = new System.Drawing.Point(146, 184);
+            this.btnSave_SC.Location = new System.Drawing.Point(146, 179);
             this.btnSave_SC.Name = "btnSave_SC";
-            this.btnSave_SC.Size = new System.Drawing.Size(110, 37);
+            this.btnSave_SC.Size = new System.Drawing.Size(120, 43);
             this.btnSave_SC.TabIndex = 7;
             this.btnSave_SC.Tag = "btnCancel_SC";
             this.btnSave_SC.Text = "Save";
@@ -972,12 +988,15 @@
             // 
             // btnCancel_OC
             // 
-            this.btnCancel_OC.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancel_OC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnCancel_OC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel_OC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel_OC.Font = new System.Drawing.Font("Century Gothic", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel_OC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnCancel_OC.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel_OC.Image")));
-            this.btnCancel_OC.Location = new System.Drawing.Point(342, 186);
+            this.btnCancel_OC.Location = new System.Drawing.Point(351, 182);
             this.btnCancel_OC.Name = "btnCancel_OC";
-            this.btnCancel_OC.Size = new System.Drawing.Size(110, 37);
+            this.btnCancel_OC.Size = new System.Drawing.Size(120, 43);
             this.btnCancel_OC.TabIndex = 7;
             this.btnCancel_OC.Text = "Cancel";
             this.btnCancel_OC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1065,12 +1084,15 @@
             // 
             // btnSave_OC
             // 
-            this.btnSave_OC.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSave_OC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnSave_OC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave_OC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSave_OC.Font = new System.Drawing.Font("Century Gothic", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave_OC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnSave_OC.Image = ((System.Drawing.Image)(resources.GetObject("btnSave_OC.Image")));
-            this.btnSave_OC.Location = new System.Drawing.Point(225, 186);
+            this.btnSave_OC.Location = new System.Drawing.Point(225, 182);
             this.btnSave_OC.Name = "btnSave_OC";
-            this.btnSave_OC.Size = new System.Drawing.Size(110, 37);
+            this.btnSave_OC.Size = new System.Drawing.Size(120, 43);
             this.btnSave_OC.TabIndex = 6;
             this.btnSave_OC.Tag = "btnCancel_OC";
             this.btnSave_OC.Text = "Save";
@@ -1227,12 +1249,15 @@
             // 
             // btnCancel_Terms
             // 
-            this.btnCancel_Terms.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancel_Terms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnCancel_Terms.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel_Terms.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel_Terms.Font = new System.Drawing.Font("Century Gothic", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel_Terms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnCancel_Terms.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel_Terms.Image")));
-            this.btnCancel_Terms.Location = new System.Drawing.Point(334, 177);
+            this.btnCancel_Terms.Location = new System.Drawing.Point(343, 177);
             this.btnCancel_Terms.Name = "btnCancel_Terms";
-            this.btnCancel_Terms.Size = new System.Drawing.Size(110, 37);
+            this.btnCancel_Terms.Size = new System.Drawing.Size(120, 43);
             this.btnCancel_Terms.TabIndex = 6;
             this.btnCancel_Terms.Text = "Cancel";
             this.btnCancel_Terms.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1242,12 +1267,15 @@
             // 
             // btnSave_Terms
             // 
-            this.btnSave_Terms.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSave_Terms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnSave_Terms.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave_Terms.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSave_Terms.Font = new System.Drawing.Font("Century Gothic", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave_Terms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnSave_Terms.Image = ((System.Drawing.Image)(resources.GetObject("btnSave_Terms.Image")));
             this.btnSave_Terms.Location = new System.Drawing.Point(217, 177);
             this.btnSave_Terms.Name = "btnSave_Terms";
-            this.btnSave_Terms.Size = new System.Drawing.Size(110, 37);
+            this.btnSave_Terms.Size = new System.Drawing.Size(120, 43);
             this.btnSave_Terms.TabIndex = 5;
             this.btnSave_Terms.Tag = "btnCancel_Terms";
             this.btnSave_Terms.Text = "Save";
@@ -1421,12 +1449,15 @@
             // 
             // btnCancel_Trans
             // 
-            this.btnCancel_Trans.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancel_Trans.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnCancel_Trans.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel_Trans.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel_Trans.Font = new System.Drawing.Font("Century Gothic", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel_Trans.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnCancel_Trans.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel_Trans.Image")));
-            this.btnCancel_Trans.Location = new System.Drawing.Point(278, 173);
+            this.btnCancel_Trans.Location = new System.Drawing.Point(287, 173);
             this.btnCancel_Trans.Name = "btnCancel_Trans";
-            this.btnCancel_Trans.Size = new System.Drawing.Size(110, 37);
+            this.btnCancel_Trans.Size = new System.Drawing.Size(120, 43);
             this.btnCancel_Trans.TabIndex = 7;
             this.btnCancel_Trans.Text = "Cancel";
             this.btnCancel_Trans.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1445,12 +1476,15 @@
             // 
             // btnSave_Trans
             // 
-            this.btnSave_Trans.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSave_Trans.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnSave_Trans.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave_Trans.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSave_Trans.Font = new System.Drawing.Font("Century Gothic", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave_Trans.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnSave_Trans.Image = ((System.Drawing.Image)(resources.GetObject("btnSave_Trans.Image")));
             this.btnSave_Trans.Location = new System.Drawing.Point(161, 173);
             this.btnSave_Trans.Name = "btnSave_Trans";
-            this.btnSave_Trans.Size = new System.Drawing.Size(110, 37);
+            this.btnSave_Trans.Size = new System.Drawing.Size(120, 43);
             this.btnSave_Trans.TabIndex = 6;
             this.btnSave_Trans.Tag = "btnCancel_Trans";
             this.btnSave_Trans.Text = "Save";
@@ -1603,8 +1637,11 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.Location = new System.Drawing.Point(794, 65);
             this.button1.Name = "button1";
@@ -1617,9 +1654,11 @@
             // 
             // cboPP
             // 
+            this.cboPP.BackColor = System.Drawing.Color.Gainsboro;
             this.cboPP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPP.ForeColor = System.Drawing.Color.Black;
             this.cboPP.FormattingEnabled = true;
             this.cboPP.Items.AddRange(new object[] {
             "01",
@@ -1677,9 +1716,11 @@
             // 
             // cboYearPP
             // 
+            this.cboYearPP.BackColor = System.Drawing.Color.Gainsboro;
             this.cboYearPP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboYearPP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboYearPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboYearPP.ForeColor = System.Drawing.Color.Black;
             this.cboYearPP.FormattingEnabled = true;
             this.cboYearPP.Location = new System.Drawing.Point(209, 76);
             this.cboYearPP.Name = "cboYearPP";
@@ -1688,9 +1729,11 @@
             // 
             // cboItemsReport
             // 
+            this.cboItemsReport.BackColor = System.Drawing.Color.Gainsboro;
             this.cboItemsReport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboItemsReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboItemsReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboItemsReport.ForeColor = System.Drawing.Color.Black;
             this.cboItemsReport.FormattingEnabled = true;
             this.cboItemsReport.Items.AddRange(new object[] {
             "Items Report A",
@@ -1704,8 +1747,11 @@
             // 
             // btnViewRpt
             // 
-            this.btnViewRpt.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnViewRpt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.btnViewRpt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnViewRpt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewRpt.Font = new System.Drawing.Font("Century Gothic", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewRpt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(128)))), ((int)(((byte)(30)))));
             this.btnViewRpt.Image = ((System.Drawing.Image)(resources.GetObject("btnViewRpt.Image")));
             this.btnViewRpt.Location = new System.Drawing.Point(521, 65);
             this.btnViewRpt.Name = "btnViewRpt";
@@ -1771,7 +1817,7 @@
             // 
             this.lblSelectIRL.AutoSize = true;
             this.lblSelectIRL.Font = new System.Drawing.Font("Verdana", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectIRL.ForeColor = System.Drawing.Color.Maroon;
+            this.lblSelectIRL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.lblSelectIRL.Location = new System.Drawing.Point(160, 241);
             this.lblSelectIRL.Name = "lblSelectIRL";
             this.lblSelectIRL.Size = new System.Drawing.Size(676, 25);
@@ -1782,7 +1828,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(954, 405);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnViewRpt);
@@ -1802,7 +1848,7 @@
             this.MaximizeBox = false;
             this.Name = "ItemsReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Items Report v2017.11.06";
+            this.Text = "Items Report v2017.11.16";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ItemsReport_FormClosing);
             this.Load += new System.EventHandler(this.ItemsReport_Load);
             this.Shown += new System.EventHandler(this.ItemsReport_Shown);

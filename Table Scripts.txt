@@ -246,7 +246,7 @@ GO
 USE [esp_systems]
 GO
 
-/****** Object:  Table [dbo].[NFPChecking]    Script Date: 10/26/2017 3:43:17 PM ******/
+/****** Object:  Table [dbo].[NFPChecking]    Script Date: 11/16/2017 1:24:30 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -256,13 +256,14 @@ GO
 CREATE TABLE [dbo].[NFPChecking](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[Type] [smallint] NOT NULL,
-	[DateEntered] [datetime] NOT NULL,
+	[DateUploaded] [datetime] NOT NULL,
 	[EmpID] [nchar](10) NOT NULL,
 	[Name] [nvarchar](100) NOT NULL,
 	[Prev_Unit] [nvarchar](50) NOT NULL,
-	[UpdatedBy] [nvarchar](50) NULL,
-	[UpdatedDate] [datetime] NULL,
+	[CheckedBy] [nvarchar](50) NULL,
+	[CheckedDate] [datetime] NULL,
 	[CurrentStat] [bit] NOT NULL,
+	[Comments] [nvarchar](500) NULL,
  CONSTRAINT [PK_NFPChecking] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -271,8 +272,5 @@ CREATE TABLE [dbo].[NFPChecking](
 
 GO
 
-ALTER TABLE [dbo].[NFPChecking] ADD  CONSTRAINT [DF_NFPChecking_DateEntered]  DEFAULT (getdate()) FOR [DateEntered]
+ALTER TABLE [dbo].[NFPChecking] ADD  CONSTRAINT [DF_NFPChecking_DateEntered]  DEFAULT (getdate()) FOR [DateUploaded]
 GO
-
-
-
