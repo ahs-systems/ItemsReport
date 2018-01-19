@@ -31,9 +31,10 @@ namespace WindowsFormsApplication1
         public frmReport()
         {
             InitializeComponent();
+            cboYearPP.Items.Add(DateTime.Today.Year + 1);
             cboYearPP.Items.Add(DateTime.Today.Year);
             cboYearPP.Items.Add(DateTime.Today.Year - 1);
-            cboYearPP.SelectedIndex = 0;
+            cboYearPP.SelectedIndex = 1;
         }
 
         private void frmReport_Load(object sender, EventArgs e)
@@ -383,7 +384,7 @@ namespace WindowsFormsApplication1
                             break;
                     }
 
-                    string _sqlString = "SELECT * FROM NFPChecking WHERE (CurrentStat = 0 OR CheckedDate BETWEEN @_from and @_to)" + _filter + " ORDER BY DateUploaded";
+                    string _sqlString = "SELECT * FROM NFPChecking WHERE (CurrentStat = 0 OR DateUploaded BETWEEN @_from and @_to)" + _filter + " ORDER BY DateUploaded";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
                     {

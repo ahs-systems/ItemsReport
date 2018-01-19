@@ -87,6 +87,7 @@ namespace WindowsFormsApplication1
             // 
             // frmWorkingStatus
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(415, 274);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboWorkingStatus);

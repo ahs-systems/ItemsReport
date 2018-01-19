@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.SqlClient;
-using System.Windows.Forms;
+﻿using System.Data.SqlClient;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
@@ -12,7 +8,8 @@ namespace WindowsFormsApplication1
 
     class Common
     {
-        public static string ESPServer = @"Server=wssqlc015v02\esp8; Initial Catalog = esp_cal_prod; Integrated Security = SSPI;";
+        //public static string ESPServer = @"Server=wssqlc015v02\esp8; Initial Catalog = esp_cal_prod; Integrated Security = SSPI;";
+        public static string ESPServer = @"Server=wssqlc015v02\esp8; Database=esp_cal_prod;User Id=Espreport; Password=Esp4rep0rt;";
         public static string SystemsServer = @"Server=M292387\ESPSYSTEMS; Database=esp_systems;User Id=esp_systems;Password=esp_systems1;";
         public static string CurrentUser { get; set; }
         public static string LocalServer = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Application.StartupPath + @"\esp_systems.mdf;Integrated Security=True";
@@ -32,12 +29,12 @@ namespace WindowsFormsApplication1
                 SqlDataReader _reader = _comm.ExecuteReader();
                 _reader.Read();
                 _ret = _reader["PP_NBR"].ToString();
-                if (_reader.IsClosed != true) _reader.Close();                
+                if (_reader.IsClosed != true) _reader.Close();
 
                 return _ret != "" ? _ret.PadLeft(2, '0') : _ret;
             }
             catch
-            {                
+            {
                 return "";
             }
             finally

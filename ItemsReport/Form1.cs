@@ -31,10 +31,15 @@ namespace WindowsFormsApplication1
         {
             Common.CurrentUser = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
 
+            // center the initial label
+            int X = Width / 2 - lblSelectIRL.Width / 2;
+            lblSelectIRL.Location = new Point(X, lblSelectIRL.Location.Y);
+
+
             _frmReport._parentForm = this;
 
-            cboYearPP.Items.Add(DateTime.Today.Year); cboYearPP.Items.Add(DateTime.Today.Year - 1);
-            cboYearPP.SelectedIndex = 0;
+            cboYearPP.Items.Add(DateTime.Today.Year + 1); cboYearPP.Items.Add(DateTime.Today.Year); cboYearPP.Items.Add(DateTime.Today.Year - 1);
+            cboYearPP.SelectedIndex = 1;
 
             cboPP.SelectedItem = Common.GetPP(DateTime.Now.ToString("yyyy-MM-dd"));
 
