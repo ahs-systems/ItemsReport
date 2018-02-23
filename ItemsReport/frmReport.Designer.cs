@@ -66,11 +66,11 @@
             this.cboNFPchecking = new System.Windows.Forms.ComboBox();
             this.btnNFPtoExcel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.dpNFPcheckingTo = new System.Windows.Forms.DateTimePicker();
             this.dpNFPcheckingFrom = new System.Windows.Forms.DateTimePicker();
             this.dgvNFPChecking = new System.Windows.Forms.DataGridView();
             this.lblUpdatedFrom = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.cboItemsReport = new System.Windows.Forms.ComboBox();
             this.cboYearPP = new System.Windows.Forms.ComboBox();
@@ -80,6 +80,7 @@
             this.label35 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnRunCheck = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.NPP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNPP)).BeginInit();
@@ -127,9 +128,9 @@
             this.NPP.Controls.Add(this.btnEdit_NPP);
             this.NPP.Controls.Add(this.dgvNPP);
             this.NPP.ImageIndex = 0;
-            this.NPP.Location = new System.Drawing.Point(4, 38);
+            this.NPP.Location = new System.Drawing.Point(4, 34);
             this.NPP.Name = "NPP";
-            this.NPP.Size = new System.Drawing.Size(1610, 462);
+            this.NPP.Size = new System.Drawing.Size(1610, 466);
             this.NPP.TabIndex = 2;
             this.NPP.Text = "New Primary Positions";
             // 
@@ -141,7 +142,7 @@
             this.btnDel_NPP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDel_NPP.ForeColor = System.Drawing.Color.White;
             this.btnDel_NPP.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_NPP.Image")));
-            this.btnDel_NPP.Location = new System.Drawing.Point(116, 414);
+            this.btnDel_NPP.Location = new System.Drawing.Point(116, 418);
             this.btnDel_NPP.Name = "btnDel_NPP";
             this.btnDel_NPP.Size = new System.Drawing.Size(104, 40);
             this.btnDel_NPP.TabIndex = 47;
@@ -159,7 +160,7 @@
             this.btnEdit_NPP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit_NPP.ForeColor = System.Drawing.Color.White;
             this.btnEdit_NPP.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_NPP.Image")));
-            this.btnEdit_NPP.Location = new System.Drawing.Point(6, 414);
+            this.btnEdit_NPP.Location = new System.Drawing.Point(6, 418);
             this.btnEdit_NPP.Name = "btnEdit_NPP";
             this.btnEdit_NPP.Size = new System.Drawing.Size(104, 40);
             this.btnEdit_NPP.TabIndex = 46;
@@ -181,7 +182,7 @@
             this.dgvNPP.ReadOnly = true;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvNPP.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvNPP.Size = new System.Drawing.Size(1604, 402);
+            this.dgvNPP.Size = new System.Drawing.Size(1604, 406);
             this.dgvNPP.TabIndex = 45;
             this.dgvNPP.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNPP_CellDoubleClick);
             // 
@@ -192,10 +193,10 @@
             this.UUT.Controls.Add(this.btnEdit_UUT);
             this.UUT.Controls.Add(this.dgvUUT);
             this.UUT.ImageIndex = 1;
-            this.UUT.Location = new System.Drawing.Point(4, 38);
+            this.UUT.Location = new System.Drawing.Point(4, 34);
             this.UUT.Name = "UUT";
             this.UUT.Padding = new System.Windows.Forms.Padding(3);
-            this.UUT.Size = new System.Drawing.Size(1610, 462);
+            this.UUT.Size = new System.Drawing.Size(1610, 466);
             this.UUT.TabIndex = 0;
             this.UUT.Text = "Unit To Unit Transfer";
             // 
@@ -207,7 +208,7 @@
             this.btnDel_UUT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDel_UUT.ForeColor = System.Drawing.Color.White;
             this.btnDel_UUT.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_UUT.Image")));
-            this.btnDel_UUT.Location = new System.Drawing.Point(116, 414);
+            this.btnDel_UUT.Location = new System.Drawing.Point(116, 418);
             this.btnDel_UUT.Name = "btnDel_UUT";
             this.btnDel_UUT.Size = new System.Drawing.Size(104, 40);
             this.btnDel_UUT.TabIndex = 49;
@@ -225,7 +226,7 @@
             this.btnEdit_UUT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit_UUT.ForeColor = System.Drawing.Color.White;
             this.btnEdit_UUT.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_UUT.Image")));
-            this.btnEdit_UUT.Location = new System.Drawing.Point(6, 414);
+            this.btnEdit_UUT.Location = new System.Drawing.Point(6, 418);
             this.btnEdit_UUT.Name = "btnEdit_UUT";
             this.btnEdit_UUT.Size = new System.Drawing.Size(104, 40);
             this.btnEdit_UUT.TabIndex = 48;
@@ -247,7 +248,7 @@
             this.dgvUUT.ReadOnly = true;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvUUT.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvUUT.Size = new System.Drawing.Size(1600, 405);
+            this.dgvUUT.Size = new System.Drawing.Size(1600, 409);
             this.dgvUUT.TabIndex = 42;
             this.dgvUUT.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUUT_CellDoubleClick);
             // 
@@ -258,10 +259,10 @@
             this.SC.Controls.Add(this.btnEdit_SC);
             this.SC.Controls.Add(this.dgvSC);
             this.SC.ImageIndex = 2;
-            this.SC.Location = new System.Drawing.Point(4, 38);
+            this.SC.Location = new System.Drawing.Point(4, 34);
             this.SC.Name = "SC";
             this.SC.Padding = new System.Windows.Forms.Padding(3);
-            this.SC.Size = new System.Drawing.Size(1610, 462);
+            this.SC.Size = new System.Drawing.Size(1610, 466);
             this.SC.TabIndex = 1;
             this.SC.Text = "Status Change";
             // 
@@ -273,7 +274,7 @@
             this.btnDel_SC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDel_SC.ForeColor = System.Drawing.Color.White;
             this.btnDel_SC.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_SC.Image")));
-            this.btnDel_SC.Location = new System.Drawing.Point(116, 414);
+            this.btnDel_SC.Location = new System.Drawing.Point(116, 418);
             this.btnDel_SC.Name = "btnDel_SC";
             this.btnDel_SC.Size = new System.Drawing.Size(104, 40);
             this.btnDel_SC.TabIndex = 51;
@@ -291,7 +292,7 @@
             this.btnEdit_SC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit_SC.ForeColor = System.Drawing.Color.White;
             this.btnEdit_SC.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_SC.Image")));
-            this.btnEdit_SC.Location = new System.Drawing.Point(6, 414);
+            this.btnEdit_SC.Location = new System.Drawing.Point(6, 418);
             this.btnEdit_SC.Name = "btnEdit_SC";
             this.btnEdit_SC.Size = new System.Drawing.Size(104, 40);
             this.btnEdit_SC.TabIndex = 50;
@@ -313,7 +314,7 @@
             this.dgvSC.ReadOnly = true;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvSC.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvSC.Size = new System.Drawing.Size(1600, 404);
+            this.dgvSC.Size = new System.Drawing.Size(1600, 408);
             this.dgvSC.TabIndex = 48;
             this.dgvSC.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSC_CellDoubleClick);
             // 
@@ -324,9 +325,9 @@
             this.OC.Controls.Add(this.btnEdit_OC);
             this.OC.Controls.Add(this.dgvOC);
             this.OC.ImageIndex = 3;
-            this.OC.Location = new System.Drawing.Point(4, 38);
+            this.OC.Location = new System.Drawing.Point(4, 34);
             this.OC.Name = "OC";
-            this.OC.Size = new System.Drawing.Size(1610, 462);
+            this.OC.Size = new System.Drawing.Size(1610, 466);
             this.OC.TabIndex = 3;
             this.OC.Text = "Occupation Changes";
             // 
@@ -338,7 +339,7 @@
             this.btnDel_OC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDel_OC.ForeColor = System.Drawing.Color.White;
             this.btnDel_OC.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_OC.Image")));
-            this.btnDel_OC.Location = new System.Drawing.Point(116, 414);
+            this.btnDel_OC.Location = new System.Drawing.Point(116, 418);
             this.btnDel_OC.Name = "btnDel_OC";
             this.btnDel_OC.Size = new System.Drawing.Size(104, 40);
             this.btnDel_OC.TabIndex = 51;
@@ -356,7 +357,7 @@
             this.btnEdit_OC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit_OC.ForeColor = System.Drawing.Color.White;
             this.btnEdit_OC.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_OC.Image")));
-            this.btnEdit_OC.Location = new System.Drawing.Point(6, 414);
+            this.btnEdit_OC.Location = new System.Drawing.Point(6, 418);
             this.btnEdit_OC.Name = "btnEdit_OC";
             this.btnEdit_OC.Size = new System.Drawing.Size(104, 40);
             this.btnEdit_OC.TabIndex = 50;
@@ -378,7 +379,7 @@
             this.dgvOC.ReadOnly = true;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvOC.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvOC.Size = new System.Drawing.Size(1600, 404);
+            this.dgvOC.Size = new System.Drawing.Size(1600, 408);
             this.dgvOC.TabIndex = 48;
             this.dgvOC.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOC_CellDoubleClick);
             // 
@@ -389,9 +390,9 @@
             this.Terms.Controls.Add(this.btnEdit_Terms);
             this.Terms.Controls.Add(this.dgvTerms);
             this.Terms.ImageIndex = 4;
-            this.Terms.Location = new System.Drawing.Point(4, 38);
+            this.Terms.Location = new System.Drawing.Point(4, 34);
             this.Terms.Name = "Terms";
-            this.Terms.Size = new System.Drawing.Size(1610, 462);
+            this.Terms.Size = new System.Drawing.Size(1610, 466);
             this.Terms.TabIndex = 4;
             this.Terms.Text = "Terminations";
             // 
@@ -403,7 +404,7 @@
             this.btnDel_Terms.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDel_Terms.ForeColor = System.Drawing.Color.White;
             this.btnDel_Terms.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_Terms.Image")));
-            this.btnDel_Terms.Location = new System.Drawing.Point(116, 414);
+            this.btnDel_Terms.Location = new System.Drawing.Point(116, 418);
             this.btnDel_Terms.Name = "btnDel_Terms";
             this.btnDel_Terms.Size = new System.Drawing.Size(104, 40);
             this.btnDel_Terms.TabIndex = 51;
@@ -421,7 +422,7 @@
             this.btnEdit_Terms.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit_Terms.ForeColor = System.Drawing.Color.White;
             this.btnEdit_Terms.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_Terms.Image")));
-            this.btnEdit_Terms.Location = new System.Drawing.Point(6, 414);
+            this.btnEdit_Terms.Location = new System.Drawing.Point(6, 418);
             this.btnEdit_Terms.Name = "btnEdit_Terms";
             this.btnEdit_Terms.Size = new System.Drawing.Size(104, 40);
             this.btnEdit_Terms.TabIndex = 50;
@@ -443,7 +444,7 @@
             this.dgvTerms.ReadOnly = true;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvTerms.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvTerms.Size = new System.Drawing.Size(1600, 404);
+            this.dgvTerms.Size = new System.Drawing.Size(1600, 408);
             this.dgvTerms.TabIndex = 48;
             this.dgvTerms.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTerms_CellDoubleClick);
             // 
@@ -454,9 +455,9 @@
             this.Trans.Controls.Add(this.btnEdit_Trans);
             this.Trans.Controls.Add(this.dgvTrans);
             this.Trans.ImageIndex = 5;
-            this.Trans.Location = new System.Drawing.Point(4, 38);
+            this.Trans.Location = new System.Drawing.Point(4, 34);
             this.Trans.Name = "Trans";
-            this.Trans.Size = new System.Drawing.Size(1610, 462);
+            this.Trans.Size = new System.Drawing.Size(1610, 466);
             this.Trans.TabIndex = 5;
             this.Trans.Text = "Transfers";
             // 
@@ -468,7 +469,7 @@
             this.btnDel_Trans.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDel_Trans.ForeColor = System.Drawing.Color.White;
             this.btnDel_Trans.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_Trans.Image")));
-            this.btnDel_Trans.Location = new System.Drawing.Point(116, 414);
+            this.btnDel_Trans.Location = new System.Drawing.Point(116, 418);
             this.btnDel_Trans.Name = "btnDel_Trans";
             this.btnDel_Trans.Size = new System.Drawing.Size(104, 40);
             this.btnDel_Trans.TabIndex = 51;
@@ -486,7 +487,7 @@
             this.btnEdit_Trans.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit_Trans.ForeColor = System.Drawing.Color.White;
             this.btnEdit_Trans.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_Trans.Image")));
-            this.btnEdit_Trans.Location = new System.Drawing.Point(6, 414);
+            this.btnEdit_Trans.Location = new System.Drawing.Point(6, 418);
             this.btnEdit_Trans.Name = "btnEdit_Trans";
             this.btnEdit_Trans.Size = new System.Drawing.Size(104, 40);
             this.btnEdit_Trans.TabIndex = 50;
@@ -508,13 +509,14 @@
             this.dgvTrans.ReadOnly = true;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvTrans.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvTrans.Size = new System.Drawing.Size(1600, 404);
+            this.dgvTrans.Size = new System.Drawing.Size(1600, 408);
             this.dgvTrans.TabIndex = 48;
             this.dgvTrans.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrans_CellDoubleClick);
             // 
             // NFPs
             // 
             this.NFPs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.NFPs.Controls.Add(this.btnRunCheck);
             this.NFPs.Controls.Add(this.cboNFPchecking);
             this.NFPs.Controls.Add(this.btnNFPtoExcel);
             this.NFPs.Controls.Add(this.button1);
@@ -524,10 +526,10 @@
             this.NFPs.Controls.Add(this.lblUpdatedFrom);
             this.NFPs.Controls.Add(this.label1);
             this.NFPs.ImageIndex = 6;
-            this.NFPs.Location = new System.Drawing.Point(4, 38);
+            this.NFPs.Location = new System.Drawing.Point(4, 34);
             this.NFPs.Name = "NFPs";
             this.NFPs.Padding = new System.Windows.Forms.Padding(3);
-            this.NFPs.Size = new System.Drawing.Size(1610, 462);
+            this.NFPs.Size = new System.Drawing.Size(1610, 466);
             this.NFPs.TabIndex = 6;
             this.NFPs.Text = "NFP Checking";
             // 
@@ -543,7 +545,7 @@
             "InActive Only"});
             this.cboNFPchecking.Location = new System.Drawing.Point(813, 14);
             this.cboNFPchecking.Name = "cboNFPchecking";
-            this.cboNFPchecking.Size = new System.Drawing.Size(214, 28);
+            this.cboNFPchecking.Size = new System.Drawing.Size(214, 25);
             this.cboNFPchecking.TabIndex = 66;
             // 
             // btnNFPtoExcel
@@ -579,29 +581,18 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(473, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 18);
-            this.label1.TabIndex = 63;
-            this.label1.Text = "To:";
-            // 
             // dpNFPcheckingTo
             // 
             this.dpNFPcheckingTo.Location = new System.Drawing.Point(504, 15);
             this.dpNFPcheckingTo.Name = "dpNFPcheckingTo";
-            this.dpNFPcheckingTo.Size = new System.Drawing.Size(292, 26);
+            this.dpNFPcheckingTo.Size = new System.Drawing.Size(292, 23);
             this.dpNFPcheckingTo.TabIndex = 48;
             // 
             // dpNFPcheckingFrom
             // 
             this.dpNFPcheckingFrom.Location = new System.Drawing.Point(170, 15);
             this.dpNFPcheckingFrom.Name = "dpNFPcheckingFrom";
-            this.dpNFPcheckingFrom.Size = new System.Drawing.Size(292, 26);
+            this.dpNFPcheckingFrom.Size = new System.Drawing.Size(292, 23);
             this.dpNFPcheckingFrom.TabIndex = 47;
             // 
             // dgvNFPChecking
@@ -616,7 +607,7 @@
             this.dgvNFPChecking.Name = "dgvNFPChecking";
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvNFPChecking.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvNFPChecking.Size = new System.Drawing.Size(1604, 402);
+            this.dgvNFPChecking.Size = new System.Drawing.Size(1604, 406);
             this.dgvNFPChecking.TabIndex = 46;
             this.dgvNFPChecking.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNFPChecking_CellValueChanged);
             // 
@@ -627,9 +618,20 @@
             this.lblUpdatedFrom.ForeColor = System.Drawing.Color.White;
             this.lblUpdatedFrom.Location = new System.Drawing.Point(11, 19);
             this.lblUpdatedFrom.Name = "lblUpdatedFrom";
-            this.lblUpdatedFrom.Size = new System.Drawing.Size(153, 18);
+            this.lblUpdatedFrom.Size = new System.Drawing.Size(127, 15);
             this.lblUpdatedFrom.TabIndex = 61;
             this.lblUpdatedFrom.Text = "Those uploaded from:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(473, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(24, 15);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "To:";
             // 
             // imageList1
             // 
@@ -655,7 +657,7 @@
             "Items Report C"});
             this.cboItemsReport.Location = new System.Drawing.Point(362, 17);
             this.cboItemsReport.Name = "cboItemsReport";
-            this.cboItemsReport.Size = new System.Drawing.Size(121, 26);
+            this.cboItemsReport.Size = new System.Drawing.Size(121, 23);
             this.cboItemsReport.TabIndex = 63;
             // 
             // cboYearPP
@@ -666,7 +668,7 @@
             this.cboYearPP.FormattingEnabled = true;
             this.cboYearPP.Location = new System.Drawing.Point(219, 17);
             this.cboYearPP.Name = "cboYearPP";
-            this.cboYearPP.Size = new System.Drawing.Size(121, 26);
+            this.cboYearPP.Size = new System.Drawing.Size(121, 23);
             this.cboYearPP.TabIndex = 61;
             // 
             // cboPP
@@ -704,7 +706,7 @@
             "26"});
             this.cboPP.Location = new System.Drawing.Point(96, 17);
             this.cboPP.Name = "cboPP";
-            this.cboPP.Size = new System.Drawing.Size(56, 26);
+            this.cboPP.Size = new System.Drawing.Size(56, 23);
             this.cboPP.TabIndex = 59;
             // 
             // label34
@@ -713,7 +715,7 @@
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.Location = new System.Drawing.Point(11, 20);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(84, 18);
+            this.label34.Size = new System.Drawing.Size(69, 15);
             this.label34.TabIndex = 60;
             this.label34.Text = "Pay Period:";
             // 
@@ -740,7 +742,7 @@
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.Location = new System.Drawing.Point(173, 20);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(42, 18);
+            this.label35.Size = new System.Drawing.Size(35, 15);
             this.label35.TabIndex = 62;
             this.label35.Text = "Year:";
             // 
@@ -766,6 +768,22 @@
             this.toolTip1.IsBalloon = true;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Tip:";
+            // 
+            // btnRunCheck
+            // 
+            this.btnRunCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(62)))), ((int)(((byte)(5)))));
+            this.btnRunCheck.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRunCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRunCheck.ForeColor = System.Drawing.Color.White;
+            this.btnRunCheck.Image = ((System.Drawing.Image)(resources.GetObject("btnRunCheck.Image")));
+            this.btnRunCheck.Location = new System.Drawing.Point(1423, 5);
+            this.btnRunCheck.Name = "btnRunCheck";
+            this.btnRunCheck.Size = new System.Drawing.Size(180, 40);
+            this.btnRunCheck.TabIndex = 67;
+            this.btnRunCheck.Text = "Run Auto Checking";
+            this.btnRunCheck.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRunCheck.UseVisualStyleBackColor = false;
+            this.btnRunCheck.Click += new System.EventHandler(this.btnRunCheck_Click);
             // 
             // frmReport
             // 
@@ -849,5 +867,6 @@
         private System.Windows.Forms.Button btnNFPtoExcel;
         public System.Windows.Forms.ComboBox cboNFPchecking;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnRunCheck;
     }
 }

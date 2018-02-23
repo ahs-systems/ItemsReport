@@ -14,6 +14,7 @@ namespace WindowsFormsApplication1
         public ItemsReport _parentForm;
         public bool firstLoad = true;
         public bool CloseTheForm = false;
+        public bool LoadingNFP = false;
 
         #region Disable Close Button
         //private const int CP_NOCLOSE_BUTTON = 0x200;
@@ -409,6 +410,8 @@ namespace WindowsFormsApplication1
 
             try
             {
+                LoadingNFP = true;
+
                 _dgv.DataSource = null;
 
                 _dgv.DataSource = GetNFPList();
@@ -443,14 +446,15 @@ namespace WindowsFormsApplication1
 
                     //Hide Record ID Column
                     _dgv.Columns[0].Visible = false;
-
-                    
-
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                LoadingNFP = false;
             }
         }
 
@@ -664,6 +668,11 @@ namespace WindowsFormsApplication1
 
         private void dgvNFPChecking_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+            if (LoadingNFP)
+            {
+                return;
+            }
+
             try
             {
                 using (SqlConnection _conn = new SqlConnection(Common.SystemsServer))
@@ -673,9 +682,9 @@ namespace WindowsFormsApplication1
                     {
                         _comm.CommandText = "UPDATE NFPChecking SET CheckedBy = @_currUser,  CheckedDate = getdate(), CurrentStat = @_stat, Comments = @_comments  WHERE ID = @_id";
                         _comm.Parameters.AddWithValue("_currUser", Common.CurrentUser);
-                        _comm.Parameters.AddWithValue("_stat", (bool)dgvNFPChecking.CurrentRow.Cells[8].Value ? "1" : "0");
-                        _comm.Parameters.AddWithValue("_id", dgvNFPChecking.CurrentRow.Cells[0].Value.ToString());
-                        _comm.Parameters.AddWithValue("_comments", dgvNFPChecking.CurrentRow.Cells[9].Value.ToString());
+                        _comm.Parameters.AddWithValue("_stat", (bool)dgvNFPChecking.CurrentRow.Cells["CurrentStat"].Value ? "1" : "0");
+                        _comm.Parameters.AddWithValue("_id", dgvNFPChecking.CurrentRow.Cells["id"].Value.ToString());
+                        _comm.Parameters.AddWithValue("_comments", dgvNFPChecking.CurrentRow.Cells["Comments"].Value.ToString());
                         _comm.ExecuteNonQuery();
                     }
                 }
@@ -784,5 +793,122 @@ namespace WindowsFormsApplication1
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnRunCheck_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                btnRunCheck.Text = "Please wait...";
+                btnRunCheck.Update();
+
+                using (SqlConnection _conn = new SqlConnection(Common.SystemsServer))
+                {
+                    SqlCommand _comm = _conn.CreateCommand();
+                    _comm.CommandText = "select * from NFPChecking where CurrentStat = 0";
+
+                    _conn.Open();
+                    SqlDataReader _dr = _comm.ExecuteReader();
+
+                    if (_dr.HasRows)
+                    {
+                        while (_dr.Read())
+                        {
+                            string _payInfo = GetPayInfo(_dr["EmpID"].ToString());
+
+                            // if _payInfo == "" then something when wrong, don't do anything, otherwise proceed
+                            if (_payInfo != "")
+                            {
+                                // If there is a change in PayInfo, it means it was already updated in EE workspace and needs to update its status to "checked" already
+                                // Current PayInfo should also not be "Not for Payroll" or "--- INACTIVE ---"
+                                if (_payInfo != _dr["Prev_Unit"].ToString() && !"Not for Payroll , --- INACTIVE ---, Inactive".Contains(_payInfo))
+                                {
+                                    UpdateNFPcheckingList(_dr["id"].ToString(), _payInfo);
+                                }
+                            }
+                        }
+
+                        Load_NFPChecking();
+                    }
+
+                    _conn.Close();
+
+                    MessageBox.Show("Done checking.", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in Run Checking: " + ex.Message);
+            }
+            finally
+            {
+                btnRunCheck.Text = "Run Auto Checking";
+            }
+
+        }
+
+        private void UpdateNFPcheckingList(string _id, string _payInfo)
+        {
+            try
+            {
+                using (SqlConnection _conn = new SqlConnection(Common.SystemsServer))
+                {
+                    _conn.Open();
+                    using (SqlCommand _comm = _conn.CreateCommand())
+                    {
+                        _comm.CommandText = "UPDATE NFPChecking SET CheckedBy = 'AutoSystem',  CheckedDate = getdate(), CurrentStat = 1, Curr_Unit = @_currUnit, Comments = @_comments  WHERE ID = @_id";                                      
+                        _comm.Parameters.AddWithValue("_currUnit", _payInfo);
+                        _comm.Parameters.AddWithValue("_comments", "Auto Checked Run by " + Common.CurrentUser);
+                        _comm.Parameters.AddWithValue("_id", _id);
+                        _comm.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in UpdateNFPcheckingList: " + ex.Message);
+            }
+        }
+
+        private string GetPayInfo(string _empNbr)
+        {
+            string _ret = "";
+
+            try
+            {
+                using (SqlConnection _conn = new SqlConnection(Common.ESPServer))
+                {
+                    SqlCommand _comm = _conn.CreateCommand();
+
+                    _comm.CommandText = "SELECT TCG_Desc from TimeCardGroup where TCG_TCardGroupID = " +
+                                        "(select TOP 1 ETCI_TimeCardGroupID from EmpTimeCardInfo ETCI where ETCI_EmpID = " +
+                                        "(select E_EmpID from emp where E_EmpNbr = @_empID) ORDER BY ETCI_PayPeriodID DESC)";
+                    _comm.Parameters.AddWithValue("_empID", _empNbr);
+
+                    _conn.Open();
+
+                    SqlDataReader _dr = _comm.ExecuteReader();
+
+                    if (_dr.HasRows)
+                    {
+                        _dr.Read();
+                        _ret = _dr["TCG_Desc"].ToString().Trim();
+                    }
+                    else
+                    {
+                        _ret = "--- INACTIVE ---";
+                    }
+
+                    _conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in GetPayInfo: " + ex.Message);
+            }
+
+            return _ret;
+        }
+
+
     }
 }
