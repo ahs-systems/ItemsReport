@@ -688,7 +688,12 @@ namespace WindowsFormsApplication1
                         _comm.ExecuteNonQuery();
                     }
                 }
+
+                int _currentRowIndex = dgvNFPChecking.CurrentRow.Index;
+                //MessageBox.Show("Changes was successfuly saved.", "Confirm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Load_NFPChecking();
+
+                dgvNFPChecking.FirstDisplayedScrollingRowIndex = _currentRowIndex;
             }
             catch (Exception ex)
             {
@@ -857,7 +862,7 @@ namespace WindowsFormsApplication1
                     {
                         _comm.CommandText = "UPDATE NFPChecking SET CheckedBy = 'AutoSystem',  CheckedDate = getdate(), CurrentStat = 1, Curr_Unit = @_currUnit, Comments = @_comments  WHERE ID = @_id";                                      
                         _comm.Parameters.AddWithValue("_currUnit", _payInfo);
-                        _comm.Parameters.AddWithValue("_comments", "Auto Checked Run by " + Common.CurrentUser);
+                        _comm.Parameters.AddWithValue("_comments", "Auto check run by: " + Common.CurrentUser);
                         _comm.Parameters.AddWithValue("_id", _id);
                         _comm.ExecuteNonQuery();
                     }
