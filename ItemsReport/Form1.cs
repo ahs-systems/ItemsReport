@@ -29,6 +29,8 @@ namespace WindowsFormsApplication1
 
         private void ItemsReport_Load(object sender, EventArgs e)
         {
+            Common.LoadIt("ItemsReport");
+
             Common.CurrentUser = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
 
             // center the initial label
