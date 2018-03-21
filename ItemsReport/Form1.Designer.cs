@@ -154,6 +154,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblSelectIRL = new System.Windows.Forms.Label();
+            this.timerClose = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.NPP.SuspendLayout();
             this.UUT.SuspendLayout();
@@ -1827,6 +1828,11 @@
             this.lblSelectIRL.TabIndex = 61;
             this.lblSelectIRL.Text = "Please select first the Items Report Letter from the drop down.";
             // 
+            // timerClose
+            // 
+            this.timerClose.Interval = 12600000;
+            this.timerClose.Tick += new System.EventHandler(this.timerClose_Tick);
+            // 
             // ItemsReport
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -2000,6 +2006,7 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblSelectIRL;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Timer timerClose;
     }
 }
 

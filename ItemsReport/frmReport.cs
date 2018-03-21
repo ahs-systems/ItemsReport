@@ -378,10 +378,10 @@ namespace WindowsFormsApplication1
                             _filter = "";
                             break;
                         case 1:
-                            _filter = " AND UPPER(Prev_Unit) LIKE '%NOT FOR PAYROLL%'";
+                            _filter = " AND UPPER(Prev_PayInfo) LIKE '%NOT FOR PAYROLL%'";
                             break;
                         case 2:
-                            _filter = " AND UPPER(Prev_Unit) LIKE '%INACTIVE%'";
+                            _filter = " AND UPPER(Prev_PayInfo) LIKE '%INACTIVE%'";
                             break;
                     }
 
@@ -771,7 +771,7 @@ namespace WindowsFormsApplication1
                             worksheet.Cells[lineCtr, 2].Value = Convert.ToDateTime(_row["DateUploaded"]).ToString("dd-MMM-yyyy HH:mm");
                             worksheet.Cells[lineCtr, 3].Value = _row["EmpID"];
                             worksheet.Cells[lineCtr, 4].Value = _row["Name"];
-                            worksheet.Cells[lineCtr, 5].Value = _row["Prev_Unit"];
+                            worksheet.Cells[lineCtr, 5].Value = _row["Prev_PayInfo"];
                             worksheet.Cells[lineCtr, 6].Value = _row["Comments"];
                             lineCtr++;
 
@@ -825,7 +825,7 @@ namespace WindowsFormsApplication1
                             {
                                 // If there is a change in PayInfo, it means it was already updated in EE workspace and needs to update its status to "checked" already
                                 // Current PayInfo should also not be "Not for Payroll" or "--- INACTIVE ---"
-                                if (_payInfo != _dr["Prev_Unit"].ToString() && !"Not for Payroll , --- INACTIVE ---, Inactive".Contains(_payInfo))
+                                if (_payInfo != _dr["Prev_PayInfo"].ToString() && !"Not for Payroll , --- INACTIVE ---, Inactive".Contains(_payInfo))
                                 {
                                     UpdateNFPcheckingList(_dr["id"].ToString(), _payInfo);
                                 }
@@ -860,7 +860,7 @@ namespace WindowsFormsApplication1
                     _conn.Open();
                     using (SqlCommand _comm = _conn.CreateCommand())
                     {
-                        _comm.CommandText = "UPDATE NFPChecking SET CheckedBy = 'AutoSystem',  CheckedDate = getdate(), CurrentStat = 1, Curr_Unit = @_currUnit, Comments = @_comments  WHERE ID = @_id";                                      
+                        _comm.CommandText = "UPDATE NFPChecking SET CheckedBy = 'AutoSystem',  CheckedDate = getdate(), CurrentStat = 1, Curr_PayInfo = @_currUnit, Comments = @_comments  WHERE ID = @_id";                                      
                         _comm.Parameters.AddWithValue("_currUnit", _payInfo);
                         _comm.Parameters.AddWithValue("_comments", "Auto check run by: " + Common.CurrentUser);
                         _comm.Parameters.AddWithValue("_id", _id);

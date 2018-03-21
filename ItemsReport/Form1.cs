@@ -50,6 +50,9 @@ namespace WindowsFormsApplication1
 
             PopulateUnitLongDesc(ref unitsLongDesc);
             txtUnit_Terms.AutoCompleteCustomSource = txtUnitFrom_Trans.AutoCompleteCustomSource = unitsLongDesc;
+
+            //enable trigger of closing the application at early morning
+            timerClose.Enabled = true;
         }
 
         private int GetSiteNum_ShortDesc(string _unitShortDesc)
@@ -1927,6 +1930,11 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Ooops, there's an error: " + ex.Message, "ERROR");
             }
+        }
+
+        private void timerClose_Tick(object sender, EventArgs e)
+        {
+            if (DateTime.Now.Hour > 1 && DateTime.Now.Hour < 5 && Cursor != Cursors.WaitCursor) Application.Exit();
         }
     }
 }
