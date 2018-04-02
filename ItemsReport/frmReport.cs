@@ -682,7 +682,14 @@ namespace WindowsFormsApplication1
                     {
                         _comm.CommandText = "UPDATE NFPChecking SET CheckedBy = @_currUser,  CheckedDate = getdate(), CurrentStat = @_stat, Comments = @_comments  WHERE ID = @_id";
                         _comm.Parameters.AddWithValue("_currUser", Common.CurrentUser);
-                        _comm.Parameters.AddWithValue("_stat", (bool)dgvNFPChecking.CurrentRow.Cells["CurrentStat"].Value ? "1" : "0");
+                        if (dgvNFPChecking.CurrentRow.Cells["Comments"].Value.ToString() != "")
+                        {
+                            _comm.Parameters.AddWithValue("_stat", "1");
+                        }
+                        else
+                        {
+                            _comm.Parameters.AddWithValue("_stat", (bool)dgvNFPChecking.CurrentRow.Cells["CurrentStat"].Value ? "1" : "0");
+                        }
                         _comm.Parameters.AddWithValue("_id", dgvNFPChecking.CurrentRow.Cells["id"].Value.ToString());
                         _comm.Parameters.AddWithValue("_comments", dgvNFPChecking.CurrentRow.Cells["Comments"].Value.ToString());
                         _comm.ExecuteNonQuery();
