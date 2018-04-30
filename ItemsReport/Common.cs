@@ -1,5 +1,9 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -80,6 +84,62 @@ namespace WindowsFormsApplication1
             }
         }
 
+        public static bool CheckUsers(string _currentUser)
+        {
+            try
+            {
+                using (SqlConnection myConnection = new SqlConnection())
+                {
+                    bool _ret = false;
+
+                    myConnection.ConnectionString = Common.BooServer;
+                    myConnection.Open();
+
+                    SqlCommand myCommand = myConnection.CreateCommand();
+
+                    myCommand.CommandText = "SELECT username FROM AppUsers WHERE username = '" + _currentUser.ToUpper() + "' AND zone = 'CAL'";
+
+                    SqlDataReader myReader = myCommand.ExecuteReader();
+
+                    // if found then it is a valid user
+                    _ret = myReader.HasRows;
+
+                    myCommand.Dispose();
+
+                    return _ret;
+                }
+            }
+            catch
+            {
+                return false;
+            }            
+        }
+
+        public static string Decrypt(string strEncrypted, string strKey)
+        {
+            try
+            {
+                TripleDESCryptoServiceProvider objDESCrypto =
+                    new TripleDESCryptoServiceProvider();
+                MD5CryptoServiceProvider objHashMD5 = new MD5CryptoServiceProvider();
+                byte[] byteHash, byteBuff;
+                string strTempKey = strKey;
+                byteHash = objHashMD5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(strTempKey));
+                objHashMD5 = null;
+                objDESCrypto.Key = byteHash;
+                objDESCrypto.Mode = CipherMode.ECB; //CBC, CFB
+                byteBuff = Convert.FromBase64String(strEncrypted);
+                string strDecrypted = ASCIIEncoding.ASCII.GetString
+                (objDESCrypto.CreateDecryptor().TransformFinalBlock
+                (byteBuff, 0, byteBuff.Length));
+                objDESCrypto = null;
+                return strDecrypted;
+            }
+            catch
+            {
+                return "ERROR";
+            }
+        }
     }
 
     public static class RichTextBoxExtensions

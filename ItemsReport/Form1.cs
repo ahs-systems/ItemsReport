@@ -31,6 +31,14 @@ namespace WindowsFormsApplication1
         {
             Common.LoadIt("ItemsReport");
 
+            // Check if valid user
+            if (!Common.CheckUsers(System.Security.Principal.WindowsIdentity.GetCurrent().Name.Replace(@"HEALTHY\", "").ToUpper()))
+            {
+                MessageBox.Show("Error: Unknown user.\n\nApplication will abort.", "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+                return;
+            }
+
             Common.CurrentUser = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
 
             // center the initial label
@@ -1842,6 +1850,7 @@ namespace WindowsFormsApplication1
                 case 0:
                     lblStatus.Text = "Your status: Not working on it.";
                     lblStatus.ForeColor = Color.DimGray;
+                    lblStatus.Image = imageList2.Images[_stat];
                     break;
                 case 1:
                     lblStatus.Text = "Your status: Still working on it.";
@@ -1852,6 +1861,8 @@ namespace WindowsFormsApplication1
                     lblStatus.ForeColor = Color.Green;
                     break;
             }
+
+            lblStatus.Image = imageList2.Images[_stat];
 
             workingStatus = (WorkingStatus)_stat;
         }

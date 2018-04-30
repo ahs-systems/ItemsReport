@@ -155,6 +155,7 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblSelectIRL = new System.Windows.Forms.Label();
             this.timerClose = new System.Windows.Forms.Timer(this.components);
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1.SuspendLayout();
             this.NPP.SuspendLayout();
             this.UUT.SuspendLayout();
@@ -175,11 +176,11 @@
             this.tabControl1.Controls.Add(this.OC);
             this.tabControl1.Controls.Add(this.Terms);
             this.tabControl1.Controls.Add(this.Trans);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ImageList = this.imageList1;
             this.tabControl1.Location = new System.Drawing.Point(12, 134);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.Padding = new System.Drawing.Point(10, 6);
+            this.tabControl1.Padding = new System.Drawing.Point(12, 7);
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1002, 269);
             this.tabControl1.TabIndex = 0;
@@ -206,10 +207,10 @@
             this.NPP.Controls.Add(this.label3);
             this.NPP.Controls.Add(this.label30);
             this.NPP.ImageIndex = 0;
-            this.NPP.Location = new System.Drawing.Point(4, 32);
+            this.NPP.Location = new System.Drawing.Point(4, 35);
             this.NPP.Name = "NPP";
             this.NPP.Padding = new System.Windows.Forms.Padding(3);
-            this.NPP.Size = new System.Drawing.Size(994, 233);
+            this.NPP.Size = new System.Drawing.Size(994, 230);
             this.NPP.TabIndex = 0;
             this.NPP.Text = "New Primary Positions";
             // 
@@ -446,10 +447,10 @@
             this.UUT.Controls.Add(this.label12);
             this.UUT.Controls.Add(this.label9);
             this.UUT.ImageIndex = 1;
-            this.UUT.Location = new System.Drawing.Point(4, 32);
+            this.UUT.Location = new System.Drawing.Point(4, 35);
             this.UUT.Name = "UUT";
             this.UUT.Padding = new System.Windows.Forms.Padding(3);
-            this.UUT.Size = new System.Drawing.Size(994, 233);
+            this.UUT.Size = new System.Drawing.Size(994, 230);
             this.UUT.TabIndex = 1;
             this.UUT.Text = "Unit to Unit Transfer";
             // 
@@ -741,10 +742,10 @@
             this.SC.Controls.Add(this.label17);
             this.SC.Controls.Add(this.label23);
             this.SC.ImageIndex = 2;
-            this.SC.Location = new System.Drawing.Point(4, 32);
+            this.SC.Location = new System.Drawing.Point(4, 35);
             this.SC.Name = "SC";
             this.SC.Padding = new System.Windows.Forms.Padding(3);
-            this.SC.Size = new System.Drawing.Size(994, 233);
+            this.SC.Size = new System.Drawing.Size(994, 230);
             this.SC.TabIndex = 2;
             this.SC.Text = "Status Change";
             // 
@@ -980,10 +981,10 @@
             this.OC.Controls.Add(this.label27);
             this.OC.Controls.Add(this.label25);
             this.OC.ImageIndex = 3;
-            this.OC.Location = new System.Drawing.Point(4, 32);
+            this.OC.Location = new System.Drawing.Point(4, 35);
             this.OC.Name = "OC";
             this.OC.Padding = new System.Windows.Forms.Padding(3);
-            this.OC.Size = new System.Drawing.Size(994, 233);
+            this.OC.Size = new System.Drawing.Size(994, 230);
             this.OC.TabIndex = 3;
             this.OC.Text = "Occupation Change";
             // 
@@ -1241,10 +1242,10 @@
             this.Terms.Controls.Add(this.label38);
             this.Terms.Controls.Add(this.label39);
             this.Terms.ImageIndex = 4;
-            this.Terms.Location = new System.Drawing.Point(4, 32);
+            this.Terms.Location = new System.Drawing.Point(4, 35);
             this.Terms.Name = "Terms";
             this.Terms.Padding = new System.Windows.Forms.Padding(3);
-            this.Terms.Size = new System.Drawing.Size(994, 233);
+            this.Terms.Size = new System.Drawing.Size(994, 230);
             this.Terms.TabIndex = 4;
             this.Terms.Text = "Terminations";
             // 
@@ -1442,9 +1443,9 @@
             this.Trans.Controls.Add(this.label42);
             this.Trans.Controls.Add(this.label44);
             this.Trans.ImageIndex = 5;
-            this.Trans.Location = new System.Drawing.Point(4, 32);
+            this.Trans.Location = new System.Drawing.Point(4, 35);
             this.Trans.Name = "Trans";
-            this.Trans.Size = new System.Drawing.Size(994, 233);
+            this.Trans.Size = new System.Drawing.Size(994, 230);
             this.Trans.TabIndex = 5;
             this.Trans.Text = "Transfers";
             // 
@@ -1641,10 +1642,10 @@
             this.button1.BackColor = System.Drawing.Color.SteelBlue;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(784, 65);
+            this.button1.Location = new System.Drawing.Point(698, 65);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 44);
             this.button1.TabIndex = 5;
@@ -1697,22 +1698,22 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(78)))), ((int)(((byte)(121)))));
-            this.label34.Location = new System.Drawing.Point(10, 79);
+            this.label34.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label34.Location = new System.Drawing.Point(13, 80);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(69, 15);
+            this.label34.Size = new System.Drawing.Size(79, 14);
             this.label34.TabIndex = 55;
             this.label34.Text = "Pay Period:";
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(78)))), ((int)(((byte)(121)))));
-            this.label35.Location = new System.Drawing.Point(172, 80);
+            this.label35.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label35.Location = new System.Drawing.Point(182, 80);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(35, 15);
+            this.label35.Size = new System.Drawing.Size(39, 14);
             this.label35.TabIndex = 57;
             this.label35.Text = "Year:";
             // 
@@ -1724,7 +1725,7 @@
             this.cboYearPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboYearPP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.cboYearPP.FormattingEnabled = true;
-            this.cboYearPP.Location = new System.Drawing.Point(214, 76);
+            this.cboYearPP.Location = new System.Drawing.Point(224, 76);
             this.cboYearPP.Margin = new System.Windows.Forms.Padding(7);
             this.cboYearPP.Name = "cboYearPP";
             this.cboYearPP.Size = new System.Drawing.Size(140, 23);
@@ -1742,7 +1743,7 @@
             "Items Report A",
             "Items Report B",
             "Items Report C"});
-            this.cboItemsReport.Location = new System.Drawing.Point(374, 76);
+            this.cboItemsReport.Location = new System.Drawing.Point(384, 76);
             this.cboItemsReport.Margin = new System.Windows.Forms.Padding(7);
             this.cboItemsReport.Name = "cboItemsReport";
             this.cboItemsReport.Size = new System.Drawing.Size(140, 23);
@@ -1754,10 +1755,10 @@
             this.btnViewRpt.BackColor = System.Drawing.Color.SteelBlue;
             this.btnViewRpt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnViewRpt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewRpt.Font = new System.Drawing.Font("Century Gothic", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewRpt.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewRpt.ForeColor = System.Drawing.Color.White;
             this.btnViewRpt.Image = ((System.Drawing.Image)(resources.GetObject("btnViewRpt.Image")));
-            this.btnViewRpt.Location = new System.Drawing.Point(521, 65);
+            this.btnViewRpt.Location = new System.Drawing.Point(531, 65);
             this.btnViewRpt.Name = "btnViewRpt";
             this.btnViewRpt.Size = new System.Drawing.Size(161, 44);
             this.btnViewRpt.TabIndex = 4;
@@ -1810,12 +1811,14 @@
             // 
             // lblStatus
             // 
-            this.lblStatus.AutoSize = true;
+            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
             this.lblStatus.Font = new System.Drawing.Font("Verdana", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblStatus.Location = new System.Drawing.Point(14, 38);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(0, 17);
+            this.lblStatus.Size = new System.Drawing.Size(321, 31);
             this.lblStatus.TabIndex = 59;
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSelectIRL
             // 
@@ -1833,10 +1836,18 @@
             this.timerClose.Interval = 12600000;
             this.timerClose.Tick += new System.EventHandler(this.timerClose_Tick);
             // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "sleeping.png");
+            this.imageList2.Images.SetKeyName(1, "Working_36.png");
+            this.imageList2.Images.SetKeyName(2, "In Progress_36px.png");
+            // 
             // ItemsReport
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1026, 405);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnViewRpt);
@@ -1849,14 +1860,14 @@
             this.Controls.Add(this.label35);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.lblSelectIRL);
-            this.Font = new System.Drawing.Font("Verdana", 7.471698F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "ItemsReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Items Report v2018.04.02";
+            this.Text = "Items Report v2018.04.30";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ItemsReport_FormClosing);
             this.Load += new System.EventHandler(this.ItemsReport_Load);
             this.Shown += new System.EventHandler(this.ItemsReport_Shown);
@@ -2007,6 +2018,7 @@
         private System.Windows.Forms.Label lblSelectIRL;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Timer timerClose;
+        private System.Windows.Forms.ImageList imageList2;
     }
 }
 

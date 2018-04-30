@@ -63,6 +63,7 @@
             this.btnEdit_Trans = new System.Windows.Forms.Button();
             this.dgvTrans = new System.Windows.Forms.DataGridView();
             this.NFPs = new System.Windows.Forms.TabPage();
+            this.btnRunCheck = new System.Windows.Forms.Button();
             this.cboNFPchecking = new System.Windows.Forms.ComboBox();
             this.btnNFPtoExcel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -80,7 +81,6 @@
             this.label35 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnRunCheck = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.NPP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNPP)).BeginInit();
@@ -111,7 +111,7 @@
             this.tabControl1.Controls.Add(this.Terms);
             this.tabControl1.Controls.Add(this.Trans);
             this.tabControl1.Controls.Add(this.NFPs);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ImageList = this.imageList1;
             this.tabControl1.Location = new System.Drawing.Point(2, 60);
             this.tabControl1.Name = "tabControl1";
@@ -128,9 +128,9 @@
             this.NPP.Controls.Add(this.btnEdit_NPP);
             this.NPP.Controls.Add(this.dgvNPP);
             this.NPP.ImageIndex = 0;
-            this.NPP.Location = new System.Drawing.Point(4, 34);
+            this.NPP.Location = new System.Drawing.Point(4, 36);
             this.NPP.Name = "NPP";
-            this.NPP.Size = new System.Drawing.Size(1610, 466);
+            this.NPP.Size = new System.Drawing.Size(1610, 464);
             this.NPP.TabIndex = 2;
             this.NPP.Text = "New Primary Positions";
             // 
@@ -142,7 +142,7 @@
             this.btnDel_NPP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDel_NPP.ForeColor = System.Drawing.Color.White;
             this.btnDel_NPP.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_NPP.Image")));
-            this.btnDel_NPP.Location = new System.Drawing.Point(116, 418);
+            this.btnDel_NPP.Location = new System.Drawing.Point(116, 416);
             this.btnDel_NPP.Name = "btnDel_NPP";
             this.btnDel_NPP.Size = new System.Drawing.Size(104, 40);
             this.btnDel_NPP.TabIndex = 47;
@@ -160,7 +160,7 @@
             this.btnEdit_NPP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit_NPP.ForeColor = System.Drawing.Color.White;
             this.btnEdit_NPP.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_NPP.Image")));
-            this.btnEdit_NPP.Location = new System.Drawing.Point(6, 418);
+            this.btnEdit_NPP.Location = new System.Drawing.Point(6, 416);
             this.btnEdit_NPP.Name = "btnEdit_NPP";
             this.btnEdit_NPP.Size = new System.Drawing.Size(104, 40);
             this.btnEdit_NPP.TabIndex = 46;
@@ -182,7 +182,7 @@
             this.dgvNPP.ReadOnly = true;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvNPP.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvNPP.Size = new System.Drawing.Size(1604, 406);
+            this.dgvNPP.Size = new System.Drawing.Size(1604, 404);
             this.dgvNPP.TabIndex = 45;
             this.dgvNPP.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNPP_CellDoubleClick);
             // 
@@ -533,6 +533,22 @@
             this.NFPs.TabIndex = 6;
             this.NFPs.Text = "NFP Checking";
             // 
+            // btnRunCheck
+            // 
+            this.btnRunCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(62)))), ((int)(((byte)(5)))));
+            this.btnRunCheck.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRunCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRunCheck.ForeColor = System.Drawing.Color.White;
+            this.btnRunCheck.Image = ((System.Drawing.Image)(resources.GetObject("btnRunCheck.Image")));
+            this.btnRunCheck.Location = new System.Drawing.Point(1423, 5);
+            this.btnRunCheck.Name = "btnRunCheck";
+            this.btnRunCheck.Size = new System.Drawing.Size(180, 40);
+            this.btnRunCheck.TabIndex = 67;
+            this.btnRunCheck.Text = "Run Auto Checking";
+            this.btnRunCheck.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRunCheck.UseVisualStyleBackColor = false;
+            this.btnRunCheck.Click += new System.EventHandler(this.btnRunCheck_Click);
+            // 
             // cboNFPchecking
             // 
             this.cboNFPchecking.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -585,14 +601,14 @@
             // 
             this.dpNFPcheckingTo.Location = new System.Drawing.Point(504, 15);
             this.dpNFPcheckingTo.Name = "dpNFPcheckingTo";
-            this.dpNFPcheckingTo.Size = new System.Drawing.Size(292, 23);
+            this.dpNFPcheckingTo.Size = new System.Drawing.Size(292, 26);
             this.dpNFPcheckingTo.TabIndex = 48;
             // 
             // dpNFPcheckingFrom
             // 
             this.dpNFPcheckingFrom.Location = new System.Drawing.Point(170, 15);
             this.dpNFPcheckingFrom.Name = "dpNFPcheckingFrom";
-            this.dpNFPcheckingFrom.Size = new System.Drawing.Size(292, 23);
+            this.dpNFPcheckingFrom.Size = new System.Drawing.Size(292, 26);
             this.dpNFPcheckingFrom.TabIndex = 47;
             // 
             // dgvNFPChecking
@@ -768,22 +784,6 @@
             this.toolTip1.IsBalloon = true;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Tip:";
-            // 
-            // btnRunCheck
-            // 
-            this.btnRunCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(62)))), ((int)(((byte)(5)))));
-            this.btnRunCheck.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRunCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRunCheck.ForeColor = System.Drawing.Color.White;
-            this.btnRunCheck.Image = ((System.Drawing.Image)(resources.GetObject("btnRunCheck.Image")));
-            this.btnRunCheck.Location = new System.Drawing.Point(1423, 5);
-            this.btnRunCheck.Name = "btnRunCheck";
-            this.btnRunCheck.Size = new System.Drawing.Size(180, 40);
-            this.btnRunCheck.TabIndex = 67;
-            this.btnRunCheck.Text = "Run Auto Checking";
-            this.btnRunCheck.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRunCheck.UseVisualStyleBackColor = false;
-            this.btnRunCheck.Click += new System.EventHandler(this.btnRunCheck_Click);
             // 
             // frmReport
             // 
