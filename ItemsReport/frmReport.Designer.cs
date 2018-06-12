@@ -117,7 +117,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(6, 6);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1618, 504);
+            this.tabControl1.Size = new System.Drawing.Size(1526, 504);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.Tag = "dgvTerms";
             // 
@@ -130,7 +130,7 @@
             this.NPP.ImageIndex = 0;
             this.NPP.Location = new System.Drawing.Point(4, 36);
             this.NPP.Name = "NPP";
-            this.NPP.Size = new System.Drawing.Size(1610, 464);
+            this.NPP.Size = new System.Drawing.Size(1518, 464);
             this.NPP.TabIndex = 2;
             this.NPP.Text = "New Primary Positions";
             // 
@@ -182,7 +182,7 @@
             this.dgvNPP.ReadOnly = true;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvNPP.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvNPP.Size = new System.Drawing.Size(1604, 404);
+            this.dgvNPP.Size = new System.Drawing.Size(1512, 404);
             this.dgvNPP.TabIndex = 45;
             this.dgvNPP.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNPP_CellDoubleClick);
             // 
@@ -193,10 +193,10 @@
             this.UUT.Controls.Add(this.btnEdit_UUT);
             this.UUT.Controls.Add(this.dgvUUT);
             this.UUT.ImageIndex = 1;
-            this.UUT.Location = new System.Drawing.Point(4, 34);
+            this.UUT.Location = new System.Drawing.Point(4, 36);
             this.UUT.Name = "UUT";
             this.UUT.Padding = new System.Windows.Forms.Padding(3);
-            this.UUT.Size = new System.Drawing.Size(1610, 466);
+            this.UUT.Size = new System.Drawing.Size(1610, 464);
             this.UUT.TabIndex = 0;
             this.UUT.Text = "Unit To Unit Transfer";
             // 
@@ -208,7 +208,7 @@
             this.btnDel_UUT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDel_UUT.ForeColor = System.Drawing.Color.White;
             this.btnDel_UUT.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_UUT.Image")));
-            this.btnDel_UUT.Location = new System.Drawing.Point(116, 418);
+            this.btnDel_UUT.Location = new System.Drawing.Point(116, 416);
             this.btnDel_UUT.Name = "btnDel_UUT";
             this.btnDel_UUT.Size = new System.Drawing.Size(104, 40);
             this.btnDel_UUT.TabIndex = 49;
@@ -226,7 +226,7 @@
             this.btnEdit_UUT.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit_UUT.ForeColor = System.Drawing.Color.White;
             this.btnEdit_UUT.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_UUT.Image")));
-            this.btnEdit_UUT.Location = new System.Drawing.Point(6, 418);
+            this.btnEdit_UUT.Location = new System.Drawing.Point(6, 416);
             this.btnEdit_UUT.Name = "btnEdit_UUT";
             this.btnEdit_UUT.Size = new System.Drawing.Size(104, 40);
             this.btnEdit_UUT.TabIndex = 48;
@@ -248,7 +248,7 @@
             this.dgvUUT.ReadOnly = true;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvUUT.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvUUT.Size = new System.Drawing.Size(1600, 409);
+            this.dgvUUT.Size = new System.Drawing.Size(1600, 407);
             this.dgvUUT.TabIndex = 42;
             this.dgvUUT.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUUT_CellDoubleClick);
             // 
@@ -259,10 +259,10 @@
             this.SC.Controls.Add(this.btnEdit_SC);
             this.SC.Controls.Add(this.dgvSC);
             this.SC.ImageIndex = 2;
-            this.SC.Location = new System.Drawing.Point(4, 34);
+            this.SC.Location = new System.Drawing.Point(4, 36);
             this.SC.Name = "SC";
             this.SC.Padding = new System.Windows.Forms.Padding(3);
-            this.SC.Size = new System.Drawing.Size(1610, 466);
+            this.SC.Size = new System.Drawing.Size(1610, 464);
             this.SC.TabIndex = 1;
             this.SC.Text = "Status Change";
             // 
@@ -274,7 +274,7 @@
             this.btnDel_SC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDel_SC.ForeColor = System.Drawing.Color.White;
             this.btnDel_SC.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_SC.Image")));
-            this.btnDel_SC.Location = new System.Drawing.Point(116, 418);
+            this.btnDel_SC.Location = new System.Drawing.Point(116, 416);
             this.btnDel_SC.Name = "btnDel_SC";
             this.btnDel_SC.Size = new System.Drawing.Size(104, 40);
             this.btnDel_SC.TabIndex = 51;
@@ -292,7 +292,7 @@
             this.btnEdit_SC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit_SC.ForeColor = System.Drawing.Color.White;
             this.btnEdit_SC.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_SC.Image")));
-            this.btnEdit_SC.Location = new System.Drawing.Point(6, 418);
+            this.btnEdit_SC.Location = new System.Drawing.Point(6, 416);
             this.btnEdit_SC.Name = "btnEdit_SC";
             this.btnEdit_SC.Size = new System.Drawing.Size(104, 40);
             this.btnEdit_SC.TabIndex = 50;
@@ -314,7 +314,7 @@
             this.dgvSC.ReadOnly = true;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvSC.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvSC.Size = new System.Drawing.Size(1600, 408);
+            this.dgvSC.Size = new System.Drawing.Size(1600, 406);
             this.dgvSC.TabIndex = 48;
             this.dgvSC.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSC_CellDoubleClick);
             // 
@@ -325,9 +325,9 @@
             this.OC.Controls.Add(this.btnEdit_OC);
             this.OC.Controls.Add(this.dgvOC);
             this.OC.ImageIndex = 3;
-            this.OC.Location = new System.Drawing.Point(4, 34);
+            this.OC.Location = new System.Drawing.Point(4, 36);
             this.OC.Name = "OC";
-            this.OC.Size = new System.Drawing.Size(1610, 466);
+            this.OC.Size = new System.Drawing.Size(1610, 464);
             this.OC.TabIndex = 3;
             this.OC.Text = "Occupation Changes";
             // 
@@ -339,7 +339,7 @@
             this.btnDel_OC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDel_OC.ForeColor = System.Drawing.Color.White;
             this.btnDel_OC.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_OC.Image")));
-            this.btnDel_OC.Location = new System.Drawing.Point(116, 418);
+            this.btnDel_OC.Location = new System.Drawing.Point(116, 416);
             this.btnDel_OC.Name = "btnDel_OC";
             this.btnDel_OC.Size = new System.Drawing.Size(104, 40);
             this.btnDel_OC.TabIndex = 51;
@@ -357,7 +357,7 @@
             this.btnEdit_OC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit_OC.ForeColor = System.Drawing.Color.White;
             this.btnEdit_OC.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_OC.Image")));
-            this.btnEdit_OC.Location = new System.Drawing.Point(6, 418);
+            this.btnEdit_OC.Location = new System.Drawing.Point(6, 416);
             this.btnEdit_OC.Name = "btnEdit_OC";
             this.btnEdit_OC.Size = new System.Drawing.Size(104, 40);
             this.btnEdit_OC.TabIndex = 50;
@@ -379,7 +379,7 @@
             this.dgvOC.ReadOnly = true;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvOC.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvOC.Size = new System.Drawing.Size(1600, 408);
+            this.dgvOC.Size = new System.Drawing.Size(1600, 406);
             this.dgvOC.TabIndex = 48;
             this.dgvOC.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOC_CellDoubleClick);
             // 
@@ -390,9 +390,9 @@
             this.Terms.Controls.Add(this.btnEdit_Terms);
             this.Terms.Controls.Add(this.dgvTerms);
             this.Terms.ImageIndex = 4;
-            this.Terms.Location = new System.Drawing.Point(4, 34);
+            this.Terms.Location = new System.Drawing.Point(4, 36);
             this.Terms.Name = "Terms";
-            this.Terms.Size = new System.Drawing.Size(1610, 466);
+            this.Terms.Size = new System.Drawing.Size(1610, 464);
             this.Terms.TabIndex = 4;
             this.Terms.Text = "Terminations";
             // 
@@ -404,7 +404,7 @@
             this.btnDel_Terms.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDel_Terms.ForeColor = System.Drawing.Color.White;
             this.btnDel_Terms.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_Terms.Image")));
-            this.btnDel_Terms.Location = new System.Drawing.Point(116, 418);
+            this.btnDel_Terms.Location = new System.Drawing.Point(116, 416);
             this.btnDel_Terms.Name = "btnDel_Terms";
             this.btnDel_Terms.Size = new System.Drawing.Size(104, 40);
             this.btnDel_Terms.TabIndex = 51;
@@ -422,7 +422,7 @@
             this.btnEdit_Terms.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit_Terms.ForeColor = System.Drawing.Color.White;
             this.btnEdit_Terms.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_Terms.Image")));
-            this.btnEdit_Terms.Location = new System.Drawing.Point(6, 418);
+            this.btnEdit_Terms.Location = new System.Drawing.Point(6, 416);
             this.btnEdit_Terms.Name = "btnEdit_Terms";
             this.btnEdit_Terms.Size = new System.Drawing.Size(104, 40);
             this.btnEdit_Terms.TabIndex = 50;
@@ -444,7 +444,7 @@
             this.dgvTerms.ReadOnly = true;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvTerms.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvTerms.Size = new System.Drawing.Size(1600, 408);
+            this.dgvTerms.Size = new System.Drawing.Size(1600, 406);
             this.dgvTerms.TabIndex = 48;
             this.dgvTerms.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTerms_CellDoubleClick);
             // 
@@ -455,9 +455,9 @@
             this.Trans.Controls.Add(this.btnEdit_Trans);
             this.Trans.Controls.Add(this.dgvTrans);
             this.Trans.ImageIndex = 5;
-            this.Trans.Location = new System.Drawing.Point(4, 34);
+            this.Trans.Location = new System.Drawing.Point(4, 36);
             this.Trans.Name = "Trans";
-            this.Trans.Size = new System.Drawing.Size(1610, 466);
+            this.Trans.Size = new System.Drawing.Size(1610, 464);
             this.Trans.TabIndex = 5;
             this.Trans.Text = "Transfers";
             // 
@@ -469,7 +469,7 @@
             this.btnDel_Trans.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDel_Trans.ForeColor = System.Drawing.Color.White;
             this.btnDel_Trans.Image = ((System.Drawing.Image)(resources.GetObject("btnDel_Trans.Image")));
-            this.btnDel_Trans.Location = new System.Drawing.Point(116, 418);
+            this.btnDel_Trans.Location = new System.Drawing.Point(116, 416);
             this.btnDel_Trans.Name = "btnDel_Trans";
             this.btnDel_Trans.Size = new System.Drawing.Size(104, 40);
             this.btnDel_Trans.TabIndex = 51;
@@ -487,7 +487,7 @@
             this.btnEdit_Trans.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit_Trans.ForeColor = System.Drawing.Color.White;
             this.btnEdit_Trans.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit_Trans.Image")));
-            this.btnEdit_Trans.Location = new System.Drawing.Point(6, 418);
+            this.btnEdit_Trans.Location = new System.Drawing.Point(6, 416);
             this.btnEdit_Trans.Name = "btnEdit_Trans";
             this.btnEdit_Trans.Size = new System.Drawing.Size(104, 40);
             this.btnEdit_Trans.TabIndex = 50;
@@ -509,7 +509,7 @@
             this.dgvTrans.ReadOnly = true;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvTrans.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvTrans.Size = new System.Drawing.Size(1600, 408);
+            this.dgvTrans.Size = new System.Drawing.Size(1600, 406);
             this.dgvTrans.TabIndex = 48;
             this.dgvTrans.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrans_CellDoubleClick);
             // 
@@ -526,10 +526,10 @@
             this.NFPs.Controls.Add(this.lblUpdatedFrom);
             this.NFPs.Controls.Add(this.label1);
             this.NFPs.ImageIndex = 6;
-            this.NFPs.Location = new System.Drawing.Point(4, 34);
+            this.NFPs.Location = new System.Drawing.Point(4, 36);
             this.NFPs.Name = "NFPs";
             this.NFPs.Padding = new System.Windows.Forms.Padding(3);
-            this.NFPs.Size = new System.Drawing.Size(1610, 466);
+            this.NFPs.Size = new System.Drawing.Size(1518, 464);
             this.NFPs.TabIndex = 6;
             this.NFPs.Text = "NFP Checking";
             // 
@@ -540,7 +540,7 @@
             this.btnRunCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRunCheck.ForeColor = System.Drawing.Color.White;
             this.btnRunCheck.Image = ((System.Drawing.Image)(resources.GetObject("btnRunCheck.Image")));
-            this.btnRunCheck.Location = new System.Drawing.Point(1423, 5);
+            this.btnRunCheck.Location = new System.Drawing.Point(1332, 6);
             this.btnRunCheck.Name = "btnRunCheck";
             this.btnRunCheck.Size = new System.Drawing.Size(180, 40);
             this.btnRunCheck.TabIndex = 67;
@@ -623,7 +623,7 @@
             this.dgvNFPChecking.Name = "dgvNFPChecking";
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvNFPChecking.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvNFPChecking.Size = new System.Drawing.Size(1604, 406);
+            this.dgvNFPChecking.Size = new System.Drawing.Size(1512, 404);
             this.dgvNFPChecking.TabIndex = 46;
             this.dgvNFPChecking.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNFPChecking_CellValueChanged);
             // 
@@ -788,7 +788,7 @@
             // frmReport
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1621, 564);
+            this.ClientSize = new System.Drawing.Size(1529, 564);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cboItemsReport);

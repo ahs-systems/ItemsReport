@@ -1867,7 +1867,7 @@
             this.MaximizeBox = false;
             this.Name = "ItemsReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Items Report v2018.04.30";
+            this.Text = "Items Report v2018.06.12";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ItemsReport_FormClosing);
             this.Load += new System.EventHandler(this.ItemsReport_Load);
             this.Shown += new System.EventHandler(this.ItemsReport_Shown);

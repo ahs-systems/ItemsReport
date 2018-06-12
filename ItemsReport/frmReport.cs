@@ -55,10 +55,12 @@ namespace WindowsFormsApplication1
                 return;
             }
 
+            // To properly show the highlighted rows on first load of the form
             if (firstLoad)
             {
                 firstLoad = false;
                 tabControl1.TabPages[1].Show();
+                tabControl1.TabPages[6].Show();
             }
 
             Load_UUT_Data(cboPP.SelectedItem.ToString(), cboYearPP.SelectedItem.ToString(), cboItemsReport.SelectedItem.ToString());
@@ -205,6 +207,7 @@ namespace WindowsFormsApplication1
 
                         foreach (DataGridViewRow row in dgvUUT.Rows)
                         {
+                            // If change in site then highlight in yellow
                             if (row.Cells[dgvUUT.Columns.Count - 1].Value.ToString().ToUpper() == "TRUE")
                             {
                                 row.DefaultCellStyle.BackColor = Color.Yellow;
@@ -446,6 +449,17 @@ namespace WindowsFormsApplication1
 
                     //Hide Record ID Column
                     _dgv.Columns[0].Visible = false;
+
+                    foreach (DataGridViewRow row in _dgv.Rows)
+                    {
+                        // If not yet check then highlight them
+                        if (row.Cells["CurrentStat"].Value.ToString().ToUpper() == "FALSE")
+                        {
+                            row.DefaultCellStyle.BackColor = Color.Orange;
+                        }
+                    }
+
+                    
                 }
             }
             catch (Exception ex)
