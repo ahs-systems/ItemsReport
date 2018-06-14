@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+
+
+namespace ItemsReport
 {
     public partial class ItemsReport : Form
     {
@@ -22,10 +24,7 @@ namespace WindowsFormsApplication1
 
         private WorkingStatus workingStatus;
 
-        public ItemsReport()
-        {
-            InitializeComponent();
-        }
+        public ItemsReport() => InitializeComponent();
 
         private void ItemsReport_Load(object sender, EventArgs e)
         {
@@ -1946,6 +1945,16 @@ namespace WindowsFormsApplication1
         private void timerClose_Tick(object sender, EventArgs e)
         {
             if (DateTime.Now.Hour > 1 && DateTime.Now.Hour < 5 && Cursor != Cursors.WaitCursor) Application.Exit();
+        }
+
+        private void lblClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void lblMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

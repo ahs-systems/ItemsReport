@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace WindowsFormsApplication1
+namespace ItemsReport
 {
     public partial class frmWorkingStatus: Form
     {

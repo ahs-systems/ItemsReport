@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace ItemsReport
 {
     static class Program
     {
@@ -14,12 +14,37 @@ namespace WindowsFormsApplication1
         static void Main()
         {
             if (ApplicationRunningHelper.AlreadyRunning())
-            {                
+            {
                 return;
             }
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            AppDomain.CurrentDomain.AssemblyResolve += (Object sender, ResolveEventArgs args) =>
+            {
+                String thisExe = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
+                System.Reflection.AssemblyName embeddedAssembly = new System.Reflection.AssemblyName(args.Name);
+                String resourceName = ""; // = thisExe + "." + embeddedAssembly.Name + ".dll";
+                if (embeddedAssembly.Name.Contains("Bunifu"))
+                {
+                    resourceName = "WindowsFormsApplication1.Resources.Bunifu_UI_v1.5.3.dll";
+                }
+                else if (embeddedAssembly.Name.Contains("EPPlus"))
+                {
+                    resourceName = "WindowsFormsApplication1.Resources.EPPlus.dll";
+                }
+
+                using (var stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
+                {
+                    Byte[] assemblyData = new Byte[stream.Length];
+                    stream.Read(assemblyData, 0, assemblyData.Length);
+                    return System.Reflection.Assembly.Load(assemblyData);
+                }
+            };
+
+
+
             Application.Run(new ItemsReport());
         }
 
@@ -77,7 +102,7 @@ namespace WindowsFormsApplication1
                             SetForegroundWindow(hWnd);
                             break;
                         }
-                    }                    
+                    }
                     return true;
                 }
 

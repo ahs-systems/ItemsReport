@@ -52,8 +52,13 @@
     <ApplicationIcon>ahs.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\Bunifu_UI_v1.5.3.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="EPPlus">
       <HintPath>..\..\File6\File6\bin\Debug\EPPlus.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -97,6 +102,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="WorkingStatus.resx">
       <DependentUpon>WorkingStatus.cs</DependentUpon>
@@ -117,6 +123,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ahs.ico" />
+    <EmbeddedResource Include="Resources\EPPlus.dll" />
+    <None Include="bin\Debug\Test.txt" />
+    <EmbeddedResource Include="Resources\Bunifu_UI_v1.5.3.dll" />
+    <None Include="bin\Debug\Bunifu_UI_v1.5.3.dll" />
     <Content Include="bin\Debug\esp_systems.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

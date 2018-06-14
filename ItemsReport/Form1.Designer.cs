@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace ItemsReport
 {
     partial class ItemsReport
     {
@@ -147,15 +147,24 @@
             this.cboYearPP = new System.Windows.Forms.ComboBox();
             this.cboItemsReport = new System.Windows.Forms.ComboBox();
             this.btnViewRpt = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuWorkingStatus = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.lblStatus = new System.Windows.Forms.Label();
             this.lblSelectIRL = new System.Windows.Forms.Label();
             this.timerClose = new System.Windows.Forms.Timer(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.lblMinimize = new System.Windows.Forms.Label();
+            this.lblClose = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.bunifuDragTitle = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.teaasfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dfgdsfgdsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileWhosWorkingOnit = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.NPP.SuspendLayout();
             this.UUT.SuspendLayout();
@@ -163,12 +172,11 @@
             this.OC.SuspendLayout();
             this.Terms.SuspendLayout();
             this.Trans.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControl1.Controls.Add(this.NPP);
             this.tabControl1.Controls.Add(this.UUT);
@@ -178,7 +186,7 @@
             this.tabControl1.Controls.Add(this.Trans);
             this.tabControl1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ImageList = this.imageList1;
-            this.tabControl1.Location = new System.Drawing.Point(12, 134);
+            this.tabControl1.Location = new System.Drawing.Point(12, 164);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(12, 7);
             this.tabControl1.SelectedIndex = 0;
@@ -1645,7 +1653,7 @@
             this.button1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(698, 65);
+            this.button1.Location = new System.Drawing.Point(698, 95);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 44);
             this.button1.TabIndex = 5;
@@ -1689,7 +1697,7 @@
             "24",
             "25",
             "26"});
-            this.cboPP.Location = new System.Drawing.Point(100, 76);
+            this.cboPP.Location = new System.Drawing.Point(100, 106);
             this.cboPP.Margin = new System.Windows.Forms.Padding(7);
             this.cboPP.Name = "cboPP";
             this.cboPP.Size = new System.Drawing.Size(65, 23);
@@ -1700,7 +1708,7 @@
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label34.Location = new System.Drawing.Point(13, 80);
+            this.label34.Location = new System.Drawing.Point(13, 110);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(79, 14);
             this.label34.TabIndex = 55;
@@ -1711,7 +1719,7 @@
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label35.Location = new System.Drawing.Point(182, 80);
+            this.label35.Location = new System.Drawing.Point(182, 110);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(39, 14);
             this.label35.TabIndex = 57;
@@ -1725,7 +1733,7 @@
             this.cboYearPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboYearPP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.cboYearPP.FormattingEnabled = true;
-            this.cboYearPP.Location = new System.Drawing.Point(224, 76);
+            this.cboYearPP.Location = new System.Drawing.Point(224, 106);
             this.cboYearPP.Margin = new System.Windows.Forms.Padding(7);
             this.cboYearPP.Name = "cboYearPP";
             this.cboYearPP.Size = new System.Drawing.Size(140, 23);
@@ -1743,7 +1751,7 @@
             "Items Report A",
             "Items Report B",
             "Items Report C"});
-            this.cboItemsReport.Location = new System.Drawing.Point(384, 76);
+            this.cboItemsReport.Location = new System.Drawing.Point(384, 106);
             this.cboItemsReport.Margin = new System.Windows.Forms.Padding(7);
             this.cboItemsReport.Name = "cboItemsReport";
             this.cboItemsReport.Size = new System.Drawing.Size(140, 23);
@@ -1758,7 +1766,7 @@
             this.btnViewRpt.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewRpt.ForeColor = System.Drawing.Color.White;
             this.btnViewRpt.Image = ((System.Drawing.Image)(resources.GetObject("btnViewRpt.Image")));
-            this.btnViewRpt.Location = new System.Drawing.Point(531, 65);
+            this.btnViewRpt.Location = new System.Drawing.Point(531, 95);
             this.btnViewRpt.Name = "btnViewRpt";
             this.btnViewRpt.Size = new System.Drawing.Size(161, 44);
             this.btnViewRpt.TabIndex = 4;
@@ -1766,17 +1774,6 @@
             this.btnViewRpt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnViewRpt.UseVisualStyleBackColor = false;
             this.btnViewRpt.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(18, 18);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1026, 24);
-            this.menuStrip1.TabIndex = 58;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
@@ -1791,7 +1788,7 @@
             // 
             this.mnuWorkingStatus.Image = ((System.Drawing.Image)(resources.GetObject("mnuWorkingStatus.Image")));
             this.mnuWorkingStatus.Name = "mnuWorkingStatus";
-            this.mnuWorkingStatus.Size = new System.Drawing.Size(187, 24);
+            this.mnuWorkingStatus.Size = new System.Drawing.Size(185, 22);
             this.mnuWorkingStatus.Text = "Who\'s working on it?";
             this.mnuWorkingStatus.Click += new System.EventHandler(this.mnuWorkingStatus_Click);
             // 
@@ -1799,7 +1796,7 @@
             // 
             this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -1809,23 +1806,12 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // lblStatus
-            // 
-            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
-            this.lblStatus.Font = new System.Drawing.Font("Verdana", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblStatus.Location = new System.Drawing.Point(14, 38);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(321, 31);
-            this.lblStatus.TabIndex = 59;
-            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblSelectIRL
             // 
             this.lblSelectIRL.AutoSize = true;
             this.lblSelectIRL.Font = new System.Drawing.Font("Verdana", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSelectIRL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.lblSelectIRL.Location = new System.Drawing.Point(160, 241);
+            this.lblSelectIRL.Location = new System.Drawing.Point(160, 271);
             this.lblSelectIRL.Name = "lblSelectIRL";
             this.lblSelectIRL.Size = new System.Drawing.Size(646, 25);
             this.lblSelectIRL.TabIndex = 61;
@@ -1844,11 +1830,114 @@
             this.imageList2.Images.SetKeyName(1, "Working_36.png");
             this.imageList2.Images.SetKeyName(2, "In Progress_36px.png");
             // 
+            // lblMinimize
+            // 
+            this.lblMinimize.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMinimize.Image = ((System.Drawing.Image)(resources.GetObject("lblMinimize.Image")));
+            this.lblMinimize.Location = new System.Drawing.Point(974, 1);
+            this.lblMinimize.Name = "lblMinimize";
+            this.lblMinimize.Size = new System.Drawing.Size(22, 23);
+            this.lblMinimize.TabIndex = 70;
+            this.lblMinimize.Click += new System.EventHandler(this.lblMinimize_Click);
+            // 
+            // lblClose
+            // 
+            this.lblClose.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblClose.Image = ((System.Drawing.Image)(resources.GetObject("lblClose.Image")));
+            this.lblClose.Location = new System.Drawing.Point(999, 1);
+            this.lblClose.Name = "lblClose";
+            this.lblClose.Size = new System.Drawing.Size(22, 23);
+            this.lblClose.TabIndex = 69;
+            this.lblClose.Click += new System.EventHandler(this.lblClose_Click);
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitle.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(1026, 29);
+            this.lblTitle.TabIndex = 71;
+            this.lblTitle.Text = " Items Report v2018.06.14";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // bunifuDragTitle
+            // 
+            this.bunifuDragTitle.Fixed = true;
+            this.bunifuDragTitle.Horizontal = true;
+            this.bunifuDragTitle.TargetControl = this.lblTitle;
+            this.bunifuDragTitle.Vertical = true;
+            // 
+            // teaasfToolStripMenuItem
+            // 
+            this.teaasfToolStripMenuItem.Name = "teaasfToolStripMenuItem";
+            this.teaasfToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.teaasfToolStripMenuItem.Text = "teaasf";
+            // 
+            // dfgdsfgdsToolStripMenuItem
+            // 
+            this.dfgdsfgdsToolStripMenuItem.Name = "dfgdsfgdsToolStripMenuItem";
+            this.dfgdsfgdsToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.dfgdsfgdsToolStripMenuItem.Text = "dfgdsfgds";
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFileExit});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 29);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(1026, 24);
+            this.menuStrip2.TabIndex = 72;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // mnuFileExit
+            // 
+            this.mnuFileExit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFileWhosWorkingOnit,
+            this.exitToolStripMenuItem1});
+            this.mnuFileExit.Name = "mnuFileExit";
+            this.mnuFileExit.Size = new System.Drawing.Size(37, 20);
+            this.mnuFileExit.Text = "File";
+            // 
+            // mnuFileWhosWorkingOnit
+            // 
+            this.mnuFileWhosWorkingOnit.Image = ((System.Drawing.Image)(resources.GetObject("mnuFileWhosWorkingOnit.Image")));
+            this.mnuFileWhosWorkingOnit.Name = "mnuFileWhosWorkingOnit";
+            this.mnuFileWhosWorkingOnit.Size = new System.Drawing.Size(185, 22);
+            this.mnuFileWhosWorkingOnit.Text = "Who\'s working on it?";
+            this.mnuFileWhosWorkingOnit.Click += new System.EventHandler(this.mnuWorkingStatus_Click);
+            // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem1.Image")));
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
+            this.exitToolStripMenuItem1.Text = "Exit";
+            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatus.Font = new System.Drawing.Font("Verdana", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblStatus.Location = new System.Drawing.Point(14, 68);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(321, 31);
+            this.lblStatus.TabIndex = 59;
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ItemsReport
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1026, 405);
+            this.ClientSize = new System.Drawing.Size(1026, 449);
+            this.Controls.Add(this.menuStrip2);
+            this.Controls.Add(this.lblMinimize);
+            this.Controls.Add(this.lblClose);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnViewRpt);
             this.Controls.Add(this.cboItemsReport);
@@ -1858,12 +1947,11 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label34);
             this.Controls.Add(this.label35);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.lblSelectIRL);
+            this.Controls.Add(this.lblTitle);
             this.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "ItemsReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1884,8 +1972,8 @@
             this.Terms.PerformLayout();
             this.Trans.ResumeLayout(false);
             this.Trans.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2009,16 +2097,25 @@
         private System.Windows.Forms.Button btnCancel_OC;
         private System.Windows.Forms.Button btnCancel_Terms;
         private System.Windows.Forms.Button btnCancel_Trans;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuWorkingStatus;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblSelectIRL;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Timer timerClose;
         private System.Windows.Forms.ImageList imageList2;
+        private System.Windows.Forms.Label lblMinimize;
+        private System.Windows.Forms.Label lblClose;
+        private System.Windows.Forms.Label lblTitle;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragTitle;
+        private System.Windows.Forms.ToolStripMenuItem teaasfToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dfgdsfgdsToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileExit;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileWhosWorkingOnit;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
+        private System.Windows.Forms.Label lblStatus;
     }
 }
 

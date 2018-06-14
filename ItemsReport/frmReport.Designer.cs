@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace ItemsReport
 {
     partial class frmReport
     {
@@ -176,12 +176,15 @@
             this.dgvNPP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvNPP.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(21)))), ((int)(((byte)(12)))));
             this.dgvNPP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNPP.Location = new System.Drawing.Point(3, 4);
             this.dgvNPP.Name = "dgvNPP";
             this.dgvNPP.ReadOnly = true;
+            this.dgvNPP.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvNPP.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvNPP.RowTemplate.Height = 27;
             this.dgvNPP.Size = new System.Drawing.Size(1512, 404);
             this.dgvNPP.TabIndex = 45;
             this.dgvNPP.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNPP_CellDoubleClick);
@@ -196,7 +199,7 @@
             this.UUT.Location = new System.Drawing.Point(4, 36);
             this.UUT.Name = "UUT";
             this.UUT.Padding = new System.Windows.Forms.Padding(3);
-            this.UUT.Size = new System.Drawing.Size(1610, 464);
+            this.UUT.Size = new System.Drawing.Size(1518, 464);
             this.UUT.TabIndex = 0;
             this.UUT.Text = "Unit To Unit Transfer";
             // 
@@ -242,13 +245,15 @@
             this.dgvUUT.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvUUT.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(21)))), ((int)(((byte)(12)))));
             this.dgvUUT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUUT.Location = new System.Drawing.Point(3, 3);
+            this.dgvUUT.Location = new System.Drawing.Point(5, 4);
             this.dgvUUT.Name = "dgvUUT";
             this.dgvUUT.ReadOnly = true;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvUUT.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvUUT.Size = new System.Drawing.Size(1600, 407);
+            this.dgvUUT.RowTemplate.Height = 27;
+            this.dgvUUT.Size = new System.Drawing.Size(1508, 407);
             this.dgvUUT.TabIndex = 42;
             this.dgvUUT.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUUT_CellDoubleClick);
             // 
@@ -262,7 +267,7 @@
             this.SC.Location = new System.Drawing.Point(4, 36);
             this.SC.Name = "SC";
             this.SC.Padding = new System.Windows.Forms.Padding(3);
-            this.SC.Size = new System.Drawing.Size(1610, 464);
+            this.SC.Size = new System.Drawing.Size(1518, 464);
             this.SC.TabIndex = 1;
             this.SC.Text = "Status Change";
             // 
@@ -308,13 +313,15 @@
             this.dgvSC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSC.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(21)))), ((int)(((byte)(12)))));
             this.dgvSC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSC.Location = new System.Drawing.Point(3, 4);
+            this.dgvSC.Location = new System.Drawing.Point(5, 5);
             this.dgvSC.Name = "dgvSC";
             this.dgvSC.ReadOnly = true;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvSC.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvSC.Size = new System.Drawing.Size(1600, 406);
+            this.dgvSC.RowTemplate.Height = 27;
+            this.dgvSC.Size = new System.Drawing.Size(1508, 406);
             this.dgvSC.TabIndex = 48;
             this.dgvSC.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSC_CellDoubleClick);
             // 
@@ -327,7 +334,7 @@
             this.OC.ImageIndex = 3;
             this.OC.Location = new System.Drawing.Point(4, 36);
             this.OC.Name = "OC";
-            this.OC.Size = new System.Drawing.Size(1610, 464);
+            this.OC.Size = new System.Drawing.Size(1518, 464);
             this.OC.TabIndex = 3;
             this.OC.Text = "Occupation Changes";
             // 
@@ -373,13 +380,15 @@
             this.dgvOC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvOC.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(21)))), ((int)(((byte)(12)))));
             this.dgvOC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOC.Location = new System.Drawing.Point(3, 4);
+            this.dgvOC.Location = new System.Drawing.Point(5, 5);
             this.dgvOC.Name = "dgvOC";
             this.dgvOC.ReadOnly = true;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvOC.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvOC.Size = new System.Drawing.Size(1600, 406);
+            this.dgvOC.RowTemplate.Height = 27;
+            this.dgvOC.Size = new System.Drawing.Size(1508, 406);
             this.dgvOC.TabIndex = 48;
             this.dgvOC.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOC_CellDoubleClick);
             // 
@@ -392,7 +401,7 @@
             this.Terms.ImageIndex = 4;
             this.Terms.Location = new System.Drawing.Point(4, 36);
             this.Terms.Name = "Terms";
-            this.Terms.Size = new System.Drawing.Size(1610, 464);
+            this.Terms.Size = new System.Drawing.Size(1518, 464);
             this.Terms.TabIndex = 4;
             this.Terms.Text = "Terminations";
             // 
@@ -438,13 +447,15 @@
             this.dgvTerms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTerms.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(21)))), ((int)(((byte)(12)))));
             this.dgvTerms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTerms.Location = new System.Drawing.Point(3, 4);
+            this.dgvTerms.Location = new System.Drawing.Point(5, 4);
             this.dgvTerms.Name = "dgvTerms";
             this.dgvTerms.ReadOnly = true;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvTerms.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvTerms.Size = new System.Drawing.Size(1600, 406);
+            this.dgvTerms.RowTemplate.Height = 27;
+            this.dgvTerms.Size = new System.Drawing.Size(1508, 406);
             this.dgvTerms.TabIndex = 48;
             this.dgvTerms.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTerms_CellDoubleClick);
             // 
@@ -457,7 +468,7 @@
             this.Trans.ImageIndex = 5;
             this.Trans.Location = new System.Drawing.Point(4, 36);
             this.Trans.Name = "Trans";
-            this.Trans.Size = new System.Drawing.Size(1610, 464);
+            this.Trans.Size = new System.Drawing.Size(1518, 464);
             this.Trans.TabIndex = 5;
             this.Trans.Text = "Transfers";
             // 
@@ -503,13 +514,15 @@
             this.dgvTrans.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTrans.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(21)))), ((int)(((byte)(12)))));
             this.dgvTrans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTrans.Location = new System.Drawing.Point(3, 4);
+            this.dgvTrans.Location = new System.Drawing.Point(5, 4);
             this.dgvTrans.Name = "dgvTrans";
             this.dgvTrans.ReadOnly = true;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvTrans.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvTrans.Size = new System.Drawing.Size(1600, 406);
+            this.dgvTrans.RowTemplate.Height = 27;
+            this.dgvTrans.Size = new System.Drawing.Size(1508, 406);
             this.dgvTrans.TabIndex = 48;
             this.dgvTrans.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrans_CellDoubleClick);
             // 
@@ -559,7 +572,7 @@
             "Both NFP and InActive",
             "NFP Only",
             "InActive Only"});
-            this.cboNFPchecking.Location = new System.Drawing.Point(813, 14);
+            this.cboNFPchecking.Location = new System.Drawing.Point(801, 15);
             this.cboNFPchecking.Name = "cboNFPchecking";
             this.cboNFPchecking.Size = new System.Drawing.Size(214, 25);
             this.cboNFPchecking.TabIndex = 66;
@@ -599,14 +612,14 @@
             // 
             // dpNFPcheckingTo
             // 
-            this.dpNFPcheckingTo.Location = new System.Drawing.Point(504, 15);
+            this.dpNFPcheckingTo.Location = new System.Drawing.Point(492, 16);
             this.dpNFPcheckingTo.Name = "dpNFPcheckingTo";
             this.dpNFPcheckingTo.Size = new System.Drawing.Size(292, 26);
             this.dpNFPcheckingTo.TabIndex = 48;
             // 
             // dpNFPcheckingFrom
             // 
-            this.dpNFPcheckingFrom.Location = new System.Drawing.Point(170, 15);
+            this.dpNFPcheckingFrom.Location = new System.Drawing.Point(147, 15);
             this.dpNFPcheckingFrom.Name = "dpNFPcheckingFrom";
             this.dpNFPcheckingFrom.Size = new System.Drawing.Size(292, 26);
             this.dpNFPcheckingFrom.TabIndex = 47;
@@ -618,12 +631,14 @@
             this.dgvNFPChecking.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvNFPChecking.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(21)))), ((int)(((byte)(12)))));
             this.dgvNFPChecking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNFPChecking.Location = new System.Drawing.Point(3, 51);
+            this.dgvNFPChecking.Location = new System.Drawing.Point(10, 53);
             this.dgvNFPChecking.Name = "dgvNFPChecking";
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Verdana", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvNFPChecking.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvNFPChecking.Size = new System.Drawing.Size(1512, 404);
+            this.dgvNFPChecking.RowTemplate.Height = 27;
+            this.dgvNFPChecking.Size = new System.Drawing.Size(1498, 402);
             this.dgvNFPChecking.TabIndex = 46;
             this.dgvNFPChecking.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNFPChecking_CellValueChanged);
             // 
@@ -643,7 +658,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(473, 18);
+            this.label1.Location = new System.Drawing.Point(461, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(24, 15);
             this.label1.TabIndex = 63;
