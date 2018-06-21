@@ -459,7 +459,7 @@ namespace ItemsReport
                         }
                     }
 
-                    
+
                 }
             }
             catch (Exception ex)
@@ -841,15 +841,10 @@ namespace ItemsReport
                         {
                             string _payInfo = GetPayInfo(_dr["EmpID"].ToString());
 
-                            // if _payInfo == "" then something when wrong, don't do anything, otherwise proceed
+                            // if _payInfo == "" then something went wrong, don't do anything, otherwise proceed
                             if (_payInfo != "")
                             {
-                                // If there is a change in PayInfo, it means it was already updated in EE workspace and needs to update its status to "checked" already
-                                // Current PayInfo should also not be "Not for Payroll" or "--- INACTIVE ---"
-                                if (_payInfo != _dr["Prev_PayInfo"].ToString() && !"Not for Payroll , --- INACTIVE ---, Inactive".Contains(_payInfo))
-                                {
-                                    UpdateNFPcheckingList(_dr["id"].ToString(), _payInfo);
-                                }
+                                UpdateNFPcheckingList(_dr["id"].ToString(), _payInfo, _dr["EmpID"].ToString());
                             }
                         }
 
@@ -872,18 +867,33 @@ namespace ItemsReport
 
         }
 
-        private void UpdateNFPcheckingList(string _id, string _payInfo)
+        private void UpdateNFPcheckingList(string _id, string _payInfo, string _empID)
         {
             try
             {
+                string _comment = "";
+
+                // if Pay Info is no longer Inactive or NFP
+                if (!"Not for Payroll , --- INACTIVE ---, Inactive".ToUpper().Contains(_payInfo.ToUpper()))
+                {                    
+                    _comment = GetWhoChangedPayInfo(_empID);
+                }
+                // if Pay Info is still Inactive or NFP then don't update the Current Pay Info, get who last changed the Positions tab
+                else
+                {
+                    _payInfo = "";
+                    _comment = GetWhoChangePositions(_empID);
+                }
+                
+
                 using (SqlConnection _conn = new SqlConnection(Common.SystemsServer))
                 {
                     _conn.Open();
                     using (SqlCommand _comm = _conn.CreateCommand())
                     {
-                        _comm.CommandText = "UPDATE NFPChecking SET CheckedBy = 'AutoSystem',  CheckedDate = getdate(), CurrentStat = 1, Curr_PayInfo = @_currUnit, Comments = @_comments  WHERE ID = @_id";                                      
+                        _comm.CommandText = "UPDATE NFPChecking SET CheckedBy = 'AutoSystem',  CheckedDate = getdate(), Curr_PayInfo = @_currUnit, Comments = @_comments  WHERE ID = @_id";
                         _comm.Parameters.AddWithValue("_currUnit", _payInfo);
-                        _comm.Parameters.AddWithValue("_comments", "Auto check run by: " + Common.CurrentUser);
+                        _comm.Parameters.AddWithValue("_comments", _comment);
                         _comm.Parameters.AddWithValue("_id", _id);
                         _comm.ExecuteNonQuery();
                     }
@@ -893,6 +903,79 @@ namespace ItemsReport
             {
                 MessageBox.Show("Error in UpdateNFPcheckingList: " + ex.Message);
             }
+        }
+
+        private string GetWhoChangePositions(string _empID)
+        {
+            string _ret = "";
+
+            try
+            {
+                using (SqlConnection _conn = new SqlConnection(Common.ESPServer))
+                {
+                    _conn.Open();
+                    using (SqlCommand _comm = _conn.CreateCommand())
+                    {
+                        _comm.CommandText = "Select top 1 Format(EP.EP_ChangeDate,'dd-MMM-yyyy hh:mm tt') AS ChangeDate, Users.US_FullName from EmpPosition EP " +
+                                "left join Users on ep.EP_ChangeUserID = Users.US_UserID " +
+                                "where EP.EP_EmpID in (select DISTINCT E_EmpID from emp where E_EmpNbr LIKE @_empID) " +
+                                "AND EP_ToDate > GETDATE() ORDER BY EP_ChangeDate DESC";
+
+                        _comm.Parameters.AddWithValue("_empID", _empID.Substring(0,8) + "%");
+
+                        SqlDataReader _dr = _comm.ExecuteReader();
+
+                        if (_dr.HasRows)
+                        {
+                            _dr.Read();
+                            _ret = "Position last changed by: " + _dr["US_FullName"].ToString().Trim() + " on " + _dr["ChangeDate"];
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in GetWhoChangedPayInfo: " + ex.Message);
+            }
+
+            return _ret;
+        }
+
+        private string GetWhoChangedPayInfo(string _empID)
+        {
+            string _ret = "";
+
+            try
+            {
+                using (SqlConnection _conn = new SqlConnection(Common.ESPServer))
+                {
+                    _conn.Open();
+                    using (SqlCommand _comm = _conn.CreateCommand())
+                    {
+                        _comm.CommandText = "select TOP 1 Format(ETCI_ChangeDate,'dd-MMM-yyyy hh:mm tt') AS [ChangeDate], (select US_FullName from Users where US_UserID = ETCI.ETCI_ChangeUserID) as ChangeUser from EmpTimeCardInfo ETCI where ETCI_EmpID = " +
+                            "(select E_EmpID from emp where E_EmpNbr = @EMPID) " +
+                            //"AND ETCI_PayPeriodID <= (select PP_PayPeriodID from PayPeriod where getdate() between PP_StartDate and PP_EndDate) " +
+                            "ORDER BY ETCI_PayPeriodID DESC";
+
+                        _comm.Parameters.AddWithValue("EMPID", _empID);
+
+                        SqlDataReader _dr = _comm.ExecuteReader();
+
+                        if (_dr.HasRows)
+                        {
+                            _dr.Read();
+                            _ret = "PayInfo changed by: " + _dr["ChangeUser"].ToString().Trim() + " on " + _dr["ChangeDate"];
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in GetWhoChangedPayInfo: " + ex.Message);
+            }
+
+            return _ret;
+
         }
 
         private string GetPayInfo(string _empNbr)
@@ -908,6 +991,13 @@ namespace ItemsReport
                     _comm.CommandText = "SELECT TCG_Desc from TimeCardGroup where TCG_TCardGroupID = " +
                                         "(select TOP 1 ETCI_TimeCardGroupID from EmpTimeCardInfo ETCI where ETCI_EmpID = " +
                                         "(select E_EmpID from emp where E_EmpNbr = @_empID) ORDER BY ETCI_PayPeriodID DESC)";
+
+                    //_comm.CommandText = "SELECT TCG_Desc from TimeCardGroup where TCG_TCardGroupID =  " +
+                    //                    "(select TOP 1 ETCI_TimeCardGroupID from EmpTimeCardInfo ETCI where ETCI_EmpID = " +
+                    //                    "(select E_EmpID from emp where E_EmpNbr = @_empID) " +
+                    //                    "AND ETCI_PayPeriodID <= (select PP_PayPeriodID from PayPeriod where getdate() between PP_StartDate and PP_EndDate) " +
+                    //                    "ORDER BY ETCI_PayPeriodID DESC)";
+
                     _comm.Parameters.AddWithValue("_empID", _empNbr);
 
                     _conn.Open();

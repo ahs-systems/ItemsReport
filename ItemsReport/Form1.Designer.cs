@@ -1862,7 +1862,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(1026, 29);
             this.lblTitle.TabIndex = 71;
-            this.lblTitle.Text = " Items Report v2018.06.14";
+            this.lblTitle.Text = " Items Report v2018.06.21";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bunifuDragTitle
