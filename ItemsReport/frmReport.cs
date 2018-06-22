@@ -426,10 +426,12 @@ namespace ItemsReport
                     {
                         column.SortMode = DataGridViewColumnSortMode.NotSortable;
                         // Fill the length of the grid with the last column
-                        if (column.Name != "Comments")
-                            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        else
-                            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        //if (column.Name != "Comments")
+                        //    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        //else
+                        //    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                        column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     }
 
                     //foreach (DataGridViewColumn column in _dgv.Columns)
