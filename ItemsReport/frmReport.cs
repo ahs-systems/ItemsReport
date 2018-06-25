@@ -846,7 +846,7 @@ namespace ItemsReport
                             // if _payInfo == "" then something went wrong, don't do anything, otherwise proceed
                             if (_payInfo != "")
                             {
-                                UpdateNFPcheckingList(_dr["id"].ToString(), _payInfo, _dr["EmpID"].ToString());
+                                UpdateNFPcheckingList(_dr["id"].ToString(), _payInfo, _dr["EmpID"].ToString(), _dr["type"].ToString());
                             }
                         }
 
@@ -869,7 +869,7 @@ namespace ItemsReport
 
         }
 
-        private void UpdateNFPcheckingList(string _id, string _payInfo, string _empID)
+        private void UpdateNFPcheckingList(string _id, string _payInfo, string _empID, string _fileType)
         {
             try
             {
@@ -887,6 +887,11 @@ namespace ItemsReport
                     _comment = GetWhoChangePositions(_empID);
                 }
                 
+                // if the last update was not made by RSSS then change the comment
+                if (!_comment.Contains("RSSS"))
+                {
+                    _comment = "*** This came from Record Type " + _fileType;
+                }
 
                 using (SqlConnection _conn = new SqlConnection(Common.SystemsServer))
                 {
