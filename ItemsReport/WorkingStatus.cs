@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ItemsReport
 {
-    public partial class frmWorkingStatus: Form
+    public partial class frmWorkingStatus : Form
     {
         public ItemsReport frmMain;
 
@@ -116,13 +111,13 @@ namespace ItemsReport
             {
                 using (SqlConnection myConnection = new SqlConnection())
                 {
-                    myConnection.ConnectionString = Common.SystemsServer;
+                    myConnection.ConnectionString = Common.BooServer;
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
 
                     // Get your current working status
-                    myCommand.CommandText = "select * from ItemsRpt_WorkStatus where wName = @_name and workingDate = @_date";
+                    myCommand.CommandText = "select * from APP.ItemsRpt_WorkStatus where wName = @_name and workingDate = @_date";
                     myCommand.Parameters.AddWithValue("_name", Common.CurrentUser);
                     myCommand.Parameters.AddWithValue("_date", DateTime.Today.ToString("dd-MMM-yyyy"));
 
@@ -138,14 +133,14 @@ namespace ItemsReport
                         firstLoad = false;
                     }
 
-                    
+
                     _dr.Close();
 
                     // Get the current workers working on the Items Report
                     rtbWorkers.Clear();
 
                     myCommand.Parameters.Clear();
-                    myCommand.CommandText = "select * from ItemsRpt_WorkStatus where workingDate = @_date order by dateUpdated";
+                    myCommand.CommandText = "select * from APP.ItemsRpt_WorkStatus where workingDate = @_date order by dateUpdated";
                     myCommand.Parameters.AddWithValue("_date", DateTime.Today.ToString("dd-MMM-yyyy"));
                     _dr = myCommand.ExecuteReader();
                     if (_dr.HasRows)
@@ -154,10 +149,10 @@ namespace ItemsReport
                         //string _lastWorker = "";
                         while (_dr.Read())
                         {
-                            if (Convert.ToByte(_dr["wStatus"]) == (byte) WorkingStatus.WorkingOnIt)
+                            if (Convert.ToByte(_dr["wStatus"]) == (byte)WorkingStatus.WorkingOnIt)
                             {
                                 rtbWorkers.AppendText("[As of " + Convert.ToDateTime(_dr["dateUpdated"]).ToString("hh:mm:ss tt") + "] ", Color.DimGray);
-                                rtbWorkers.AppendText(_dr["wName"].ToString().Replace(@"HEALTHY\",""), Color.Red, true);
+                                rtbWorkers.AppendText(_dr["wName"].ToString().Replace(@"HEALTHY\", ""), Color.Red, true);
                                 rtbWorkers.AppendText(" is still working on it.", Color.DimGray, false);
                                 rtbWorkers.AppendText(Environment.NewLine);
 
@@ -170,7 +165,7 @@ namespace ItemsReport
                                 rtbWorkers.AppendText(" is done working on it.", Color.DimGray, false);
                                 rtbWorkers.AppendText(Environment.NewLine);
                             }
-                            else 
+                            else
                             {
                                 rtbWorkers.AppendText("[As of " + Convert.ToDateTime(_dr["dateUpdated"]).ToString("hh:mm:ss tt") + "] ", Color.DimGray);
                                 rtbWorkers.AppendText(_dr["wName"].ToString().Replace(@"HEALTHY\", ""), Color.DarkGray, true);
@@ -184,7 +179,7 @@ namespace ItemsReport
                         //{
                         //    MessageBox.Show("It seems that you're the last person working on it.\n\nUsually the last person is the one who will send the 'Items Report' to SSO. \n\nThank you!","Message",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                         //}
-                    }                    
+                    }
                     _dr.Close();
 
 
@@ -210,28 +205,28 @@ namespace ItemsReport
             {
                 using (SqlConnection myConnection = new SqlConnection())
                 {
-                    myConnection.ConnectionString = Common.SystemsServer;
+                    myConnection.ConnectionString = Common.BooServer;
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
 
-                    myCommand.CommandText = "if exists (SELECT * FROM ItemsRpt_WorkStatus WHERE workingDate = @_workingDate and wName = @_wName) " +
+                    myCommand.CommandText = "if exists (SELECT * FROM APP.ItemsRpt_WorkStatus WHERE workingDate = @_workingDate and wName = @_wName) " +
                                     "begin " +
-                                    "    UPDATE ItemsRpt_WorkStatus SET wStatus = @_wStatus, dateUpdated = sysdatetime() WHERE workingDate = @_workingDate and wName = @_wName " +
+                                    "    UPDATE APP.ItemsRpt_WorkStatus SET wStatus = @_wStatus, dateUpdated = sysdatetime() WHERE workingDate = @_workingDate and wName = @_wName " +
                                     "end " +
                                     "else " +
                                     "begin " +
-                                    "    INSERT INTO ItemsRpt_WorkStatus(wName, wStatus, workingDate) VALUES(@_wName, @_wStatus, @_workingDate) " +
+                                    "    INSERT INTO APP.ItemsRpt_WorkStatus(wName, wStatus, workingDate) VALUES(@_wName, @_wStatus, @_workingDate) " +
                                     "end";
                     myCommand.Parameters.AddWithValue("_workingDate", DateTime.Today.ToString("dd-MMM-yyyy"));
                     myCommand.Parameters.AddWithValue("_wName", Common.CurrentUser);
                     myCommand.Parameters.AddWithValue("_wStatus", cboWorkingStatus.SelectedIndex);
 
-                    myCommand.ExecuteNonQuery();                   
+                    myCommand.ExecuteNonQuery();
                     myCommand.Dispose();
 
                     frmMain.DisplayStatus(cboWorkingStatus.SelectedIndex);
-                    CheckStatus();                    
+                    CheckStatus();
                 }
             }
             catch (Exception ex)
@@ -246,5 +241,5 @@ namespace ItemsReport
         }
     }
 
-    
+
 }

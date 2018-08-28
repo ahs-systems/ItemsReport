@@ -82,13 +82,13 @@ namespace ItemsReport
 
                 using (SqlConnection _conn = new SqlConnection())
                 {
-                    _conn.ConnectionString = Common.SystemsServer;
+                    _conn.ConnectionString = Common.BooServer;
 
                     _dgv.DataSource = null;
                     _dgv.Refresh();
 
                     string _sqlString = "SELECT ID, S.SiteDesc, N.Emp_Num, N.Emp_Name, N.UnitFrom, N.UnitTo, N.Comments, N.EnteredBy, N.EnteredDate " +
-                                "FROM ItemsRpt_Transfers N JOIN SITES S ON N.Site = S.SiteID WHERE N.PayPeriod = @_PP AND " +
+                                "FROM APP.ItemsRpt_Transfers N JOIN APP.Sites S ON N.Site = S.SiteID WHERE N.PayPeriod = @_PP AND " +
                                  "N.PayPeriod_Year = @_PPYear and N.ItemsReportLetter = @_IRL ORDER BY N.Site, N.Emp_Name, N.EnteredDate";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
@@ -128,13 +128,13 @@ namespace ItemsReport
 
                 using (SqlConnection _conn = new SqlConnection())
                 {
-                    _conn.ConnectionString = Common.SystemsServer;
+                    _conn.ConnectionString = Common.BooServer;
 
                     _dgv.DataSource = null;
                     _dgv.Refresh();
 
                     string _sqlString = "SELECT ID, S.SiteDesc, N.Emp_Num, N.Emp_Name, N.Unit, N.TerminationDate, N.Comments, N.EnteredBy, N.EnteredDate " +
-                                "FROM ItemsRpt_Terminations N JOIN SITES S ON N.Site = S.SiteID WHERE N.PayPeriod = @_PP AND " +
+                                "FROM APP.ItemsRpt_Terminations N JOIN APP.Sites S ON N.Site = S.SiteID WHERE N.PayPeriod = @_PP AND " +
                                  "N.PayPeriod_Year = @_PPYear and N.ItemsReportLetter = @_IRL ORDER BY N.Site, N.Emp_Name, N.EnteredDate";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
@@ -172,7 +172,7 @@ namespace ItemsReport
 
                 using (SqlConnection _conn = new SqlConnection())
                 {
-                    _conn.ConnectionString = Common.SystemsServer;
+                    _conn.ConnectionString = Common.BooServer;
 
                     dgvUUT.DataSource = null;
                     dgvUUT.Refresh();
@@ -183,7 +183,7 @@ namespace ItemsReport
                                         "    Else '' " +
                                         "End as ' ', " +
                                         "U.Status, U.Comments, U.EnteredBy, U.EnteredDate, U.ChangeInSite " +
-                                        "from ItemsRpt_UnitToUnitTransfer U join Sites S on U.Site = S.SiteID WHERE U.PayPeriod = @_PP AND " +
+                                        "from APP.ItemsRpt_UnitToUnitTransfer U join APP.Sites S on U.Site = S.SiteID WHERE U.PayPeriod = @_PP AND " +
                                         "U.PayPeriod_Year = @_PPYear and U.ItemsReportLetter = @_IRL Order By U.Site, U.Emp_Name, U.EnteredDate";
 
 
@@ -235,13 +235,13 @@ namespace ItemsReport
 
                 using (SqlConnection _conn = new SqlConnection())
                 {
-                    _conn.ConnectionString = Common.SystemsServer;
+                    _conn.ConnectionString = Common.BooServer;
 
                     _dgv.DataSource = null;
                     _dgv.Refresh();
 
                     string _sqlString = "SELECT ID, S.SiteDesc, N.Emp_Num, N.Emp_Name, N.Unit, N.Occupation, N.Status, N.EnteredBy, N.EnteredDate " +
-                                 "FROM ItemsRpt_NewPrimaryPositions N JOIN SITES S ON N.Site = S.SiteID WHERE N.PayPeriod = @_PP AND " +
+                                 "FROM APP.ItemsRpt_NewPrimaryPositions N JOIN APP.Sites S ON N.Site = S.SiteID WHERE N.PayPeriod = @_PP AND " +
                                  "N.PayPeriod_Year = @_PPYear and N.ItemsReportLetter = @_IRL ORDER BY N.Site, N.Emp_Name, N.EnteredDate";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
@@ -282,13 +282,13 @@ namespace ItemsReport
 
                 using (SqlConnection _conn = new SqlConnection())
                 {
-                    _conn.ConnectionString = Common.SystemsServer;
+                    _conn.ConnectionString = Common.BooServer;
 
                     _dgv.DataSource = null;
                     _dgv.Refresh();
 
                     string _sqlString = "SELECT ID, S.SiteDesc, N.Emp_Num, N.Emp_Name, N.Unit, N.StatusFrom, N.StatusTo, N.Comments, N.EnteredBy, N.EnteredDate " +
-                                "FROM ItemsRpt_StatusChange N JOIN SITES S ON N.Site = S.SiteID WHERE N.PayPeriod = @_PP AND " +
+                                "FROM APP.ItemsRpt_StatusChange N JOIN APP.Sites S ON N.Site = S.SiteID WHERE N.PayPeriod = @_PP AND " +
                                  "N.PayPeriod_Year = @_PPYear and N.ItemsReportLetter = @_IRL ORDER BY N.Site, N.Emp_Name, N.EnteredDate";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
@@ -328,13 +328,13 @@ namespace ItemsReport
 
                 using (SqlConnection _conn = new SqlConnection())
                 {
-                    _conn.ConnectionString = Common.SystemsServer;
+                    _conn.ConnectionString = Common.BooServer;
 
                     _dgv.DataSource = null;
                     _dgv.Refresh();
 
                     string _sqlString = "SELECT ID, S.SiteDesc, N.Emp_Num, N.Emp_Name, N.Unit, N.OccFrom, N.OccTo, N.Comments, N.EnteredBy, N.EnteredDate " +
-                                 "FROM ItemsRpt_OccupationChange N JOIN SITES S ON N.Site = S.SiteID WHERE N.PayPeriod = @_PP AND " +
+                                 "FROM APP.ItemsRpt_OccupationChange N JOIN APP.Sites S ON N.Site = S.SiteID WHERE N.PayPeriod = @_PP AND " +
                                  "N.PayPeriod_Year = @_PPYear and N.ItemsReportLetter = @_IRL ORDER BY N.Site, N.Emp_Name, N.EnteredDate";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
@@ -372,7 +372,7 @@ namespace ItemsReport
             {
                 using (SqlConnection _conn = new SqlConnection())
                 {
-                    _conn.ConnectionString = Common.SystemsServer;
+                    _conn.ConnectionString = Common.BooServer;
 
                     string _filter = "";
                     switch (cboNFPchecking.SelectedIndex)
@@ -388,7 +388,7 @@ namespace ItemsReport
                             break;
                     }
 
-                    string _sqlString = "SELECT * FROM NFPChecking WHERE (CurrentStat = 0 OR DateUploaded BETWEEN @_from and @_to)" + _filter + " ORDER BY DateUploaded";
+                    string _sqlString = "SELECT * FROM APP.NFPChecking WHERE (CurrentStat = 0 OR DateUploaded BETWEEN @_from and @_to)" + _filter + " ORDER BY DateUploaded";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(_sqlString, _conn))
                     {
@@ -536,7 +536,7 @@ namespace ItemsReport
                 {
                     using (SqlConnection _conn = new SqlConnection())
                     {
-                        _conn.ConnectionString = Common.SystemsServer;
+                        _conn.ConnectionString = Common.BooServer;
                         _conn.Open();
 
                         SqlCommand _command = _conn.CreateCommand();
@@ -547,22 +547,22 @@ namespace ItemsReport
                             switch (_tabName)
                             {
                                 case "NPP":
-                                    _command.CommandText = "DELETE FROM ItemsRpt_NewPrimaryPositions WHERE Id = @_ID";
+                                    _command.CommandText = "DELETE FROM APP.ItemsRpt_NewPrimaryPositions WHERE Id = @_ID";
                                     break;
                                 case "UUT":
-                                    _command.CommandText = "DELETE FROM ItemsRpt_UnitToUnitTransfer WHERE Id = @_ID";
+                                    _command.CommandText = "DELETE FROM APP.ItemsRpt_UnitToUnitTransfer WHERE Id = @_ID";
                                     break;
                                 case "SC":
-                                    _command.CommandText = "DELETE FROM ItemsRpt_StatusChange WHERE Id = @_ID";
+                                    _command.CommandText = "DELETE FROM APP.ItemsRpt_StatusChange WHERE Id = @_ID";
                                     break;
                                 case "OC":
-                                    _command.CommandText = "DELETE FROM ItemsRpt_OccupationChange WHERE Id = @_ID";
+                                    _command.CommandText = "DELETE FROM APP.ItemsRpt_OccupationChange WHERE Id = @_ID";
                                     break;
                                 case "Terms":
-                                    _command.CommandText = "DELETE FROM ItemsRpt_Terminations WHERE Id = @_ID";
+                                    _command.CommandText = "DELETE FROM APP.ItemsRpt_Terminations WHERE Id = @_ID";
                                     break;
                                 case "Trans":
-                                    _command.CommandText = "DELETE FROM ItemsRpt_Transfers WHERE Id = @_ID";
+                                    _command.CommandText = "DELETE FROM APP.ItemsRpt_Transfers WHERE Id = @_ID";
                                     break;
                             }
 
@@ -691,12 +691,12 @@ namespace ItemsReport
 
             try
             {
-                using (SqlConnection _conn = new SqlConnection(Common.SystemsServer))
+                using (SqlConnection _conn = new SqlConnection(Common.BooServer))
                 {
                     _conn.Open();
                     using (SqlCommand _comm = _conn.CreateCommand())
                     {
-                        _comm.CommandText = "UPDATE NFPChecking SET CheckedBy = @_currUser,  CheckedDate = getdate(), CurrentStat = @_stat, Comments = @_comments  WHERE ID = @_id";
+                        _comm.CommandText = "UPDATE APP.NFPChecking SET CheckedBy = @_currUser,  CheckedDate = getdate(), CurrentStat = @_stat, Comments = @_comments  WHERE ID = @_id";
                         _comm.Parameters.AddWithValue("_currUser", Common.CurrentUser);
                         if (dgvNFPChecking.CurrentRow.Cells["Comments"].Value.ToString() != "")
                         {
@@ -829,10 +829,10 @@ namespace ItemsReport
                 btnRunCheck.Text = "Please wait...";
                 btnRunCheck.Update();
 
-                using (SqlConnection _conn = new SqlConnection(Common.SystemsServer))
+                using (SqlConnection _conn = new SqlConnection(Common.BooServer))
                 {
                     SqlCommand _comm = _conn.CreateCommand();
-                    _comm.CommandText = "select * from NFPChecking where CurrentStat = 0";
+                    _comm.CommandText = "select * from APP.NFPChecking where CurrentStat = 0";
 
                     _conn.Open();
                     SqlDataReader _dr = _comm.ExecuteReader();
@@ -877,7 +877,7 @@ namespace ItemsReport
 
                 // if Pay Info is no longer Inactive or NFP
                 if (!"Not for Payroll , --- INACTIVE ---, Inactive".ToUpper().Contains(_payInfo.ToUpper()))
-                {                    
+                {
                     _comment = GetWhoChangedPayInfo(_empID);
                 }
                 // if Pay Info is still Inactive or NFP then don't update the Current Pay Info, get who last changed the Positions tab
@@ -886,19 +886,19 @@ namespace ItemsReport
                     _payInfo = "";
                     _comment = GetWhoChangePositions(_empID);
                 }
-                
+
                 // if the last update was not made by RSSS then change the comment
                 if (!_comment.Contains("RSSS"))
                 {
                     _comment = "*** This came from Record Type " + _fileType;
                 }
 
-                using (SqlConnection _conn = new SqlConnection(Common.SystemsServer))
+                using (SqlConnection _conn = new SqlConnection(Common.BooServer))
                 {
                     _conn.Open();
                     using (SqlCommand _comm = _conn.CreateCommand())
                     {
-                        _comm.CommandText = "UPDATE NFPChecking SET CheckedBy = 'AutoSystem',  CheckedDate = getdate(), Curr_PayInfo = @_currUnit, Comments = @_comments  WHERE ID = @_id";
+                        _comm.CommandText = "UPDATE APP.NFPChecking SET CheckedBy = 'AutoSystem',  CheckedDate = getdate(), Curr_PayInfo = @_currUnit, Comments = @_comments  WHERE ID = @_id";
                         _comm.Parameters.AddWithValue("_currUnit", _payInfo);
                         _comm.Parameters.AddWithValue("_comments", _comment);
                         _comm.Parameters.AddWithValue("_id", _id);
@@ -928,7 +928,7 @@ namespace ItemsReport
                                 "where EP.EP_EmpID in (select DISTINCT E_EmpID from emp where E_EmpNbr LIKE @_empID) " +
                                 "AND EP_ToDate > GETDATE() ORDER BY EP_ChangeDate DESC";
 
-                        _comm.Parameters.AddWithValue("_empID", _empID.Substring(0,8) + "%");
+                        _comm.Parameters.AddWithValue("_empID", _empID.Substring(0, 8) + "%");
 
                         SqlDataReader _dr = _comm.ExecuteReader();
 

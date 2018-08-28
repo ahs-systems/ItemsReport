@@ -241,7 +241,7 @@ namespace ItemsReport
                 {
 
                     //myConnection.ConnectionString = @"Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=" + Application.StartupPath + @"\items.mdb;Uid=Admin;Pwd=;";
-                    myConnection.ConnectionString = Common.SystemsServer;
+                    myConnection.ConnectionString = Common.BooServer;
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
@@ -252,7 +252,7 @@ namespace ItemsReport
                         _ppYear = cboYearPP.SelectedItem.ToString();
                         _ItemsReportLetter = cboItemsReport.SelectedItem.ToString();
 
-                        myCommand.CommandText = "Insert into ItemsRpt_NewPrimaryPositions (ItemsReportLetter, PayPeriod, PayPeriod_Year, Site, Emp_Num, Emp_Name, Unit, Occupation, Status, EnteredBy) values " +
+                        myCommand.CommandText = "Insert into APP.ItemsRpt_NewPrimaryPositions (ItemsReportLetter, PayPeriod, PayPeriod_Year, Site, Emp_Num, Emp_Name, Unit, Occupation, Status, EnteredBy) values " +
                         "(@_ItemsReportLetter, @_PayPeriod, @_PayPeriod_Year, @_Site, @_Emp_Num, @_Emp_Name, @_Unit, @_Occupation, @_Status, @_EnteredBy)";
                     }
                     else // Update
@@ -261,7 +261,7 @@ namespace ItemsReport
                         _ppYear = ppYear;
                         _ItemsReportLetter = itemsReportLetter;
 
-                        myCommand.CommandText = "Update ItemsRpt_NewPrimaryPositions SET ItemsReportLetter = @_ItemsReportLetter, PayPeriod = @_PayPeriod, " +
+                        myCommand.CommandText = "Update APP.ItemsRpt_NewPrimaryPositions SET ItemsReportLetter = @_ItemsReportLetter, PayPeriod = @_PayPeriod, " +
                             "PayPeriod_Year = @_PayPeriod_Year, Site = @_Site, Emp_Num = @_Emp_Num, Emp_Name = @_Emp_Name, Unit = @_Unit, Occupation = @_Occupation, " +
                             "Status = @_Status, EnteredBy = @_EnteredBy WHERE ID = " + ID;
                     }
@@ -314,22 +314,22 @@ namespace ItemsReport
                 switch (tabControl1.SelectedIndex) // check if the EE is already existing then if true then just show it to edit
                 {
                     case 0: // New Primary Positions
-                        CheckIfUploaded(Load_NPP_Data, "ItemsRpt_NewPrimaryPositions", ((TextBox)sender).Text.Substring(0, 8));
+                        CheckIfUploaded(Load_NPP_Data, "APP.ItemsRpt_NewPrimaryPositions", ((TextBox)sender).Text.Substring(0, 8));
                         break;
                     case 1: // Unit to Unit Transfer
-                        CheckIfUploaded(Load_UUT_Data, "ItemsRpt_UnitToUnitTransfer", ((TextBox)sender).Text.Substring(0, 8));
+                        CheckIfUploaded(Load_UUT_Data, "APP.ItemsRpt_UnitToUnitTransfer", ((TextBox)sender).Text.Substring(0, 8));
                         break;
                     case 2: // Status Change
-                        CheckIfUploaded(Load_SC_Data, "ItemsRpt_StatusChange", ((TextBox)sender).Text.Substring(0, 8));
+                        CheckIfUploaded(Load_SC_Data, "APP.ItemsRpt_StatusChange", ((TextBox)sender).Text.Substring(0, 8));
                         break;
                     case 3: // Change in Occupation
-                        CheckIfUploaded(Load_OC_Data, "ItemsRpt_OccupationChange", ((TextBox)sender).Text.Substring(0, 8));
+                        CheckIfUploaded(Load_OC_Data, "APP.ItemsRpt_OccupationChange", ((TextBox)sender).Text.Substring(0, 8));
                         break;
                     case 4: // Terminations
-                        CheckIfUploaded(Load_Terms_Data, "ItemsRpt_Terminations", ((TextBox)sender).Text.Substring(0, 8));
+                        CheckIfUploaded(Load_Terms_Data, "APP.ItemsRpt_Terminations", ((TextBox)sender).Text.Substring(0, 8));
                         break;
                     case 5: // Transfers
-                        CheckIfUploaded(Load_Trans_Data, "ItemsRpt_Transfers", ((TextBox)sender).Text.Substring(0, 8));
+                        CheckIfUploaded(Load_Trans_Data, "APP.ItemsRpt_Transfers", ((TextBox)sender).Text.Substring(0, 8));
                         break;
                 }
 
@@ -355,7 +355,7 @@ namespace ItemsReport
 
                 using (SqlConnection myConnection = new SqlConnection())
                 {
-                    myConnection.ConnectionString = Common.SystemsServer;
+                    myConnection.ConnectionString = Common.BooServer;
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
@@ -514,7 +514,7 @@ namespace ItemsReport
 
                     using (SqlConnection myConnection = new SqlConnection())
                     {
-                        myConnection.ConnectionString = Common.SystemsServer;
+                        myConnection.ConnectionString = Common.BooServer;
                         myConnection.Open();
 
                         SqlCommand myCommand = myConnection.CreateCommand();
@@ -533,7 +533,7 @@ namespace ItemsReport
                         {
                             myCommand.Parameters.Clear();
 
-                            myCommand.CommandText = "select * From ItemsRpt_NewPrimaryPositions " +
+                            myCommand.CommandText = "select * From APP.ItemsRpt_NewPrimaryPositions " +
                                 "where PayPeriod = @_PayPeriod and PayPeriod_Year = @_PayPeriod_Year and ItemsReportLetter = @_IRL and [Site] = @_Site " +
                                 "order by Emp_Name";
 
@@ -589,7 +589,7 @@ namespace ItemsReport
                         {
                             myCommand.Parameters.Clear();
 
-                            myCommand.CommandText = "select * From ItemsRpt_UnitToUnitTransfer " +
+                            myCommand.CommandText = "select * From APP.ItemsRpt_UnitToUnitTransfer " +
                                 "where PayPeriod = @_PayPeriod and PayPeriod_Year = @_PayPeriod_Year and ItemsReportLetter = @_IRL and [Site] = @_Site " +
                                 "order by Emp_Name";
 
@@ -657,7 +657,7 @@ namespace ItemsReport
                         {
                             myCommand.Parameters.Clear();
 
-                            myCommand.CommandText = "select * From ItemsRpt_StatusChange " +
+                            myCommand.CommandText = "select * From APP.ItemsRpt_StatusChange " +
                                 "where PayPeriod = @_PayPeriod and PayPeriod_Year = @_PayPeriod_Year and ItemsReportLetter = @_IRL and [Site] = @_Site " +
                                 "order by Emp_Name";
 
@@ -712,7 +712,7 @@ namespace ItemsReport
                         {
                             myCommand.Parameters.Clear();
 
-                            myCommand.CommandText = "select * From ItemsRpt_OccupationChange " +
+                            myCommand.CommandText = "select * From APP.ItemsRpt_OccupationChange " +
                                 "where PayPeriod = @_PayPeriod and PayPeriod_Year = @_PayPeriod_Year and ItemsReportLetter = @_IRL and [Site] = @_Site " +
                                 "order by Emp_Name";
 
@@ -767,7 +767,7 @@ namespace ItemsReport
                         {
                             myCommand.Parameters.Clear();
 
-                            myCommand.CommandText = "select * From ItemsRpt_Terminations " +
+                            myCommand.CommandText = "select * From APP.ItemsRpt_Terminations " +
                                 "where PayPeriod = @_PayPeriod and PayPeriod_Year = @_PayPeriod_Year and ItemsReportLetter = @_IRL and [Site] = @_Site " +
                                 "order by Emp_Name";
 
@@ -821,7 +821,7 @@ namespace ItemsReport
                         {
                             myCommand.Parameters.Clear();
 
-                            myCommand.CommandText = "select * From ItemsRpt_Transfers " +
+                            myCommand.CommandText = "select * From APP.ItemsRpt_Transfers " +
                                 "where PayPeriod = @_PayPeriod and PayPeriod_Year = @_PayPeriod_Year and ItemsReportLetter = @_IRL and [Site] = @_Site " +
                                 "order by Emp_Name";
 
@@ -921,7 +921,7 @@ namespace ItemsReport
             {
                 using (SqlConnection myConnection = new SqlConnection())
                 {
-                    myConnection.ConnectionString = Common.SystemsServer; //@"Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=" + Application.StartupPath + @"\items.mdb;Uid=Admin;Pwd=;";
+                    myConnection.ConnectionString = Common.BooServer; //@"Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=" + Application.StartupPath + @"\items.mdb;Uid=Admin;Pwd=;";
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
@@ -936,7 +936,7 @@ namespace ItemsReport
                         _ppYear = cboYearPP.SelectedItem.ToString();
                         _ItemsReportLetter = cboItemsReport.SelectedItem.ToString();
 
-                        myCommand.CommandText = "Insert into ItemsRpt_UnitToUnitTransfer (ItemsReportLetter, PayPeriod, PayPeriod_Year, Site, Emp_Num, Emp_Name, UnitFrom, UnitTo, Occupation, Status, ChangeInOccupation, ChangeInSite, Comments, EnteredBy) values " +
+                        myCommand.CommandText = "Insert into APP.ItemsRpt_UnitToUnitTransfer (ItemsReportLetter, PayPeriod, PayPeriod_Year, Site, Emp_Num, Emp_Name, UnitFrom, UnitTo, Occupation, Status, ChangeInOccupation, ChangeInSite, Comments, EnteredBy) values " +
                             "(@_ItemsReportLetter, @_PayPeriod, @_PayPeriod_Year, @_Site, @_Emp_Num, @_Emp_Name, @_UnitFrom, @_UnitTo, @_Occupation, @_Status, @_ChangeInOccupation, @_ChangeInSite, @_Comments, @_EnteredBy)";
                     }
                     else // btnSave_UUT.Text == "Update"
@@ -945,7 +945,7 @@ namespace ItemsReport
                         _ppYear = ppYear;
                         _ItemsReportLetter = itemsReportLetter;
 
-                        myCommand.CommandText = "Update ItemsRpt_UnitToUnitTransfer SET ItemsReportLetter = @_ItemsReportLetter, PayPeriod = @_PayPeriod, PayPeriod_Year = @_PayPeriod_Year, " +
+                        myCommand.CommandText = "Update APP.ItemsRpt_UnitToUnitTransfer SET ItemsReportLetter = @_ItemsReportLetter, PayPeriod = @_PayPeriod, PayPeriod_Year = @_PayPeriod_Year, " +
                             "Site = @_Site, Emp_Num = @_Emp_Num, Emp_Name = @_Emp_Name, UnitFrom = @_UnitFrom, UnitTo = @_UnitTo, Occupation = @_Occupation, Status = @_Status, " +
                             "ChangeInOccupation = @_ChangeInOccupation, ChangeInSite = @_ChangeInSite, Comments = @_Comments, EnteredBy = @_EnteredBy WHERE ID = " + ID;
                     }
@@ -1053,7 +1053,7 @@ namespace ItemsReport
             {
                 using (SqlConnection myConnection = new SqlConnection())
                 {
-                    myConnection.ConnectionString = Common.SystemsServer; //@"Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=" + Application.StartupPath + @"\items.mdb;Uid=Admin;Pwd=;";
+                    myConnection.ConnectionString = Common.BooServer; //@"Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=" + Application.StartupPath + @"\items.mdb;Uid=Admin;Pwd=;";
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
@@ -1068,7 +1068,7 @@ namespace ItemsReport
                         _ppYear = cboYearPP.SelectedItem.ToString();
                         _ItemsReportLetter = cboItemsReport.SelectedItem.ToString();
 
-                        myCommand.CommandText = "Insert into ItemsRpt_StatusChange (ItemsReportLetter, PayPeriod, PayPeriod_Year, Site, Emp_Num, Emp_Name, StatusFrom, StatusTo, Unit, Comments, EnteredBy) values " +
+                        myCommand.CommandText = "Insert into APP.ItemsRpt_StatusChange (ItemsReportLetter, PayPeriod, PayPeriod_Year, Site, Emp_Num, Emp_Name, StatusFrom, StatusTo, Unit, Comments, EnteredBy) values " +
                         "(@_ItemsReportLetter, @_PayPeriod, @_PayPeriod_Year, @_Site, @_Emp_Num, @_Emp_Name, @_StatusFrom, @_StatusTo, @_Unit, @_Comments, @_EnteredBy)";
                     }
                     else // Update
@@ -1077,7 +1077,7 @@ namespace ItemsReport
                         _ppYear = ppYear;
                         _ItemsReportLetter = itemsReportLetter;
 
-                        myCommand.CommandText = "UPDATE ItemsRpt_StatusChange SET ItemsReportLetter = @_ItemsReportLetter, PayPeriod = @_PayPeriod, PayPeriod_Year = @_PayPeriod_Year, " +
+                        myCommand.CommandText = "UPDATE APP.ItemsRpt_StatusChange SET ItemsReportLetter = @_ItemsReportLetter, PayPeriod = @_PayPeriod, PayPeriod_Year = @_PayPeriod_Year, " +
                             "Site = @_Site, Emp_Num = @_Emp_Num, Emp_Name = @_Emp_Name, StatusFrom = @_StatusFrom, StatusTo = @_StatusTo, Unit = @_Unit, Comments = @_Comments,  " +
                             "EnteredBy = @_EnteredBy WHERE ID = " + ID;
                     }
@@ -1144,7 +1144,7 @@ namespace ItemsReport
             {
                 using (SqlConnection myConnection = new SqlConnection())
                 {
-                    myConnection.ConnectionString = Common.SystemsServer; //@"Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=" + Application.StartupPath + @"\items.mdb;Uid=Admin;Pwd=;";
+                    myConnection.ConnectionString = Common.BooServer; //@"Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=" + Application.StartupPath + @"\items.mdb;Uid=Admin;Pwd=;";
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
@@ -1159,7 +1159,7 @@ namespace ItemsReport
                         _ppYear = cboYearPP.SelectedItem.ToString();
                         _ItemsReportLetter = cboItemsReport.SelectedItem.ToString();
 
-                        myCommand.CommandText = "Insert into ItemsRpt_OccupationChange (ItemsReportLetter, PayPeriod, PayPeriod_Year, Site, Emp_Num, Emp_Name, Unit, OccFrom, OccTo, Comments, EnteredBy) values " +
+                        myCommand.CommandText = "Insert into APP.ItemsRpt_OccupationChange (ItemsReportLetter, PayPeriod, PayPeriod_Year, Site, Emp_Num, Emp_Name, Unit, OccFrom, OccTo, Comments, EnteredBy) values " +
                         "(@_ItemsReportLetter, @_PayPeriod, @_PayPeriod_Year, @_Site, @_Emp_Num, @_Emp_Name, @_Unit, @_OccFrom, @_OccTo, @_Comments, @_EnteredBy)";
                     }
                     else // Update
@@ -1168,7 +1168,7 @@ namespace ItemsReport
                         _ppYear = ppYear;
                         _ItemsReportLetter = itemsReportLetter;
 
-                        myCommand.CommandText = "UPDATE ItemsRpt_OccupationChange SET ItemsReportLetter = @_ItemsReportLetter, PayPeriod = @_PayPeriod, PayPeriod_Year = @_PayPeriod_Year, " +
+                        myCommand.CommandText = "UPDATE APP.ItemsRpt_OccupationChange SET ItemsReportLetter = @_ItemsReportLetter, PayPeriod = @_PayPeriod, PayPeriod_Year = @_PayPeriod_Year, " +
                             "Site = @_Site, Emp_Num = @_Emp_Num, Emp_Name = @_Emp_Name, Unit = @_Unit, OccFrom = @_OccFrom, OccTo = @_OccTo, Comments = @_Comments, " +
                             "EnteredBy = @_EnteredBy WHERE ID = " + ID;
                     }
@@ -1235,7 +1235,7 @@ namespace ItemsReport
             {
                 using (SqlConnection myConnection = new SqlConnection())
                 {
-                    myConnection.ConnectionString = Common.SystemsServer; //@"Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=" + Application.StartupPath + @"\items.mdb;Uid=Admin;Pwd=;";
+                    myConnection.ConnectionString = Common.BooServer; //@"Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=" + Application.StartupPath + @"\items.mdb;Uid=Admin;Pwd=;";
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
@@ -1250,7 +1250,7 @@ namespace ItemsReport
                         _ppYear = cboYearPP.SelectedItem.ToString();
                         _ItemsReportLetter = cboItemsReport.SelectedItem.ToString();
 
-                        myCommand.CommandText = "Insert into ItemsRpt_Terminations (ItemsReportLetter, PayPeriod, PayPeriod_Year, Site, Emp_Num, Emp_Name, Unit, TerminationDate, Comments, EnteredBy) values " +
+                        myCommand.CommandText = "Insert into APP.ItemsRpt_Terminations (ItemsReportLetter, PayPeriod, PayPeriod_Year, Site, Emp_Num, Emp_Name, Unit, TerminationDate, Comments, EnteredBy) values " +
                         "(@_ItemsReportLetter, @_PayPeriod, @_PayPeriod_Year, @_Site, @_Emp_Num, @_Emp_Name, @_Unit, @_TerminationDate, @_Comments, @_EnteredBy)";
                     }
                     else // Update
@@ -1259,7 +1259,7 @@ namespace ItemsReport
                         _ppYear = ppYear;
                         _ItemsReportLetter = itemsReportLetter;
 
-                        myCommand.CommandText = "UPDATE ItemsRpt_Terminations SET ItemsReportLetter = @_ItemsReportLetter, PayPeriod = @_PayPeriod, PayPeriod_Year = @_PayPeriod_Year, " +
+                        myCommand.CommandText = "UPDATE APP.ItemsRpt_Terminations SET ItemsReportLetter = @_ItemsReportLetter, PayPeriod = @_PayPeriod, PayPeriod_Year = @_PayPeriod_Year, " +
                             "Site = @_Site, Emp_Num = @_Emp_Num, Emp_Name = @_Emp_Name, Unit = @_Unit, TerminationDate = @_TerminationDate, Comments = @_Comments, EnteredBy = @_EnteredBy " +
                             "WHERE ID = " + ID;
                     }
@@ -1325,7 +1325,7 @@ namespace ItemsReport
             {
                 using (SqlConnection myConnection = new SqlConnection())
                 {
-                    myConnection.ConnectionString = Common.SystemsServer; //@"Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=" + Application.StartupPath + @"\items.mdb;Uid=Admin;Pwd=;";
+                    myConnection.ConnectionString = Common.BooServer; //@"Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=" + Application.StartupPath + @"\items.mdb;Uid=Admin;Pwd=;";
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
@@ -1340,7 +1340,7 @@ namespace ItemsReport
                         _ppYear = cboYearPP.SelectedItem.ToString();
                         _ItemsReportLetter = cboItemsReport.SelectedItem.ToString();
 
-                        myCommand.CommandText = "Insert into ItemsRpt_Transfers (ItemsReportLetter, PayPeriod, PayPeriod_Year, Site, Emp_Num, Emp_Name, UnitFrom, UnitTo, Comments, EnteredBy) values " +
+                        myCommand.CommandText = "Insert into APP.ItemsRpt_Transfers (ItemsReportLetter, PayPeriod, PayPeriod_Year, Site, Emp_Num, Emp_Name, UnitFrom, UnitTo, Comments, EnteredBy) values " +
                         "(@_ItemsReportLetter, @_PayPeriod, @_PayPeriod_Year, @_Site, @_Emp_Num, @_Emp_Name, @_UnitFrom, @_UnitTo, @_Comments, @_EnteredBy)";
                     }
                     else // Update
@@ -1349,7 +1349,7 @@ namespace ItemsReport
                         _ppYear = ppYear;
                         _ItemsReportLetter = itemsReportLetter;
 
-                        myCommand.CommandText = "UPDATE ItemsRpt_Transfers SET ItemsReportLetter = @_ItemsReportLetter, PayPeriod = @_PayPeriod, PayPeriod_Year = @_PayPeriod_Year, " +
+                        myCommand.CommandText = "UPDATE APP.ItemsRpt_Transfers SET ItemsReportLetter = @_ItemsReportLetter, PayPeriod = @_PayPeriod, PayPeriod_Year = @_PayPeriod_Year, " +
                             "Site = @_Site, Emp_Num = @_Emp_Num, Emp_Name = @_Emp_Name, UnitFrom = @_UnitFrom, UnitTo = @_UnitTo, Comments = @_Comments, " +
                             "EnteredBy = @_EnteredBy WHERE ID = " + ID;
                     }
@@ -1429,13 +1429,13 @@ namespace ItemsReport
             {
                 using (SqlConnection myConnection = new SqlConnection())
                 {
-                    myConnection.ConnectionString = Common.SystemsServer; //@"Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=" + Application.StartupPath + @"\items.mdb;Uid=Admin;Pwd=;";
+                    myConnection.ConnectionString = Common.BooServer; //@"Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=" + Application.StartupPath + @"\items.mdb;Uid=Admin;Pwd=;";
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
 
                     myCommand.CommandText = "Select U.Site, U.PayPeriod, U.PayPeriod_Year, U.ItemsReportLetter, U.ID, U.Emp_Num, U.Emp_Name, U.UnitFrom, U.UnitTo, U.Occupation, U.ChangeInOccupation, " +
-                        "U.Status, U.Comments, U.EnteredBy, U.ChangeInSite from ItemsRpt_UnitToUnitTransfer U where ID = @_ID";
+                        "U.Status, U.Comments, U.EnteredBy, U.ChangeInSite from APP.ItemsRpt_UnitToUnitTransfer U where ID = @_ID";
                     myCommand.Parameters.AddWithValue("_ID", _ID);
 
                     SqlDataReader _dr = myCommand.ExecuteReader();
@@ -1477,13 +1477,13 @@ namespace ItemsReport
             {
                 using (SqlConnection myConnection = new SqlConnection())
                 {
-                    myConnection.ConnectionString = Common.SystemsServer;
+                    myConnection.ConnectionString = Common.BooServer;
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
 
                     myCommand.CommandText = "Select U.Site, U.PayPeriod, U.PayPeriod_Year, U.ItemsReportLetter, U.ID, U.Emp_Num, U.Emp_Name, U.Unit, U.Occupation, U.Status " +
-                        "from ItemsRpt_NewPrimaryPositions U where U.ID = @_ID";
+                        "from APP.ItemsRpt_NewPrimaryPositions U where U.ID = @_ID";
                     myCommand.Parameters.AddWithValue("_ID", _ID);
 
                     SqlDataReader _dr = myCommand.ExecuteReader();
@@ -1521,13 +1521,13 @@ namespace ItemsReport
             {
                 using (SqlConnection myConnection = new SqlConnection())
                 {
-                    myConnection.ConnectionString = Common.SystemsServer;
+                    myConnection.ConnectionString = Common.BooServer;
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
 
                     myCommand.CommandText = "Select U.Site, U.PayPeriod, U.PayPeriod_Year, U.ItemsReportLetter, U.Emp_Num, U.Emp_Name, U.StatusFrom, U.StatusTo, U.Unit, " +
-                        "U.Comments from ItemsRpt_StatusChange U where U.ID = @_ID";
+                        "U.Comments from APP.ItemsRpt_StatusChange U where U.ID = @_ID";
                     myCommand.Parameters.AddWithValue("_ID", _ID);
 
                     SqlDataReader _dr = myCommand.ExecuteReader();
@@ -1566,13 +1566,13 @@ namespace ItemsReport
             {
                 using (SqlConnection myConnection = new SqlConnection())
                 {
-                    myConnection.ConnectionString = Common.SystemsServer;
+                    myConnection.ConnectionString = Common.BooServer;
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
 
                     myCommand.CommandText = "Select U.Site, U.PayPeriod, U.PayPeriod_Year, U.ItemsReportLetter, U.Emp_Num, U.Emp_Name, U.Unit, U.OccFrom, U.OccTo, " +
-                        "U.Comments from ItemsRpt_OccupationChange U where U.ID = @_ID";
+                        "U.Comments from APP.ItemsRpt_OccupationChange U where U.ID = @_ID";
                     myCommand.Parameters.AddWithValue("_ID", _ID);
 
                     SqlDataReader _dr = myCommand.ExecuteReader();
@@ -1611,13 +1611,13 @@ namespace ItemsReport
             {
                 using (SqlConnection myConnection = new SqlConnection())
                 {
-                    myConnection.ConnectionString = Common.SystemsServer;
+                    myConnection.ConnectionString = Common.BooServer;
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
 
                     myCommand.CommandText = "Select U.Site, U.PayPeriod, U.PayPeriod_Year, U.ItemsReportLetter, U.Emp_Num, U.Emp_Name, U.Unit, U.TerminationDate, " +
-                        "U.Comments from ItemsRpt_Terminations U where U.ID = @_ID";
+                        "U.Comments from APP.ItemsRpt_Terminations U where U.ID = @_ID";
                     myCommand.Parameters.AddWithValue("_ID", _ID);
 
                     SqlDataReader _dr = myCommand.ExecuteReader();
@@ -1655,13 +1655,13 @@ namespace ItemsReport
             {
                 using (SqlConnection myConnection = new SqlConnection())
                 {
-                    myConnection.ConnectionString = Common.SystemsServer;
+                    myConnection.ConnectionString = Common.BooServer;
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
 
                     myCommand.CommandText = "Select U.Site, U.PayPeriod, U.PayPeriod_Year, U.ItemsReportLetter, U.Emp_Num, U.Emp_Name, U.UnitFrom, U.UnitTo, " +
-                        "U.Comments from ItemsRpt_Transfers U where U.ID = @_ID";
+                        "U.Comments from APP.ItemsRpt_Transfers U where U.ID = @_ID";
                     myCommand.Parameters.AddWithValue("_ID", _ID);
 
                     SqlDataReader _dr = myCommand.ExecuteReader();
@@ -1813,18 +1813,18 @@ namespace ItemsReport
             {
                 using (SqlConnection myConnection = new SqlConnection())
                 {
-                    myConnection.ConnectionString = Common.SystemsServer;
+                    myConnection.ConnectionString = Common.BooServer;
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
 
-                    myCommand.CommandText = "if exists (SELECT * FROM ItemsRpt_WorkStatus WHERE workingDate = @_workingDate and wName = @_wName) " +
+                    myCommand.CommandText = "if exists (SELECT * FROM APP.ItemsRpt_WorkStatus WHERE workingDate = @_workingDate and wName = @_wName) " +
                                     "begin " +
-                                    "    UPDATE ItemsRpt_WorkStatus SET wStatus = @_wStatus, dateUpdated = sysdatetime() WHERE workingDate = @_workingDate and wName = @_wName " +
+                                    "    UPDATE APP.ItemsRpt_WorkStatus SET wStatus = @_wStatus, dateUpdated = sysdatetime() WHERE workingDate = @_workingDate and wName = @_wName " +
                                     "end " +
                                     "else " +
                                     "begin " +
-                                    "    INSERT INTO ItemsRpt_WorkStatus(wName, wStatus, workingDate) VALUES(@_wName, @_wStatus, @_workingDate) " +
+                                    "    INSERT INTO APP.ItemsRpt_WorkStatus(wName, wStatus, workingDate) VALUES(@_wName, @_wStatus, @_workingDate) " +
                                     "end";
                     myCommand.Parameters.AddWithValue("_workingDate", DateTime.Today.ToString("dd-MMM-yyyy"));
                     myCommand.Parameters.AddWithValue("_wName", Common.CurrentUser);
@@ -1874,13 +1874,13 @@ namespace ItemsReport
             {
                 using (SqlConnection myConnection = new SqlConnection())
                 {
-                    myConnection.ConnectionString = Common.SystemsServer;
+                    myConnection.ConnectionString = Common.BooServer;
                     myConnection.Open();
 
                     SqlCommand myCommand = myConnection.CreateCommand();
 
                     // Get your current working status
-                    myCommand.CommandText = "select * from ItemsRpt_WorkStatus where wName = @_name and workingDate = @_date";
+                    myCommand.CommandText = "select * from APP.ItemsRpt_WorkStatus where wName = @_name and workingDate = @_date";
                     myCommand.Parameters.AddWithValue("_name", Common.CurrentUser);
                     myCommand.Parameters.AddWithValue("_date", DateTime.Today.ToString("dd-MMM-yyyy"));
 
@@ -1922,7 +1922,7 @@ namespace ItemsReport
                     SqlCommand myCommand = myConnection.CreateCommand();
 
                     // Get your current working status
-                    myCommand.CommandText = "select * from sites where siteid = 2";
+                    myCommand.CommandText = "select * from APP.Sites where siteid = 2";
 
                     SqlDataReader _dr = myCommand.ExecuteReader();
 
